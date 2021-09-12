@@ -93,6 +93,7 @@
 # Таким образом, искомый вектор $х$ -- не что иное как:
 # 
 # $$
+# |x\rangle = A^{-1} |b \rangle = \sum_{j=0}^{N-1} \lambda_{j}^{-1}b_j | u_{j}\rangle
 # $$
 # 
 # Итак, фазовая оценка. Мы применяем к кубитам второго регистра матрицы Адамара, тем самым приводим их в суперпозицию. Следом запускаем оператор $U$:
@@ -113,9 +114,10 @@
 # Таким образом, состояние второго регистра приходит в вид:
 # 
 # $$
+# \large |0\rangle + e^{2\pi i 2^{m-1} \psi} |1\rangle + |0\rangle + e^{2\pi i 2^{m-2} \psi} |1\rangle + \dots + |0\rangle + e^{2\pi i 2^{0} \psi} |1\rangle = \sum_{l=0}^{2^{m-1}} e^{2\pi i \psi l} |l\rangle
 # $$
 # 
-# Однако просто записать фазу недостаточно. При измерении мы можем получить единицу, но как узнать её вероятность? Измерение не даст нам этой цифры, а ноль и вовсе неинформативен.
+# Однако просто записать фазу недостаточно. При измерении мы можем получить единицу, но как узнать её вероятность? Измерение не даст нам этой цифры, а ноль и вовсе не информативен.
 # Алгоритм обратного квантового Фурье переводит фазу в конкретный вектор.
 # 
 # Так что на выходе после QPE мы имеем:
@@ -138,8 +140,8 @@
 # 
 # $$
 # \begin{aligned}
-# &\sum*{j=0}^{N-1}\left(\sqrt{1-\frac{c^{2}}{\lambda*{j}^{2}}}|0\rangle+\frac{c}{\lambda*j}|1\rangle\right) b_j\left|\lambda*{j}\right\rangle*{n}\left|u*{j}\right\rangle*{m} \\
-# &\sum*{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda*{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b*{j}|0\rangle*{n}\left|u*{j}\right\rangle\_{m}
+# &\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m} \\
+# &\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda*{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_{j}|0\rangle_{n}\left|u_{j}\right\rangle\_{m}
 # \end{aligned}
 # $$
 # 
@@ -201,7 +203,7 @@
 # Зададим параметр $t$ и проанализируем фазу:
 # 
 # $$
-# \mathord{\sqsupset} \ t = 2\pi \frac{5}{16}
+# \large\mathord{\sqsupset} \ t = 2\pi \frac{5}{16}
 # $$
 # 
 # $$
@@ -218,7 +220,7 @@
 # $$
 # \begin{aligned}
 # &{\left[|b\rangle_{m}=\sum_{j=0}^{1} \frac{1}{\sqrt{2}}\left|u_{j}\right\rangle\right]} \\
-# &\frac{1}{\sqrt{2}}\left(|001\rangle\left|u*{0}\right\rangle+|100\rangle\left|u*{1}\right\rangle\right)
+# &\frac{1}{\sqrt{2}}\left(|001\rangle\left|u_{0}\right\rangle+|100\rangle\left|u_{1}\right\rangle\right)
 # \end{aligned}
 # $$
 # 
