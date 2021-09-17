@@ -71,7 +71,7 @@ holidays.clear()
 # значит, длина равна 0
 print(len(holidays))
 
-# данный ключ (то, что записано первым в тьюпле) уже есть в quidditch_team
+# данный ключ (то, что записано первым в кортеже) уже есть в quidditch_team
 member_update = [("Harry Potter", "2nd year")]
 
 # значение, соответствующее "Harry Potter", будет переписано
@@ -115,7 +115,7 @@ counter = 100
 print(counter, hex(id(counter)))
 
 counter = 200
-print(counter, hex(id(counter)))
+print(f'{counter = }, {hex(id(counter)) = }')
 
 # создадим две переменные с одинаковыми значениями в диапазоне от -5 до 256
 a = 20

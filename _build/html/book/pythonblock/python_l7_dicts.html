@@ -774,16 +774,16 @@
 <p>Мы уже видели, что значения в словарь можно добавлять или менять, обращаясь по ключу. Python предоставляет возможность не писать кучу присваиваний, а использовать лаконичный метод <code class="docutils literal notranslate"><span class="pre">update()</span></code>, который на вход может принимать либо</p>
 <ul class="simple">
 <li><p>другой словарь</p></li>
-<li><p>пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в какой-то последовательности (например, тьюплы по два значения в списке: первое – ключ, второе – значение)</p></li>
+<li><p>пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в какой-то последовательности (например, кортежи по два значения в списке: первое – ключ, второе – значение)</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Тьюпл (tuple) - еще одна стандартная структура данных. Очень похожа на list (поддерживает индексацию), но является неизменяемой: как только tuple создан, поменять его нельзя```</p>
+<p>Кортеж/тьюпл (tuple) - еще одна стандартная структура данных. Очень похожа на list (поддерживает индексацию), но является неизменяемой: как только tuple создан, поменять его нельзя```</p>
 </div>
 <p>А что, если в <code class="docutils literal notranslate"><span class="pre">update()</span></code> передать пары, ключ которых уже был в словаре? Значения по дублирующимся ключам будут <strong>перезаписаны</strong> на новые:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># данный ключ (то, что записано первым в тьюпле) уже есть в quidditch_team</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># данный ключ (то, что записано первым в кортеже) уже есть в quidditch_team</span>
 <span class="n">member_update</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;2nd year&quot;</span><span class="p">)]</span>
 
 <span class="c1"># значение, соответствующее &quot;Harry Potter&quot;, будет переписано</span>
@@ -847,7 +847,7 @@
 </div>
 <div class="section" id="id13">
 <h3>Все и сразу<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<p>Существует метод <code class="docutils literal notranslate"><span class="pre">items()</span></code>, который достает пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в виде последовательности тьюплов 👏 Его же часто удобно использовать в циклах, чтобы не тащить длинную запись в виде названия словаря и квадратных скобок с ключом при обращении к значению:</p>
+<p>Существует метод <code class="docutils literal notranslate"><span class="pre">items()</span></code>, который достает пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в виде последовательности кортежей 👏 Его же часто удобно использовать в циклах, чтобы не тащить длинную запись в виде названия словаря и квадратных скобок с ключом при обращении к значению:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># сразу две переменные: первая последовательно будет ключами,</span>
@@ -884,7 +884,7 @@
 <div class="section" id="id15">
 <h2>Что можно хранить<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>Теперь добавим немного технических подробностей: возможно, вы уже заметили самостоятельно, что <code class="docutils literal notranslate"><span class="pre">dict</span></code> может принимать в качестве ключа не всякое значение. На самом деле только <strong>хэшируемые</strong> объекты <em>(можно вызвать функцию <code class="docutils literal notranslate"><span class="pre">hash()</span></code> и получить значение)</em> могут быть ключами словаря, на значения это ограничение не распространяется. В <code class="docutils literal notranslate"><span class="pre">dict</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> значение хэша от объекта используется для поиска внутри структуры.</p>
-<p>Ключом словаря нельзя сделать объект <strong>изменяемого</strong> типа, например, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> или <strong>сам <code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>, так как значение их хэша может измениться со временем. Неизменяемый тьюпл может быть ключом только если не содержит внутри изменяемые объекты.</p>
+<p>Ключом словаря нельзя сделать объект <strong>изменяемого</strong> типа, например, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> или <strong>сам <code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>, так как значение их хэша может измениться со временем. Неизменяемый кортеж может быть ключом только если не содержит внутри изменяемые объекты.</p>
 <div class="section" id="id16">
 <h3>Изменяемость и неизменяемость<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p><em>В англоязычной литературе изменяемые типы называют <strong>mutable</strong>, а неизменяемые – <strong>immutable</strong>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">почитать документацию</a></em></p>
@@ -923,7 +923,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">counter</span> <span class="si">= }</span><span class="s1">, </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
