@@ -499,8 +499,13 @@
 </div>
 <div class="section" id="git">
 <h2>Git и получение файлов курса<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://ru.wikipedia.org/wiki/Git"><code class="docutils literal notranslate"><span class="pre">Git</span></code></a> - это система контроля версий. Этот инструмент часто используется для совместной разработки программ (и не только!) группой людей, каждый из которых работает над своей отдельной проблемой. Так, например, этот курс был создан с помощью <code class="docutils literal notranslate"><span class="pre">Git</span></code>, и каждый автор работал с отдельной копией, создавая набор лекций. А затем все копии собрались в одну книгу, которую вы и читаете. Для вашего удобства, а также возможности получить (“собрать” на сленге) свой экземпляр книги (если он вам зачем-то нужен – ведь все доступно онлайн в полном объеме). К сожалению, знакомство с этим инструментов не входит в программу настоящего курса, и единственное, что вам потребуется - это скачать файлы себе для дальнейщей работы. Хороший туториал на английском можно найти по <a class="reference external" href="https://git-scm.com/docs/gittutorial">этой ссылке</a>.</p>
+<p><a class="reference external" href="https://ru.wikipedia.org/wiki/Git"><code class="docutils literal notranslate"><span class="pre">Git</span></code></a> - это система контроля версий. Этот инструмент часто используется для совместной разработки программ (и не только!) группой людей, каждый из которых работает над своей отдельной проблемой. Так, например, этот курс был создан с помощью <code class="docutils literal notranslate"><span class="pre">Git</span></code>, и каждый автор работал с отдельной копией, создавая набор лекций. А затем все копии собрались в одну книгу, которую вы и читаете. Для вашего удобства, а также возможности получить (“собрать” на сленге) свой экземпляр книги (если он вам зачем-то нужен – ведь все доступно онлайн в полном объеме). К сожалению, знакомство с этим инструментов не входит в программу настоящего курса, и единственное, что вам потребуется - это скачать файлы себе для дальнейшей работы. Хороший туториал на английском можно найти по <a class="reference external" href="https://git-scm.com/docs/gittutorial">этой ссылке</a>.</p>
 <p>Однако сейчас ограничимся лишь простой операцией: для этого надо зайти на страницу с репозиторием (папкой) <a class="reference external" href="https://github.com/SemyonSinchenko/qmlcourse">по ссылке на github</a> (одну из разновидностей <code class="docutils literal notranslate"><span class="pre">Git</span></code>). Затем найдите зеленую кнопку с текстом <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span> <span class="pre">Code</span></code> и кликните по ней. В открывшемся окне убедитесь, что выбрана вкладка <code class="docutils literal notranslate"><span class="pre">HTTPS</span></code>, а не <code class="docutils literal notranslate"><span class="pre">SSH</span></code> или <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">CLI</span></code>. В самом низу окошка будет кнопка <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">ZIP</span></code> - она нам и нужна, жмите!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Если вы проследуете инструкциям из документации по установке <code class="docutils literal notranslate"><span class="pre">Git</span></code>, то действия выше можно проделать одной командой из консоли:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/SemyonSinchenko/qmlcourse</span></code>. Вообще <code class="docutils literal notranslate"><span class="pre">Git</span></code> - очень полезный инструмент, и рекомендуется уделить время прочтению инструкций по его установке и настройке, это пригодится в будущем.</p>
+</div>
 <div class="figure align-default" id="git-download">
 <a class="reference internal image-reference" href="../../_images/git_download.png"><img alt="../../_images/git_download.png" src="../../_images/git_download.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Не пугайтесь темного цвета - это просто цветовая схема в браузере. На светлой странице все, что написано выше, применимо в полном объеме.</span><a class="headerlink" href="#git-download" title="Permalink to this image">¶</a></p>
@@ -534,12 +539,16 @@
 </div>
 <div class="section" id="ubuntu">
 <h3>Инструкция для Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
-<p>Для начала необходимо установить дополнительные программы. Выполните код ниже в терминале:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get update
-apt-get install sudo -y
-apt-get install build-essential -y
-apt-get install git wget -y
+<p>Эта часть подойдет также для всех “родственных” систем: Debian, Linux Mint, Deepin Linux (который можно встретить на ноутбуках компании Huawei, к примеру) и многие другие системы, использующие менеджер пакетов <code class="docutils literal notranslate"><span class="pre">apt</span></code>.
+Для начала необходимо установить дополнительные программы. Выполните код ниже в терминале:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install build-essential -y
+sudo apt-get install git wget -y
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>При использовании sudo терминал может попросить вас ввести пароль для установки и обновления пакетов программ. Это абсолютно нормально.</p>
 </div>
 <p>Затем выполнить простую команду (тоже в терминале), предварительно перейдя в папку с курсом, которую вы извлекли из архива. Для этого нужно воспользоваться командой <code class="docutils literal notranslate"><span class="pre">cd</span></code> (change directory, сменить директорию) и указать путь до папки. Самый простой способ это сделать - перетащить папку из окна Finder в терминал: путь подставится автоматически. Например:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/ivan.petrov/Downloads/course/qmlcourse-master/
