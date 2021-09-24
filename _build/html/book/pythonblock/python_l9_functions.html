@@ -1037,10 +1037,24 @@ None
 <ul class="simple">
 <li><p>Что такое функции и зачем их применять</p></li>
 <li><p>Как определить функцию (инструкция <code class="docutils literal notranslate"><span class="pre">def</span></code>)</p></li>
-<li><p>Отличия позиционных параметров от именованных: порядок указания, значения по умолчанию</p></li>
-<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов</p></li>
-<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code></p></li>
-<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">название_функции</span><span class="p">(</span><span class="n">параметры</span><span class="p">):</span>
+    <span class="n">тело</span> <span class="n">функции</span>
+    <span class="o">&lt;</span><span class="k">return</span> <span class="n">возвращаемые_значения</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Отличия позиционных параметров от именованных:
+– порядок указания - <em>сначала</em> позиционные, <em>потом</em> именованные
+– значения по умолчанию у именованных позволяют не указывать их при вызове</p></li>
+<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов
+– в <code class="docutils literal notranslate"><span class="pre">*some_list</span></code> стоит <strong>одна</strong> *: эта конструкция для получения неограниченного количества позиционных/неименованных аргументов
+– в <code class="docutils literal notranslate"><span class="pre">**some_dict</span></code> <strong>две</strong> *: все именованные аргументы, явно не указанные среди параметров, попадут туда</p></li>
+<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code>
+– return обозначает выход из функции и передачу “наружу” результата работы
+– в return можно перечислять несколько возвращаемых значений через запятую</p></li>
+<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>
+– использование декоратора эквивалентно сохранению результата вызова функции-декоратора с аргументом в виде оборачиваемой функции <code class="docutils literal notranslate"><span class="pre">stupid_power</span> <span class="pre">=</span> <span class="pre">time_decorator(stupid_power)</span></code></p></li>
 </ul>
 </div>
 </div>
