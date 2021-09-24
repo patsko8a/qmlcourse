@@ -24,7 +24,7 @@ print(f"{flowers["violets"] = }")
 print(f"{flowers.get("magnolias") = }")
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_3177/1081355869.py"[0;36m, line [0;32m2[0m
+[0;36m  File [0;32m"/tmp/ipykernel_3204/1081355869.py"[0;36m, line [0;32m2[0m
 [0;31m    print(f"{flowers["violets"] = }")[0m
 [0m                      ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
