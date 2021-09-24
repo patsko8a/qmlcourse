@@ -563,9 +563,8 @@
         
               <div>
                 
-  <p>(python_l7=)</p>
-<div class="section" id="id1">
-<h1>Словари<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="python-l7">
+<span id="id1"></span><h1>Словари<a class="headerlink" href="#python-l7" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>В этой лекции мы расскажем про:</p>
@@ -717,12 +716,63 @@
 </div>
 <p>Предположим, коллега из самого первого примера уволился и больше нет смысла хранить его день рождения:</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> – метод, который достает значение, хранящееся по переданному ключу, и <strong>сразу</strong> удаляет ключ из словаря:</p>
-<p>Для метода <code class="docutils literal notranslate"><span class="pre">pop()</span></code> есть возможность указать значение, которое будет возвращено при обращении к несуществующему ключу. Почти как <code class="docutils literal notranslate"><span class="pre">get()</span></code>, но все таки, без указания этого значения, <code class="docutils literal notranslate"><span class="pre">pop()</span></code> выбрасывает <code class="docutils literal notranslate"><span class="pre">KeyError</span></code></p>
-</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># из словаря dates удаляется ключ &quot;Наташа Романова&quot;</span>
+<span class="k">del</span> <span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> – метод, который достает значение, хранящееся по переданному ключу, и <strong>сразу</strong> удаляет ключ из словаря:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># еще один способ создания словаря из последовательности пар</span>
+<span class="n">holidays</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;Feburary&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">23</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">])])</span>
+
+<span class="c1"># pop() возвращает значение, соответствующее ключу, значит его можно присвоить</span>
+<span class="c1"># переменной</span>
+<span class="n">january_days</span> <span class="o">=</span> <span class="n">holidays</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;January&quot;</span><span class="p">)</span>
+
+<span class="c1"># напечатается соответствующий массив</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">january_days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Для метода `pop()` есть возможность указать значение, которое будет возвращено при обращении к несуществующему ключу. Почти как `get()`, но все таки, без указания этого значения, `pop()` выбрасывает `KeyError`
+</pre></div>
+</div>
+<ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">popitem()</span></code> имеет схожее название, но не путайте с предыдущим методом: этот на вход не принимает <code class="docutils literal notranslate"><span class="pre">ключ</span></code>, а возвращает пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, которая была добавлена последней (<em>такое поведение гарантируется с Python <strong>3.7</strong></em>).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># в результате -- последняя добавленная пара</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">holidays</span><span class="o">.</span><span class="n">popitem</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code> позволяет удалить сразу все ключи словаря, то есть полностью его очистить:</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># вернемся к предыдущему примеру</span>
+<span class="c1"># словарь становится пустой</span>
+<span class="n">holidays</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="c1"># значит, длина равна 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Обратите внимание на то, как работают методы <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> и <code class="docutils literal notranslate"><span class="pre">clear()</span></code>: как только вызываются, словарь меняет свой состав (<em>изменения происходят in place</em>, то изменить по месту без копирования).</p>
 </div>
 <div class="section" id="id9">
