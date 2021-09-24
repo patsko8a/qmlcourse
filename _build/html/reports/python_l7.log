@@ -17,24 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# данный ключ (то, что записано первым в кортеже) уже есть в quidditch_team
-member_update = [("Harry Potter", "2nd year")]
+# доступ к элементу, если ключа нет - ошибка
+print(f"{flowers["violets"] = }")
 
-# значение, соответствующее "Harry Potter", будет переписано
-quidditch_team.update(new_members)
-
-print(quidditch_team["Harry Potter"])
+# при помощи get()
+print(f"{flowers.get("magnolias") = }")
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3180/3005461984.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0;31m# значение, соответствующее "Harry Potter", будет переписано[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 5[0;31m [0mquidditch_team[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mnew_members[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      6[0m [0;34m[0m[0m
-[1;32m      7[0m [0mprint[0m[0;34m([0m[0mquidditch_team[0m[0;34m[[0m[0;34m"Harry Potter"[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;36m  File [0;32m"/tmp/ipykernel_3160/1081355869.py"[0;36m, line [0;32m2[0m
+[0;31m    print(f"{flowers["violets"] = }")[0m
+[0m                      ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mNameError[0m: name 'quidditch_team' is not defined
-NameError: name 'quidditch_team' is not defined
+SyntaxError: invalid syntax (1081355869.py, line 2)
 

@@ -25,7 +25,7 @@ marks = dict(линал=100, английский=92)
 print(f'{"матан" in marks = }')
 
 # True
-print(f'{"линал" in marks}')
+print(f'{"линал" in marks = }')
 
 if "матан" in marks:
     print(marks["матан"])
@@ -38,14 +38,14 @@ empty_dict = {}
 # None
 print(empty_dict.get("ключ"))
 
-# теперь будет возвращено значение -1
+# теперь будет возвращено значение `-1`
 print(empty_dict.get("ключ", -1))
 
 # empty_dict -- пустой словарь, поэтому длина равна 0
-print(f"{len(empty_dict)}")
+print(f"{len(empty_dict) = }")
 
 # а вот словарь marks уже содержит две пары, поэтому длина 2
-print(f"{len(marks)}")
+print(f"{len(marks) = }")
 
 # из словаря dates удаляется ключ "Наташа Романова"
 del dates["Наташа Романова"]
@@ -70,6 +70,19 @@ holidays.clear()
 
 # значит, длина равна 0
 print(len(holidays))
+
+# создадим два словаря: в первом уже есть два ключа
+quidditch_team = {"Fred Weasley": "3rd year", "George Weasley": "3rd year"}
+
+# во втором -- один ключ
+new_members = {"Harry Potter": "1st year"}
+
+# добавим пары из new_members
+# метод update() также работает in place, поэтому после выполнения данной
+# строки кода, в словаре quidditch_team станет три ключа
+quidditch_team.update(new_members)
+
+print(quidditch_team["Harry Potter"])
 
 # данный ключ (то, что записано первым в кортеже) уже есть в quidditch_team
 member_update = [("Harry Potter", "2nd year")]
@@ -146,10 +159,10 @@ literature = dict(poem_flowers=flowers)
 print(f"{flowers = }\n{anime = }\n{literature = }")
 
 # доступ к элементу, если ключа нет - ошибка
-print(flowers["violets"])
+print(f"{flowers["violets"] = }")
 
 # при помощи get()
-print(flowers.get("magnolias"))
+print(f"{flowers.get("magnolias") = }")
 
 days = ["Пн", "Вт", "Ср", "Чт", "Пт"]
 
