@@ -749,15 +749,30 @@ len(marks) = 2
 <div class="section" id="id8">
 <h3>Удаление из словаря<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Есть несколько способов очистки в словаре: можно убирать по ключу, а можно сразу удалить все!</p>
-<ol>
-<li><p>при помощи инструкции del (от английского <em>“delete”</em>) можно удалить пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (<em>замечу, что удаление ключа эквивалентно удалению пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, так как мы теряем возможность найти то самое <code class="docutils literal notranslate"><span class="pre">значение</span></code></em>), в общем виде:</p>
+<ol class="simple">
+<li><p>при помощи инструкции del (от английского <em>“delete”</em>) можно удалить пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (<em>замечу, что удаление ключа эквивалентно удалению пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, так как мы теряем возможность найти то самое <code class="docutils literal notranslate"><span class="pre">значение</span></code></em>), в общем виде:</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># таким образом из словаря &quot;словарь&quot; будет удален ключ &quot;название_ключа&quot;</span>
 <span class="c1"># и соответствующее ему значение</span>
 <span class="k">del</span> <span class="n">словарь</span><span class="p">[</span><span class="n">название_ключа</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Предположим, коллега из самого первого примера уволился и больше нет смысла хранить его день рождения:</p>
-</li>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># из словаря dates удаляется ключ &quot;Наташа Романова&quot;</span>
+<span class="k">del</span> <span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> – метод, который достает значение, хранящееся по переданному ключу, и <strong>сразу</strong> удаляет ключ из словаря:</p></li>
 </ol>
 <div class="cell docutils container">
@@ -780,9 +795,7 @@ len(marks) = 2
 </div>
 </div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Для метода `pop()` есть возможность указать значение, которое будет возвращено при обращении к несуществующему ключу. Почти как `get()`, но все таки, без указания этого значения, `pop()` выбрасывает `KeyError`
-</pre></div>
-</div>
+<p>Для метода <code class="docutils literal notranslate"><span class="pre">pop()</span></code> есть возможность указать значение, которое будет возвращено при обращении к несуществующему ключу. Почти как <code class="docutils literal notranslate"><span class="pre">get()</span></code>, но все таки, без указания этого значения, <code class="docutils literal notranslate"><span class="pre">pop()</span></code> выбрасывает <code class="docutils literal notranslate"><span class="pre">KeyError</span></code></p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">popitem()</span></code> имеет схожее название, но не путайте с предыдущим методом: этот на вход не принимает <code class="docutils literal notranslate"><span class="pre">ключ</span></code>, а возвращает пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, которая была добавлена последней (<em>такое поведение гарантируется с Python <strong>3.7</strong></em>).</p></li>
 </ol>
@@ -1023,7 +1036,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7fcb5d0e7d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f441eed6d80
 </pre></div>
 </div>
 </div>
@@ -1041,7 +1054,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7fcb5d0e8a00&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f441eed7a00&#39;
 </pre></div>
 </div>
 </div>
@@ -1092,8 +1105,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7fcb54db5080
-Стало: 0x7fcb54db5080 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f4414ba2380
+Стало: 0x7f4414ba2380 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
