@@ -128,7 +128,7 @@ counter = 100
 print(counter, hex(id(counter)))
 
 counter = 200
-print(f'{counter = }, {hex(id(counter)) = }')
+print(f"{counter = }, {hex(id(counter)) = }")
 
 # создадим две переменные с одинаковыми значениями в диапазоне от -5 до 256
 a = 20
