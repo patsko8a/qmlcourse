@@ -734,7 +734,7 @@
 </div>
 <div class="section" id="id7">
 <h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Функция <code class="docutils literal notranslate"><span class="pre">len()</span></code> для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, которое в нем содержится:</p>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">len()</span></code> для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (их столько же, сколько ключей), которое в нем содержится:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty_dict -- пустой словарь, поэтому длина равна 0</span>
@@ -989,7 +989,7 @@ Player Harry Potter is in 1st year
 <p>Функция <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступна и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вспомним про рабочие дни</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вспомним про рабочие дни, ключи - целые числа по номеру дня недели</span>
 <span class="n">week</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">:</span> <span class="s2">&quot;weekend&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s2">&quot;weekend&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;workday&quot;</span><span class="p">}</span>
 
 <span class="c1"># в sorted_week окажутся ключи, отсортированные в порядке возрастания</span>
@@ -1041,7 +1041,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7fe94cba3d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f021fff1d80
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1059,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7fe94cba4a00&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f021fff2a00&#39;
 </pre></div>
 </div>
 </div>
@@ -1110,8 +1110,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7fe944870c80
-Стало: 0x7fe944870c80 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f0218cbcbc0
+Стало: 0x7f0218cbcbc0 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
