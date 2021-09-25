@@ -462,10 +462,10 @@ print(f"{flowers = }\n{anime = }\n{literature = }")
 
 
 # доступ к элементу, если ключа нет - ошибка
-print(f"{flowers['violets'] = }")
+print(f'{flowers["violets"] = }')
 
 # при помощи get()
-print(f"{flowers.get('magnolias') = }")
+print(f'{flowers.get("magnolias") = }')
 
 
 # In[27]:
