@@ -577,12 +577,12 @@
 </ol>
 <p>Существуют правила и рекомендации по именованию функций:</p>
 <ul class="simple">
-<li><p><strong>правила</strong>:
-– название не может начинаться с числа
-– можно использовать нижнее подчеркивание <code class="docutils literal notranslate"><span class="pre">_</span></code>, цифры и буквы</p></li>
-<li><p><strong>рекомендации</strong>:
-– <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>: в названии только буквы нижнего регистра, слова разделяются <code class="docutils literal notranslate"><span class="pre">_</span></code>
-– название “приватных” функций начинается с <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p><strong>правила</strong>:</p></li>
+<li><p>название не может начинаться с числа</p></li>
+<li><p>можно использовать нижнее подчеркивание <code class="docutils literal notranslate"><span class="pre">_</span></code>, цифры и буквы</p></li>
+<li><p><strong>рекомендации</strong>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snake_case</span></code>: в названии только буквы нижнего регистра, слова разделяются <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>название “приватных” функций начинается с <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
 </ul>
 <ol class="simple">
 <li><p>круглые скобки и, опционально, параметры внутри <em>(о них ниже)</em></p></li>
@@ -713,8 +713,8 @@ None
 <p>В Python объектам можно давать имя и по этому имени обращаться, эти названия организованы в пространства имен или неймспейсы <em>(от английского ‘namespace’)</em>. Инициализация переменной добавляет в неймспейс название объекта. Неймспейс - набор имен определенных на текущий момент объектов. Представьте себе <code class="docutils literal notranslate"><span class="pre">dict</span></code>, где ключом является строка, а значением - ссылка на объект. Область видимости определяет, переменные из каких пространств имен сейчас доступны. Разберем, как и где Python ищет объекты, к которым обращаются.</p>
 <p>Неймспейсы и области видимости можно разделить на несколько типов:</p>
 <ul class="simple">
-<li><p>локальные (<strong>L</strong>ocal) - локальные переменные функции, данная область существует до тех пор, пока функция не завершит работу после вызова
-– локальные пространства могут быть вложены друг в друга, в таком случае область уровня N (<strong>E</strong>nclosing) содержит “более глубокую” N + 1.
+<li><p>локальные (<strong>L</strong>ocal) - локальные переменные функции, данная область существует до тех пор, пока функция не завершит работу после вызова</p></li>
+<li><p>локальные пространства могут быть вложены друг в друга, в таком случае область уровня N (<strong>E</strong>nclosing) содержит “более глубокую” N + 1.
 Поиск имени, вызванного на уровне N, начинается с локального неймспейса этого уровня и продвигается “наружу”, то есть на уровни выше</p></li>
 <li><p>глобальные (<strong>G</strong>lobal) - все объекты, определенные на уровне скрипта</p></li>
 <li><p>встроенные (<strong>B</strong>uilt-in) - неймспейс содержит все встроенные объекты (функции, исключения и т.д.), поиск в нем осуществляется последним</p></li>
@@ -1051,17 +1051,17 @@ None
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Отличия позиционных параметров от именованных:
-– порядок указания - <em>сначала</em> позиционные, <em>потом</em> именованные
-– значения по умолчанию у именованных позволяют не указывать их при вызове</p></li>
-<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов
-– в <code class="docutils literal notranslate"><span class="pre">*some_list</span></code> стоит <strong>одна</strong> *: эта конструкция для получения неограниченного количества позиционных/неименованных аргументов
-– в <code class="docutils literal notranslate"><span class="pre">**some_dict</span></code> <strong>две</strong> *: все именованные аргументы, явно не указанные среди параметров, попадут туда</p></li>
-<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code>
-– return обозначает выход из функции и передачу “наружу” результата работы
-– в return можно перечислять несколько возвращаемых значений через запятую</p></li>
-<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>
-– использование декоратора эквивалентно сохранению результата вызова функции-декоратора с аргументом в виде оборачиваемой функции <code class="docutils literal notranslate"><span class="pre">stupid_power</span> <span class="pre">=</span> <span class="pre">time_decorator(stupid_power)</span></code></p></li>
+<li><p>Отличия позиционных параметров от именованных:</p></li>
+<li><p>порядок указания - <em>сначала</em> позиционные, <em>потом</em> именованные</p></li>
+<li><p>значения по умолчанию у именованных позволяют не указывать их при вызове</p></li>
+<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов</p></li>
+<li><p>в <code class="docutils literal notranslate"><span class="pre">*some_list</span></code> стоит <strong>одна</strong> *: эта конструкция для получения неограниченного количества позиционных/неименованных аргументов</p></li>
+<li><p>в <code class="docutils literal notranslate"><span class="pre">**some_dict</span></code> <strong>две</strong> *: все именованные аргументы, явно не указанные среди параметров, попадут туда</p></li>
+<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code></p></li>
+<li><p>return обозначает выход из функции и передачу “наружу” результата работы</p></li>
+<li><p>в return можно перечислять несколько возвращаемых значений через запятую</p></li>
+<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p></li>
+<li><p>использование декоратора эквивалентно сохранению результата вызова функции-декоратора с аргументом в виде оборачиваемой функции <code class="docutils literal notranslate"><span class="pre">stupid_power</span> <span class="pre">=</span> <span class="pre">time_decorator(stupid_power)</span></code></p></li>
 </ul>
 </div>
 </div>
