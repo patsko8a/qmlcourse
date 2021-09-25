@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# (python_l9_functions=)
+# (python_l9=)
 # 
 # # Функции
 # 
