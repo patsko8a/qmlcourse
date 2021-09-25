@@ -584,12 +584,17 @@
 </ol>
 <p>Существуют правила и рекомендации по именованию функций:</p>
 <ul class="simple">
-<li><p><strong>правила</strong>:</p></li>
+<li><p><strong>правила</strong>:</p>
+<ul>
 <li><p>название не может начинаться с числа</p></li>
 <li><p>можно использовать нижнее подчеркивание <code class="docutils literal notranslate"><span class="pre">_</span></code>, цифры и буквы</p></li>
-<li><p><strong>рекомендации</strong>:</p></li>
+</ul>
+</li>
+<li><p><strong>рекомендации</strong>:</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">snake_case</span></code>: в названии только буквы нижнего регистра, слова разделяются <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
-<li><p>название “приватных” функций начинается с <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+</ul>
+</li>
 </ul>
 <ol class="simple">
 <li><p>круглые скобки и, опционально, параметры внутри <em>(о них ниже)</em></p></li>
@@ -852,6 +857,10 @@ None
 </div>
 </div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Совет: лучше передавать все в списках или векторах (о которых расскажут позже)</p>
+</div>
 </div>
 <div class="section" id="id10">
 <h3>Именованные параметры<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
@@ -1058,17 +1067,29 @@ None
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Отличия позиционных параметров от именованных:</p></li>
+<li><p>Отличия позиционных параметров от именованных:</p>
+<ul>
 <li><p>порядок указания - <em>сначала</em> позиционные, <em>потом</em> именованные</p></li>
 <li><p>значения по умолчанию у именованных позволяют не указывать их при вызове</p></li>
-<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов</p></li>
+</ul>
+</li>
+<li><p>Синтаксис со звездочками для получения заранее неизвестного числа позиционных (<code class="docutils literal notranslate"><span class="pre">*some_list</span></code>) и именованных (<code class="docutils literal notranslate"><span class="pre">**some_dict</span></code>) аргументов</p>
+<ul>
 <li><p>в <code class="docutils literal notranslate"><span class="pre">*some_list</span></code> стоит <strong>одна</strong> *: эта конструкция для получения неограниченного количества позиционных/неименованных аргументов</p></li>
 <li><p>в <code class="docutils literal notranslate"><span class="pre">**some_dict</span></code> <strong>две</strong> *: все именованные аргументы, явно не указанные среди параметров, попадут туда</p></li>
-<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code></p></li>
+</ul>
+</li>
+<li><p>Что может возвращать функция при помощи <code class="docutils literal notranslate"><span class="pre">return</span></code></p>
+<ul>
 <li><p>return обозначает выход из функции и передачу “наружу” результата работы</p></li>
 <li><p>в return можно перечислять несколько возвращаемых значений через запятую</p></li>
-<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p></li>
+</ul>
+</li>
+<li><p>Что такое декораторы и как они работают, щепотку синтаксического сахара с <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p>
+<ul>
 <li><p>использование декоратора эквивалентно сохранению результата вызова функции-декоратора с аргументом в виде оборачиваемой функции <code class="docutils literal notranslate"><span class="pre">stupid_power</span> <span class="pre">=</span> <span class="pre">time_decorator(stupid_power)</span></code></p></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
