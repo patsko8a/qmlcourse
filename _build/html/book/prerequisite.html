@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Приветствие &#8212; QMLCourse</title>
+    <title>Пререквизиты для прохождения курса QML &#8212; QMLCourse</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/index.html" />
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/prerequisite.html" />
     <link rel="shortcut icon" href="../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="О квантовых компьютерах, биткоине и превосходстве" href="intro1block/intro1.html" />
+    <link rel="next" title="О блоке" href="pythonblock/pythonintro.html" />
+    <link rel="prev" title="О квантовых компьютерах, биткоине и превосходстве" href="intro1block/intro1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -84,8 +85,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
    Приветствие
   </a>
  </li>
@@ -95,14 +96,14 @@
   Введение
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro1block/intro1.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="prerequisite.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -380,7 +381,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/book/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/prerequisite.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -400,7 +401,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/prerequisite.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -427,21 +428,9 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Почему именно этот курс?
+  <a class="reference internal nav-link" href="#python-poetry">
+   Python, Poetry и среда разработки
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Как устроен курс?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Как будет проходить этот курс?
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -454,57 +443,29 @@
         
               <div>
                 
-  <div class="section" id="id1">
-<h1>Приветствие<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения!</p>
-<div class="section" id="id2">
-<h2>Почему именно этот курс?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Наш курс отличается от других курсов по квантовым вычислениям:</p>
+  <div class="section" id="qml">
+<h1>Пререквизиты для прохождения курса QML<a class="headerlink" href="#qml" title="Permalink to this headline">¶</a></h1>
+<p>Настоящий курс совмещает в себе как теорию для глубинного понимания материала, так и большое количество практики для закрепления навыков и проработки неочевидных ситуаций/проблем. Поэтому предполагается, что некоторые базовые знания у вас уже есть. Если это не так, то приобрести их перед прохождением курса вам помогут соответствующие блоки курса.</p>
+<div class="section" id="python-poetry">
+<h2>Python, Poetry и среда разработки<a class="headerlink" href="#python-poetry" title="Permalink to this headline">¶</a></h2>
+<p>Для успешного прохождения курса вы должны уметь делать и понимать такие вещи, как:</p>
 <ul class="simple">
-<li><p>он адаптивный и содержит лекции разных уровней сложности и глубины;</p></li>
-<li><p>он практический, а все объяснения подкрепляются кодом;</p></li>
-<li><p>он про реальные методы, которые будут актуальны ближайшие 10-15 лет.</p></li>
+<li><p>копирование файлов с GitHub;</p></li>
+<li><p>установка <code class="docutils literal notranslate"><span class="pre">Poetry</span></code> и библиотек <code class="docutils literal notranslate"><span class="pre">Python</span></code>;</p></li>
+<li><p>как запустить Jupyter Notebook;</p></li>
+<li><p>основные сочетания клавиш в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>;</p></li>
+<li><p>как запускать код в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>;</p></li>
+<li><p>какие простые типы данных существуют в <code class="docutils literal notranslate"><span class="pre">Python</span></code>;</p></li>
+<li><p>как работать со сложными типами-контейнерами (<code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>), включая самые популярные методы каждого из них;</p></li>
+<li><p>как работает арифметика <code class="docutils literal notranslate"><span class="pre">Python</span></code> и как переменные разных типов соотносятся друг с другом;</p></li>
+<li><p>что такое условные конструкции и ветвление логики;</p></li>
+<li><p>что такое блок кода в <code class="docutils literal notranslate"><span class="pre">Python</span></code> и зачем нужны отступы (табуляции);</p></li>
+<li><p>что такое циклы и как их можно использовать применительно к сложным типам данных;</p></li>
+<li><p>как писать функции в <code class="docutils literal notranslate"><span class="pre">Python</span></code>, что такое аргументы функции и какими они бывают;</p></li>
+<li><p>что такое декоратор и как его использовать;</p></li>
+<li><p>базовый ООП: объявление классов, понятие объекта класса, умение писать методы класса.</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>Как устроен курс?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Наш курс разделен на логические блоки, каждый из которых содержит лекции разных уровней сложности:</p>
-<ul class="simple">
-<li><p><strong>ГОЛУБОЙ</strong> – вводные лекции;</p></li>
-<li><p><strong>ЗЕЛЕНЫЙ</strong> – лекции “основного” блока курса;</p></li>
-<li><p><strong>ЖЕЛТЫЙ</strong> – лекции, глубже раскрывающие темы блоков;</p></li>
-<li><p><strong>КРАСНЫЙ</strong> – лекции про физику и математику, которая стоит за всем этим;</p></li>
-<li><p><strong>БЕЛЫЙ</strong> – факультативные лекции.</p></li>
-</ul>
-<div class="figure align-default" id="course-program">
-<img alt="../_images/program.png" src="../_images/program.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Программа курса</span><a class="headerlink" href="#course-program" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>Как будет проходить этот курс?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Рекомендуем проходить курс в порядке, обозначенном на схеме.</p>
-<p><strong>Желаем успехов!</strong></p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<p>Если какая либо из тем вызывает у вас непонимание, то настоятельно рекомендуется освежить знания (или даже их приобрести), пройдя соответствующие уроки в блоке “Основы Python”. Даже если у вас есть опыт работы с ним и написания кода, то предлагается ознакомиться с процессов установки всех необходимых зависимостей и библиотек (урок 2 блока), а также горячими клавишами и разнообразными функциями в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> (урок 3).</p>
 </div>
 </div>
 
@@ -537,11 +498,20 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="intro1block/intro1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">О квантовых компьютерах, биткоине и превосходстве</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="intro1block/intro1.html" title="next page">
+        <a class="right-next" href="pythonblock/pythonintro.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">О квантовых компьютерах, биткоине и превосходстве</p>
+                <p class="prevnext-title">О блоке</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
