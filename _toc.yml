@@ -47,6 +47,8 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
+    - file: book/qcblock/mixedstates
+      title: 🟨 Смешанные состояния
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
     - file: book/qcblock/grovers_algorithm
@@ -81,8 +83,6 @@
   chapters:
     - file: book/qsvmblock/qsvmintro
       title: ⬜ О блоке
-    - file: book/qsvmblock/classic_svm
-      title: 🟩 Классический SVM
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
 
