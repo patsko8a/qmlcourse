@@ -106,7 +106,7 @@ cd /home/ivan.petrov/Downloads/course/qmlcourse-master/
 И из этой папки вызовите последовательность из двух команд:
 
 ```bash
-make install-macos-latest && make build-linux-macos
+make install-macOS-latest && make build
 ```
 
 Если вам интересно, то первая установит `Python`, `poetry` - это еще один менеджер, который отвечает за управление библиотеками `Python` и их версиями, и, наконец, сами библиотеки, необходимые для прохождения курса.
@@ -137,7 +137,7 @@ cd /home/ivan.petrov/Downloads/course/qmlcourse-master/
 И из этой папки вызовите последовательность из двух команд:
 
 ```bash
-make install-ubuntu-latest && make build-linux-macos
+make install-ubuntu-latest && make build
 ```
 
 Если вам интересно, то первая установит `Python`, `poetry` - это еще один менеджер, который отвечает за управление библиотеками `Python` и их версиями, и, наконец, сами библиотеки, необходимые для прохождения курса.

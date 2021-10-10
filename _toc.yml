@@ -4,8 +4,6 @@
   chapters:
     - file: book/intro1block/intro1.md
       title: 🟦 О квантовых компьютерах
-    - file: book/prerequisite.md
-      title: ⬜ Пререквизиты курса
 
 - part: Основы Python
   chapters:
@@ -47,8 +45,6 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-    - file: book/qcblock/mixedstates
-      title: 🟨 Смешанные состояния
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
     - file: book/qcblock/grovers_algorithm
@@ -85,6 +81,13 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Квантовые нейронные сети
+  chapters:
+    - file: book/qnnblock/qnnintro
+      title: ⬜ О блоке
+    - file: book/qnnblock/qconv
+      title: 🟩 Квантовые сверточные сети
 
 - part: Проблемы квантового машинного обучения
   chapters:
