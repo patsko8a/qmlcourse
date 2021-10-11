@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Квантование электрических цепей" href="scqubits.html" />
+    <link rel="next" title="Введение" href="scqubits.html" />
     <link rel="prev" title="Квантовая химия. Теория самосогласованного поля." href="../problemsblock/quantchemadvancedscf.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -346,7 +346,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scqubits.html">
-   Квантование электрических цепей
+   Введение
   </a>
  </li>
 </ul>
@@ -479,32 +479,32 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id5">
      Природа степени свободы для кодирования информации
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id8">
      Способ кодирования информации
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id10">
      Способ выполнения операций
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id12">
      Наборы инструкций и универсальность
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id14">
      Успехи в практической реализации
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id15">
      Заключение
     </a>
    </li>
@@ -537,6 +537,16 @@
 <h1>Обзор и классификация физических платформ для квантовых вычислений<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id3">
 <h2>Радиочастотные и оптические кубиты<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Первый признак, по которому можно классифицировать разные кубиты, это характер тех двух квантовых состояний, в которых
+хранится информация. Рассматрим, напимер, фрагмент структуры уровней для иона Yb-171+ <span id="id4">[<a class="reference internal" href="../bibliography.html#id19"><span>Mon</span></a>]</span>. Этот ион часто
+используют для квантовых вычислений.</p>
+<div class="figure align-default" id="yb171-energy-levels">
+<img alt="../../_images/Yb171+_energy_levels.png" src="../../_images/Yb171+_energy_levels.png" />
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Фрагмент структуры энергетических уровней иона Yb-171+. У типичного атома очень много степеней свободы:
+спин ядра, спин электронной подсистемы, радиус орбитали электрона и проекция момента орбитали электрона.
+Переходы между состояниями имеют очень разные частоты, времена когерентности и восприимчивости к частот к внешним полям.
+Чтобы сделать из иона кубит, надо определиться, какой уровень будет “0”, а какой – “1”.</span><a class="headerlink" href="#yb171-energy-levels" title="Permalink to this image">¶</a></p>
+</div>
 <p>На сегодняшнем этапе все платформы для квантовых вычислений можно разделить на два класса: те, которые работают со сравнительно
 низкими <span class="math notranslate nohighlight">\(\omega/2\pi\sim10^{5}\dots10^{10}~\mathrm{Hz}\)</span> частотами (вплоть до микроволновых), и те, которые работают на
 высоких частотах <span class="math notranslate nohighlight">\(\omega/2\pi\sim10^{13}\dots10^{15}~\mathrm{Hz}\)</span>. К первым относятся</p>
@@ -555,18 +565,24 @@
 <p>Квантовые компьютеры первого типа надо сильно охлаждать, так как они самовозбуждаются под действием броуновского движения и теплового
 излучения тел, находящихся при комнатной температуре.</p>
 </div>
-<div class="section" id="id4">
-<h2>Природа степени свободы для кодирования информации<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>Природа степени свободы для кодирования информации<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Можно классифицировать популярные платформы для квантовых
 вычислений и по другим признакам. Например, есть кубиты на естественных степенях свободы и кубиты на коллективных
-степенях свободы. Естественные степени свободы – это</p>
+степенях свободы.</p>
+<p>Естественные степени свободы – это</p>
 <ul class="simple">
 <li><p>Любые переходы в уединенных атомах и ионах,</p></li>
 <li><p>Фотоны в открытом пространстве.</p></li>
 </ul>
 <p>Кубиты на естественных степенях свободы автоматически получаются одинаковыми: вы берете одинаковые атомы, и у них
 обязательно будут одинаковые переходы. Впрочем, если поместить их в какую-нибудь ловушку, то из-за того, что ловушки
-немного влияют на частоты переходов в атомах, эту эквивалентность легко испортить. Кубиты на искусственных степенях
+немного влияют на частоты переходов в атомах, эту эквивалентность легко испортить.</p>
+<div class="figure align-default" id="single-atom">
+<img alt="../../_images/cropatom-800x603.jpg" src="../../_images/cropatom-800x603.jpg" />
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">Фотография уединённого атома в ловушке. Источник: <span id="id6">[<a class="reference internal" href="../bibliography.html#id20"><span>ion</span></a>]</span></span><a class="headerlink" href="#single-atom" title="Permalink to this image">¶</a></p>
+</div>
+<p>Кубиты на искусственных степенях
 свободы получаются когда имеет место коллективная динамика большого числа частиц, например поляризация в материала
 оптоволокна, или коллективное движение электронов в сверхпроводнике. Примеры искусственных степеней свободы:</p>
 <ul class="simple">
@@ -576,14 +592,18 @@
 <li><p>Спины в квантовых точках,</p></li>
 <li><p>Любые квазичастицы в твердотельных системах.</p></li>
 </ul>
+<div class="figure align-default" id="silicon-qubits">
+<img alt="../../_images/silicon-qubits.png" src="../../_images/silicon-qubits.png" />
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">Изображение кремниевой микросхемой с кубитом на квантовой точке. Источник: <span id="id7">[<a class="reference internal" href="../bibliography.html#id21"><span>SZK+18</span></a>]</span></span><a class="headerlink" href="#silicon-qubits" title="Permalink to this image">¶</a></p>
+</div>
 <p>На самом деле граница между естественными степенями свободы и искусственными вовсе не такая очевидная, как может
 показаться на первый взгляд. Так, например, фотон, находящийся в открытом пространстве, можно поместить между двумя
 зеркалами, которые образуют резонатор. Но в таком случае в зеркалах, и в носителях заряда в зеркале будет храниться
 часть энергии фотона – получается так называемый “поляритон”, который уже не совсем естественная степень свободы.
 Абсолютно тождественными могут быть только те носители информации, которые ни с чем не связаны.</p>
 </div>
-<div class="section" id="id5">
-<h2>Способ кодирования информации<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>Способ кодирования информации<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Только системы, где есть всего два уровня, а больше никакие не используются и не учитываются, строго говоря являются
 кубитами. Такими являются, например</p>
 <ul class="simple">
@@ -597,6 +617,10 @@
 <li><p>Сверхпроводниковые кубиты-трансмоны,</p></li>
 <li><p>Атомы и ридберговские состояния в них.</p></li>
 </ul>
+<div class="figure align-default" id="transmon-wavefunctions">
+<img alt="../../_images/transmon-wavefunctions.svg" src="../../_images/transmon-wavefunctions.svg" /><p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">Потенциал и уровни энергии в сверхпровониковом кубите-трансмоне. Построено с помощью scqubits <span id="id9">[<a class="reference internal" href="../bibliography.html#id22"><span>GK21</span></a>]</span>.
+Как правило используются нижние два уровня, однако и остальные уровни можно использовать для алгоритмов</span><a class="headerlink" href="#transmon-wavefunctions" title="Permalink to this image">¶</a></p>
+</div>
 <p>Бывают модели квантовых вычислений на непрерывных степенях свободы, например:</p>
 <ul class="simple">
 <li><p>Оптические вычисления на непрерывных переменных,</p></li>
@@ -604,8 +628,8 @@
 <li><p>Состояния микроволнового поля в сверхпроводниковых резонаторах.</p></li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>Способ выполнения операций<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>Способ выполнения операций<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>Модели вычислений в квантовых компьютерах можно классифицировать по признаку способа реализации операций в них.
 Самый простой и очевидный способ – воздействие на кубит (кудит, непрерывную переменную) при помощи короткого
 аналогового сигнала на резонансной частоте этой системы, причем амплитуда и фаза этого сигнала будет определять
@@ -615,6 +639,14 @@
 <li><p>Кубиты на ионах в радиочастотных ловушках</p></li>
 <li><p>Кубиты на нейтральных атомах в дипольных ловушках.</p></li>
 </ul>
+<div class="figure align-default" id="ion-computation-schematic">
+<img alt="../../_images/ions-computation-schematic.svg" src="../../_images/ions-computation-schematic.svg" /><p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">Схема квантового компьютера на ионах. Источник: <span id="id11">[<a class="reference internal" href="../bibliography.html#id23"><span>WBD+19</span></a>]</span>.
+Кубиты расположены рядом друг с другом в вакуумной камере, а управляющие сигналы представляют собой лазерные лучи,
+направленные на каждый ион. Для однокубитных и двухкубитных операций используют разные лазеры, для считывания – ещё
+лазер. Рассеянное на ионе излучение пследнего лазера детектируется, чтобы определить состояние кубита.
+Похожим образом работают и кубиты на нейтральных атомах (там есть дополнительный оптический пинцет), и сверхпроводникые
+кубиты (там вместо лазеров используются микроволновые кабели).</span><a class="headerlink" href="#ion-computation-schematic" title="Permalink to this image">¶</a></p>
+</div>
 <p>Бывают вычислительные модели, в которых вместо временной последовательности управляющих сигналов носитель информации
 движется по “конвейеру”, вдоль которого с ним выполняются операции. Так работают, например, вычисления на</p>
 <ul class="simple">
@@ -641,8 +673,8 @@
 через промежуточные уровни.</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2>Наборы инструкций и универсальность<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2>Наборы инструкций и универсальность<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p>Разные модели вычислений дают разные наборы инструкций для реализации квантовых алгоритмов. В зависимости от вероятности
 успешной реализации инструкций (квантовые компьютеры делают ошибки!) эти модели вычислений могут быть ближе, либо дальше
 от создания универсального масштабируемого квантового компьютера. По этому признаку</p>
@@ -671,14 +703,24 @@
 дополнение к входным данным, сложные неклассические сигналы, а на выходе производится считывание числа фотонов, которое
 является квадратичным по отношению к амплитудам сигналов. Дополнение линейной оптики наборами нелинейных операций
 может сделать такие модели вычислений универсальными.</p>
+<div class="figure align-default" id="xanadu-principle-schematic">
+<img alt="../../_images/xanadu.webp" src="../../_images/xanadu.webp" />
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Принципиальная схема работы оптического квантого чипа Xanadu. Вязто из работы <span id="id13">[<a class="reference internal" href="../bibliography.html#id24"><span>ABBradler+21</span></a>]</span>.
+a – квантовый алгоритм, выполняемый схемой: 1) сжатие света в до 8 модах и создание запутанности
+(формирование двухмодового сжатового состояния света, эквивлент однокубитных гейтов), 2) программируемые двухкубитные
+гейты в каждом четырёхмодовом подпространстве, 3) считывание всех 8 мод в фоковском базисе;
+b – изображение чипа, на котором видны основные модули;
+c – схема управляющих сигналов и приборов;
+d – фотография всей системы (кроме управления детектором фотонов) в серверной стойке.</span><a class="headerlink" href="#xanadu-principle-schematic" title="Permalink to this image">¶</a></p>
+</div>
 <p>Наконец, кубиты с дискретными операциями, такие как логические кубиты и кубиты на майорановских фермионах, сами по себе
 не дают полный набор квантовых логических операций – в дополнение к ним нужны обычные кубиты. Впрочем, задача построения
 кубита на майорановских фермионах или на коррекции ошибок сама по себе настолько сложная, что необходимость связать с
 ним обыкновенные дополнительные кубиты не кажется такой сложной.</p>
 </div>
-<div class="section" id="id8">
-<h2>Успехи в практической реализации<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>Наконец, платформы для квантовых вычислений можно отсортировать по максимальному размеру гильбертового пространства и
+<div class="section" id="id14">
+<h2>Успехи в практической реализации<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>Наконец, платформы для квантовых вычислений можно отсортировать по максимальному размеру гильбертова пространства и
 точности операций (не только унитарных гейтов, но и считыванию и инициализации), которое удавалось реализовать
 экспериментально. В этом рейтинге только три верхние платформы находятся относительно
 близко к режиму квантового превосходства в подтвержденных экспериментальных работах. Итак, рейтинг:</p>
@@ -693,10 +735,10 @@
 <p>Другие платформы существуют на сегодняшний день в лучшем случае в виде двухкубитной системы, чаще в виде одного
 кубита, а лучше вообще в виде теоретической концепции – которая может оказаться вовсе нереализуемой на практике.</p>
 </div>
-<div class="section" id="id9">
-<h2>Заключение<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>Заключение<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>Из-за того, что все платформы для квантовых вычислений очень разные, делать конкретные утверждения про все сразу
-практически невозможно. Вместо этого мы будем рассматривать один типа платформ – сверхпроводниковые кубиты.</p>
+практически невозможно. Вместо этого мы будем рассматривать одну платформу – сверхпроводниковые кубиты.</p>
 </div>
 </div>
 
@@ -742,7 +784,7 @@
         <a class="right-next" href="scqubits.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Квантование электрических цепей</p>
+                <p class="prevnext-title">Введение</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

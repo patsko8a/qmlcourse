@@ -335,6 +335,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   Введение
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   О курсе
  </span>
 </p>
@@ -565,7 +582,7 @@
 <p>В основе вариационных квантовых схем – Variational Quantum Circuits (<strong>VQC</strong>) – лежит простая идея. Чтобы проиллюстрировать ее, давайте сделаем схему, которая включает в себя набор унитарных операторов и переводит классические данные <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> и параметры <span class="math notranslate nohighlight">\(\theta\)</span> в квантовое состояние <span class="math notranslate nohighlight">\(\ket{\Psi}(\theta, \mathbf{X})\)</span>. Затем будем варьировать наше состояние <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, меняя параметры <span class="math notranslate nohighlight">\(\theta\)</span> так, чтобы при его измерении в каком-либо базисе мы получали нужный результат, например, результат классификации входных данных <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 <p>Разберем написанное выше на примере.</p>
 <div class="section" id="x">
-<h3>Аппроксимация <a class="reference internal" href="../glossary.html#term-22"><span class="xref std std-term">матрицы Паули</span></a> <strong>X</strong> оператором поворота<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
+<h3>Аппроксимация <a class="reference internal" href="../glossary.html#term-24"><span class="xref std std-term">матрицы Паули</span></a> <strong>X</strong> оператором поворота<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
 <p>Из предыдущих лекций мы помним, что оператор <span class="math notranslate nohighlight">\(\hat{\mathbf{X}}\)</span> работает как квантовый аналог оператора =NOT= – инвертирует значение кубита.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -594,7 +611,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Тут мы измеряем наш кубит в <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базисе и чаще всего будем измерять именно в нем. <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базис является неким “стандартом” для квантовых вычислений, так как это измерение “ближе к железу”. Также <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базис удобен для нас из-за диагональности <a class="reference internal" href="../glossary.html#term-22"><span class="xref std std-term">оператора Паули</span></a> <span class="math notranslate nohighlight">\(\sigma^z\)</span>.</p>
+<p>Тут мы измеряем наш кубит в <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базисе и чаще всего будем измерять именно в нем. <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базис является неким “стандартом” для квантовых вычислений, так как это измерение “ближе к железу”. Также <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базис удобен для нас из-за диагональности <a class="reference internal" href="../glossary.html#term-24"><span class="xref std std-term">оператора Паули</span></a> <span class="math notranslate nohighlight">\(\sigma^z\)</span>.</p>
 </div>
 <p>С другой стороны, у нас есть оператор <span class="math notranslate nohighlight">\(\hat{RX}(\phi)\)</span>, который “вращает” состояние нашего кубита вокруг оси <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> на угол <span class="math notranslate nohighlight">\(\phi\)</span>. Сделаем параметризованную схему с одним параметром:</p>
 <div class="cell docutils container">
