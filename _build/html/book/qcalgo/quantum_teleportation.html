@@ -597,26 +597,26 @@
 </li>
 <li><p>Алисе нужно теперь измерить первые 2 кубита и станет ясно, в какое из четырёх состояний перейдёт кубит Боба:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\large
-    \begin{array} {|r|r|}
-    \hline 00 &amp; \alpha|0\rangle + \beta|1\rangle \\ 
-    \hline 01 &amp; \alpha|1\rangle + \beta|0\rangle \\ 
-    \hline 10 &amp; \alpha|0\rangle - \beta|1\rangle \\ 
-    \hline 11 &amp; \alpha|1\rangle - \beta|0\rangle \\ 
-    \hline  
-    \end{array}
-    \end{split}\]</div>
+\[\begin{split}
+   \begin{array} {|r|r|}
+   \hline 00 &amp; \alpha|0\rangle + \beta|1\rangle \\
+   \hline 01 &amp; \alpha|1\rangle + \beta|0\rangle \\
+   \hline 10 &amp; \alpha|0\rangle - \beta|1\rangle \\
+   \hline 11 &amp; \alpha|1\rangle - \beta|0\rangle \\
+   \hline
+   \end{array}
+   \end{split}\]</div>
 </li>
 <li><p>В зависимости от полученных по классическому каналу данных, Боб должен применить одну из операций для того, чтобы восстановить исходное состояние:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[\begin{split}\large
+\[\begin{split}
 \begin{array} {|r|r|}
-\hline 00 &amp; I \\ 
-\hline 01 &amp; X \\ 
-\hline 10 &amp; Z \\ 
-\hline 11 &amp; ZX \\ 
-\hline  
+\hline 00 &amp; I \\
+\hline 01 &amp; X \\
+\hline 10 &amp; Z \\
+\hline 11 &amp; ZX \\
+\hline
 \end{array}
 \end{split}\]</div>
 <p>Одним из ограничений квантовой телепортации является необходимость передать результаты измерений первых двух кубитов от Алисы к Бобу по классическому каналу (5 шаг). Поэтому весь протокол выполняется не быстрее скорости света.</p>
@@ -648,7 +648,7 @@
 <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">crx</span><span class="p">)</span>
 
 <span class="c1"># Шаг 6 - применяются гейт X и гейт Z в завиимости от того, какое из измерений даёт результат 1.</span>
-<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">qr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">c_if</span><span class="p">(</span><span class="n">crx</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">qc</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="n">qr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">c_if</span><span class="p">(</span><span class="n">crx</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">z</span><span class="p">(</span><span class="n">qr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">c_if</span><span class="p">(</span><span class="n">crz</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
