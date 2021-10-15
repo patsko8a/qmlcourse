@@ -696,7 +696,7 @@ A \Psi_i = e_i \Psi_i
 <p>Таким образом, собственные вектора это такие вектора, которые при применении оператора не меняют свое направление. Например, если <span class="math notranslate nohighlight">\(A\)</span> это, например, оператор поворота, то его собственные вектора, это его оси симметрии:</p>
 <div class="figure align-default" id="mona-lisa-eigen">
 <a class="reference internal image-reference" href="../../_images/Mona_Lisa.png"><img alt="../../_images/Mona_Lisa.png" src="../../_images/Mona_Lisa.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении матрицы поворота не меняет направление так как является собственным вектором этой матрицы.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператор не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id2">
 <h3>Алгоритмы нахождения собственных значений<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -709,7 +709,7 @@ A \Psi_i = e_i \Psi_i
 \[
 \ket{\Psi_{i+1}} = \frac{\hat{A}\ket{\Psi_i}}{||\hat{A}||}
 \]</div>
-<p>И так мы повторяем до тех пор, пока изменения нашего вектора не будет меньше, чем некоторое заданное  маленькое значение <span class="math notranslate nohighlight">\(\epsilon\)</span>. Когда мы достигли этого условия, это значит что мы нашли первый собственный вектор, который соответствует наибольшему собственному значению. В частном случае интересных нам эрмитовых операторов, можно также последовательно находить все собственные вектора и собственные значения.</p>
+<p>И так мы повторяем до тех пор, пока изменения нашего вектора не будет меньше, чем некоторое заданное маленькое значение <span class="math notranslate nohighlight">\(\epsilon\)</span>. Когда мы достигли этого условия, это значит что мы нашли первый собственный вектор, который соответствует наибольшему собственному значению. В частном случае интересных нам эрмитовых операторов, можно также последовательно находить все собственные вектора и собственные значения.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>На самом деле, наша сеть интернет является графом – множеством связанных между собой вершин. А любой граф можно представить в виде большой-большой, но очень разреженной матрицы, каждый элемент которой это 1 если между соответствующими вершинами есть ребро и 0, если нет. Например, элемент <span class="math notranslate nohighlight">\(L_{ij}\)</span> будет 1, если между вершинами <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> есть ребро. В 1998-м году, Ларри Пейдж и Сергей Брин нашли очень эффективный способ как можно посчитать первый собственный вектор этой матрицы используя именно модификацию степенного метода. Этот алгоритм получил название <code class="docutils literal notranslate"><span class="pre">PageRank</span></code>, причем <code class="docutils literal notranslate"><span class="pre">Page</span></code> это именно фамилия автора, а не отсылка к веб-страницам. И именно этот алгоритм лег в основу поисковика <em>Google</em>, который в дальнейшем вырос в транснациональную корпорацию!</p>
@@ -860,7 +860,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 \[
 H = \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1}
 \]</div>
-<p>Ну и теперь давайте представим, что наша задачу чуточку сложнее – нам надо найти не просто максимальный разрез, а такой разрез, который самый большой при наименьшем числе вершин в наборе <span class="math notranslate nohighlight">\(V_1\)</span>. Ну и, поскольку теперь у нас два вклада в стоимость, то нам нужны коэффициенты, которые покажут, что нам важнее. Пусть это будут <span class="math notranslate nohighlight">\(J\)</span> и <span class="math notranslate nohighlight">\(h\)</span>. Финальная стоимость:</p>
+<p>Ну и теперь давайте сформулируем нашу задачу чуточку сложнее – нам надо найти не просто максимальный разрез, а такой разрез, который самый большой при наименьшем числе вершин в наборе <span class="math notranslate nohighlight">\(V_1\)</span>. Ну и, поскольку теперь у нас два вклада в стоимость, то нам нужны коэффициенты, которые покажут, что нам важнее. Пусть это будут <span class="math notranslate nohighlight">\(J\)</span> и <span class="math notranslate nohighlight">\(h\)</span>. Финальная стоимость:</p>
 <div class="math notranslate nohighlight">
 \[
 H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
@@ -877,7 +877,7 @@ H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
 <p>Давайте попробуем реализовать гамильтониан Изинга на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>/<code class="docutils literal notranslate"><span class="pre">SciPy</span></code> в виде разреженной матрицы. Для этого вспомним <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">из первых лекций</span></a>, что действуя оператором <span class="math notranslate nohighlight">\(\sigma^z\)</span> на <span class="math notranslate nohighlight">\(i\)</span> кубит мы одновременно действуем единичным оператором на все остальные, а потом перемножаем все операторы произведением Кронекера. Из <span class="xref myst">лекций по линейной алгебре</span> мы помним также об ассоциативности произведения Кронекера, чем и воспользуемся:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
     <span class="n">left_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span>
     <span class="n">right_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
 
@@ -895,7 +895,7 @@ H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
 <p>Ну а теперь мы можем реализовать и сам оператор Изинга:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ising</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ising</span><span class="p">(</span><span class="n">j</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">((</span><span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
@@ -927,12 +927,16 @@ H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
 <p>Эта энергия соответствует антиферромагнитному порядку, в этом легко убедиться, нарисовав спины и формулу на бумажке. Внимательный читатель заметил, что в этот раз мы вернули также и первый собственный вектор, который в нашем случае является волновой функцией основного состояния. А, как мы помним, квадраты элементов вектора волновой функции дают нам вероятности соответствующих битовых строк (если для вас это все звучит дико, то очень рекомендуем вернуться к <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">лекции про кубит</span></a>). Давайте посмотрим на эту битовую строку, или, другими словами, на порядок наших спинов в решении (или на разбиение вершин графа на два подмножества в терминах Max-Cut):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
-<span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -950,11 +954,7 @@ H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy: </span><span class="si">{</span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
-<span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -973,11 +973,7 @@ H = J \sum_{i=0}^{N-1} \sigma^z_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^z_i
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy: </span><span class="si">{</span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
-<span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1204,11 +1200,8 @@ NetworkX solution (total cost): 213.0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">psi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eigs</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="n">probs</span> <span class="o">=</span> <span class="n">psi</span> <span class="o">*</span> <span class="n">psi</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
-    <span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenvalue: </span><span class="si">{</span><span class="n">eigs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">Bit string: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">bit_s</span> <span class="o">=</span> <span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenvalue: </span><span class="si">{</span><span class="n">eigs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="s2">Bit string: </span><span class="si">{</span><span class="n">bit_s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1266,7 +1259,16 @@ Sigma z:
 </div>
 <div class="section" id="id21">
 <h3>Гамильтониан<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<p>Мы будем всегда считать, что путь коммивояжера начинается в вершине с индексом 0. Так как путь коммивояжера это гамильтонов цикл, то мы делаем это упрощение без какой-либо потери общности, так как вершина с индексом 0 все равно должна будет войти в путь. При этом такой хитрый трюк позволит нам снизить число необходимых кубит с <span class="math notranslate nohighlight">\(N^2\)</span> до <span class="math notranslate nohighlight">\((N - 1)^2\)</span>, что довольно существенно (хотя ассимптотическая сложность остается такой же). Работать с графом мы будем при помощи уже знакомой нам библиотеки <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>:</p>
+<p>Давайте еще раз выпишем полный гамильтониан системы. Напомню, что наша задача будет параметризована при помощи <span class="math notranslate nohighlight">\(N^2\)</span> кубит, которые, для удобства мы выстроим в виде матрицы, где <span class="math notranslate nohighlight">\(i\)</span>-я строка соответствует <span class="math notranslate nohighlight">\(i\)</span>-му шагу в цикле по графу, а <span class="math notranslate nohighlight">\(j\)</span>-й элемент строки соответствует номеру вершины и является нашим бинарным оператором:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = a\sum_{i=1}^N (1 - \sum_{j=1}^N \sigma^{z_{mod}}_{i,j})^2 + a\sum_{j=1}^N (1 - \sum_{i=1}^N \sigma^{z_{mod}}_{i,j})^2 + a \sum_{u,v \not\in E}\sum_{j=1}^{N-1}\sigma^{z_{mod}}_{u,j}\sigma^{z_{mod}}_{v,j+1} + b \sum_{u,v \in E}\sum_{j=1}^{N-1}\sigma^{z_{mod}}_{u,j}\sigma^{z_{mod}}_{v,j+1}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Еще раз вспомним, что первые два слагаемых говорят нам, что каждая вершина должна входить только в один столбец, а каждая строка должна содержать только одну вершину. Третье слагаемое представляет собой штраф за соединение вершин, между которыми нет ребра, а четвертое дает нам стоимость всего пути. Первые три слагаемых идут с бОльшим коэффициентом, чем последнее, так как нам важно в первую очередь получить реальное решение, а не получить самое дешевое.</p>
+</div>
+<p>Но мы сделаем еще один небольшой финт. Мы будем всегда считать, что путь коммивояжера начинается в вершине с индексом 0. Так как путь коммивояжера это гамильтонов цикл, то мы делаем это упрощение без какой-либо потери общности, так как вершина с индексом 0 все равно должна будет войти в путь. При этом такой хитрый трюк позволит нам снизить число необходимых кубит с <span class="math notranslate nohighlight">\(N^2\)</span> до <span class="math notranslate nohighlight">\((N - 1)^2\)</span>, что довольно существенно (хотя ассимптотическая сложность остается такой же). Работать с графом мы будем при помощи уже знакомой нам библиотеки <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_tsp_to_ising</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">:</span>
@@ -1352,9 +1354,7 @@ Sigma z:
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ground state energy: </span><span class="si">{</span><span class="n">scipy_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">scipy_solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">scipy_solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
-<span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
+<span class="n">bit_s</span> <span class="o">=</span> <span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 
 <span class="c1"># Нулевая вершина всегда первая</span>
 <span class="n">scipy_path</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,]</span>
@@ -1362,7 +1362,7 @@ Sigma z:
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bit_s</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
             <span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">scipy_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="n">scipy_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1414,7 +1414,7 @@ SciPy solution (total cost): 213.0
 <p>Поэтому нам, в идеале, хотелось бы делать либо одно-кубитные операции, либо двух-кубитные операции, но над “соседними” кубитами. Так появилась идея, так называемого, <em>hardware efficient ansatz</em> <span id="id23">[<a class="reference internal" href="../bibliography.html#id15"><span>KMT+17</span></a>]</span>. Он заключается в том, что мы формируем несколько “слоев” нашей <strong>VQC</strong>, каждый слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id30">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> из <span id="id24">[<a class="reference internal" href="../bibliography.html#id15"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id24">[<a class="reference internal" href="../bibliography.html#id15"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
@@ -1433,7 +1433,7 @@ SciPy solution (total cost): 213.0
 </div>
 </div>
 <p>Здесь мы специально не повторяем основ параметризированных квантовых схем. Для тех, кто забыл, что это такое, рекомендуем вернуться к <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">отдельной лекции</span></a> по этой теме.</p>
-<p>Теперь давайте создадим устройство, которое будет нашим квантовым симулятором, а также напишем код, который будет на этом устройстве запускаться. Такой код должен последовательно применить несколько наших <em>HWA</em> слоев, после чего измерить ожидаемое значение нашего гамильтониана в полученном состоянии.</p>
+<p>Теперь давайте создадим устройство, которое будет нашим квантовым симулятором, а также напишем код, который будет на этом устройстве запускаться. Такой код должен последовательно применить несколько наших <em>HWEA</em> слоев, после чего измерить ожидаемое значение нашего гамильтониана в полученном состоянии.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
@@ -1488,21 +1488,6 @@ SciPy solution (total cost): 213.0
 
     <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\t</span><span class="s2">energy: </span><span class="si">{</span><span class="n">e</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">energy</span><span class="p">)),</span> <span class="n">energy</span><span class="p">,</span> <span class="s2">&quot;.-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Energy by epochs&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">scipy_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">numer_stability_const</span><span class="p">,</span>
-    <span class="mi">0</span><span class="p">,</span>
-    <span class="nb">len</span><span class="p">(</span><span class="n">energy</span><span class="p">),</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
-    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact solution&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Energy&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1554,6 +1539,28 @@ SciPy solution (total cost): 213.0
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">energy</span><span class="p">)),</span> <span class="n">energy</span><span class="p">,</span> <span class="s2">&quot;.-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Energy by epochs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">scipy_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">numer_stability_const</span><span class="p">,</span>
+    <span class="mi">0</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">energy</span><span class="p">),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact solution&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/vqe_48_0.png" src="../../_images/vqe_48_0.png" />
+</div>
+</div>
 <p>Видим, что наш <strong>VQE</strong> отлично сходится к основному состоянию, которое мы знаем из <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> и <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code>. Теперь давайте убедимся, что квантовый путь совпадет с тем, что мы получили из <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>. Для этого нам нужно получить распределение вероятностей битовых строк. На реальном компьютере это можно сделать просто измеряя много раз, но на симуляторе у нас есть возможность получить его сразу одной командой.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1569,11 +1576,7 @@ SciPy solution (total cost): 213.0
     <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">probs</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)))</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">answer</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-
-
-<span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
+<span class="n">bit_s</span> <span class="o">=</span> <span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 
 <span class="c1"># Нулевая вершина всегда первая</span>
 <span class="n">q_path</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,]</span>
@@ -1581,7 +1584,7 @@ SciPy solution (total cost): 213.0
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bit_s</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
             <span class="n">k</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">q_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="n">q_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
