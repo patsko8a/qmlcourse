@@ -47,27 +47,11 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-
-- part: Фреймворки
-  chapters:
-    - file: book/progblock/progintro.md
-      title: ⬜ О блоке
-    - file: book/progblock/pennylane.ipynb
-      title: 🟩 PennyLane
-    - file: book/progblock/tfq.md
-      title: 🟧 Cirq & TFQ
-
-- part: Базовые квантовые алгоритмы
-  chapters:
-    - file: book/qcalgo/qcalgointro
-      title: ⬜ О блоке
-    - file: book/qcalgo/quantum_algorithms_overview
-      title: 🟩 Обзор квантовых алгоритмов
-    - file: book/qcalgo/deutschs_algorithm
+    - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcalgo/quantum_teleportation
-      title: 🟩 Квантовая телепортация
-    - file: book/qcalgo/grovers_algorithm
+    - file: book/qcblock/quantum_algorithms_overview
+      title: 🟩 Обзор квантовых алгоритмов
+    - file: book/qcblock/grovers_algorithm
       title: 🟧 Алгоритм Гровера
 
 - part: Железо квантовых компьютеров
@@ -79,12 +63,14 @@
     - file: book/hwblock/scqubits
       title: 🟥 Сверхпроводниковые кубиты
 
-- part: Квантовое машинное обучение
+- part: Фреймворки
   chapters:
-    - file: book/qmlkindsblock/qmlkindsintro.md
+    - file: book/progblock/progintro.md
       title: ⬜ О блоке
-    - file: book/qmlkindsblock/hhl_algorithm
-      title: 🟥 Алгоритм HHL
+    - file: book/progblock/pennylane.ipynb
+      title: 🟩 PennyLane
+    - file: book/progblock/tfq.md
+      title: 🟧 Cirq & TFQ
 
 - part: Вариационные схемы
   chapters:
@@ -122,6 +108,13 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+
+- part: VQE
+  chapters:
+    - file: book/vqeblock/vqeintro
+      title: ⬜ О блоке
+    - file: book/vqeblock/vqe
+      title: 🟩 Основы VQE
 
 - part: О курсе
   chapters:
