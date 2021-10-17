@@ -533,29 +533,29 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    VQE
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      Собственные значения как результат измерения
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    Гамильтониан Изинга
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id9">
      Задача Изинга в одномерном случае
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id10">
      Задача Изинга как задача о максимальном разрезе в графе
     </a>
    </li>
@@ -568,7 +568,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#np">
-   Ну и причем тут
+   Хорошо, а причем тут
    <em>
     NP
    </em>
@@ -576,7 +576,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id11">
      Формулировка задач комбинаторной оптимизации в терминах гамильтониана Изинга
     </a>
     <ul class="nav section-nav flex-column">
@@ -586,29 +586,29 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
+      <a class="reference internal nav-link" href="#id13">
        Задача о выделении сообществ в графах
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
+      <a class="reference internal nav-link" href="#id16">
        Задача о мостах Кеннингсберга (Калининграда)
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id16">
+        <a class="reference internal nav-link" href="#id17">
          Оператор Изинга задачи о Гамильтоновых циклах
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
+      <a class="reference internal nav-link" href="#id18">
        Задача коммивояжера
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
+      <a class="reference internal nav-link" href="#id19">
        Задача о рюкзаке
       </a>
      </li>
@@ -617,12 +617,12 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id20">
    Решение задачи коммивояжера с помощью VQE
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
+    <a class="reference internal nav-link" href="#id21">
      Случайный взвешенный граф
     </a>
    </li>
@@ -640,7 +640,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id21">
+    <a class="reference internal nav-link" href="#id22">
      Гамильтониан
     </a>
     <ul class="nav section-nav flex-column">
@@ -654,7 +654,7 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id25">
+  <a class="reference internal nav-link" href="#id26">
    Заключение
   </a>
  </li>
@@ -671,7 +671,7 @@
                 
   <div class="section" id="variational-quantum-eigensolver">
 <span id="vqe"></span><h1>Variational Quantum Eigensolver<a class="headerlink" href="#variational-quantum-eigensolver" title="Permalink to this headline">¶</a></h1>
-<p>В этой лекции мы рассмотрим такой классный и очень перспективный алгоритм как <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>. Это алгоритм, который создан для аппроксимационного решения задачи о собственных значениях матриц. Но, как мы увидим, к этой задаче можно свети большое число реально интересных задач, например, <em>NP</em>-трудные задачи комбинаторной оптимизации, о которых мы уже говорили в <a class="reference internal" href="../qcblock/quantum_algorithms_overview.html#quantum-algorithms-overview"><span class="std std-ref">лекции о квантовых алгоритмах</span></a>.</p>
+<p>В этой лекции мы рассмотрим такой классный и очень перспективный алгоритм как <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>. Это алгоритм, который создан для аппроксимационного решения задачи о собственных значениях матриц. Но, как мы увидим, к этой задаче можно свести большое число реально интересных задач, например, <em>NP</em>-трудные задачи комбинаторной оптимизации, о которых мы уже говорили в <a class="reference internal" href="../qcblock/quantum_algorithms_overview.html#quantum-algorithms-overview"><span class="std std-ref">лекции о квантовых алгоритмах</span></a>.</p>
 <p>Лекция будет построена следующим образом:</p>
 <ul class="simple">
 <li><p>Кратко вспомним задачу о собственных значениях</p></li>
@@ -682,42 +682,42 @@
 </ul>
 <div class="section" id="id1">
 <h2>Задача о собственных значениях<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Тем, кому этот блок сразу покажется трудным мы рекомендуем вернуться к вводным лекциям по линейной алгебре, а именно к <span class="xref myst">части про собственные вектора и собственные значения</span>.</p>
+<p>Тем, кому этот блок сразу покажется трудным, мы рекомендуем вернуться к вводным лекциям по линейной алгебре, а именно к <span class="xref myst">части про собственные вектора и собственные значения</span>.</p>
 <p>Итак, пусть у нас есть диагонализируемая матрица <span class="math notranslate nohighlight">\(A\)</span> размерности <span class="math notranslate nohighlight">\(n \times n\)</span>, она же является линейным оператором <span class="math notranslate nohighlight">\(\hat{A}\)</span>. Из линейной алгебры мы знаем, что у этой матрицы есть <span class="math notranslate nohighlight">\(n\)</span> таких чисел <span class="math notranslate nohighlight">\(e_i\)</span> и таких векторов <span class="math notranslate nohighlight">\(\Psi_i\)</span>, что для них выполняется условие:</p>
 <div class="math notranslate nohighlight">
 \[
 A \Psi_i = e_i \Psi_i
 \]</div>
-<p>или в нотации Дирака, которая используется в области квантовых вычисления:</p>
+<p>или в нотации Дирака, которая используется в области квантовых вычислений:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{A} \ket{\Psi_i} = e_i\ket{\Psi_i}
 \]</div>
-<p>Таким образом, собственные вектора это такие вектора, которые при применении оператора не меняют свое направление. Например, если <span class="math notranslate nohighlight">\(A\)</span> это, например, оператор поворота, то его собственные вектора, это его оси симметрии:</p>
+<p>Таким образом, собственные вектора – это такие вектора, которые при применении оператора не меняют свое направление. Например, в примере ниже собственный вектор – это ось симметрии оператора:</p>
 <div class="figure align-default" id="mona-lisa-eigen">
 <a class="reference internal image-reference" href="../../_images/Mona_Lisa.png"><img alt="../../_images/Mona_Lisa.png" src="../../_images/Mona_Lisa.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператор не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id2">
 <h3>Алгоритмы нахождения собственных значений<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>В целом, задача нахождения собственных значений является очень трудной с вычислительной точки зрения, особенно для больших матриц. Для матриц размера более, чем <span class="math notranslate nohighlight">\(3 \times 3\)</span> в общем случае не существует алгоритма нахождения собственных значений и собственных векторов. Однако существует несколько итеративных алгоритмов. Мы рассмотрим лишь два из них, причем без особых деталей, так как это эти алгоритмы, а также доказательство их сходимости являются достаточно сложными.</p>
+<p>В целом, задача нахождения собственных значений является очень трудной с вычислительной точки зрения, особенно для больших матриц. Для матриц размера более, чем <span class="math notranslate nohighlight">\(3 \times 3\)</span> в общем случае не существует алгоритма нахождения собственных значений и собственных векторов. Однако существует несколько итеративных алгоритмов. Мы рассмотрим лишь два из них, причем без особых деталей, так как эти алгоритмы, а также доказательство их сходимости являются достаточно сложными.</p>
 </div>
 <div class="section" id="id3">
 <h3>Степенной метод<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Один из самых простых для понимания алгоритмов, который, тем не менее находит интересные применения. Суть его в том, что мы берем некоторый случайный вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> и начинаем последовательно действовать на него оператором <span class="math notranslate nohighlight">\(\hat{A}\)</span> (другими словами умножать на нашу матрицу), при этом нормируя на норму:</p>
+<p>Один из самых простых для понимания алгоритмов, который, тем не менее находит интересные применения. Суть его в том, что мы берем некоторый случайный вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> и начинаем последовательно действовать на него оператором <span class="math notranslate nohighlight">\(\hat{A}\)</span> (другими словами умножать, на нашу матрицу), при этом нормируя:</p>
 <div class="math notranslate nohighlight">
 \[
 \ket{\Psi_{i+1}} = \frac{\hat{A}\ket{\Psi_i}}{||\hat{A}||}
 \]</div>
-<p>И так мы повторяем до тех пор, пока изменения нашего вектора не будет меньше, чем некоторое заданное маленькое значение <span class="math notranslate nohighlight">\(\epsilon\)</span>. Когда мы достигли этого условия, это значит что мы нашли первый собственный вектор, который соответствует наибольшему собственному значению. В частном случае интересных нам эрмитовых операторов, можно также последовательно находить все собственные вектора и собственные значения.</p>
+<p>И так мы повторяем до тех пор, пока изменение нашего вектора не будет меньше, чем некоторое заданное маленькое значение <span class="math notranslate nohighlight">\(\epsilon\)</span>. Когда мы достигли этого условия, это значит что мы нашли первый собственный вектор, который соответствует наибольшему собственному значению. В частном случае интересных нам эрмитовых операторов, можно так же последовательно находить все собственные вектора и собственные значения.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>На самом деле, наша сеть интернет является графом – множеством связанных между собой вершин. А любой граф можно представить в виде большой-большой, но очень разреженной матрицы, каждый элемент которой это 1 если между соответствующими вершинами есть ребро и 0, если нет. Например, элемент <span class="math notranslate nohighlight">\(L_{ij}\)</span> будет 1, если между вершинами <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> есть ребро. В 1998-м году, Ларри Пейдж и Сергей Брин нашли очень эффективный способ как можно посчитать первый собственный вектор этой матрицы используя именно модификацию степенного метода. Этот алгоритм получил название <code class="docutils literal notranslate"><span class="pre">PageRank</span></code>, причем <code class="docutils literal notranslate"><span class="pre">Page</span></code> это именно фамилия автора, а не отсылка к веб-страницам. И именно этот алгоритм лег в основу поисковика <em>Google</em>, который в дальнейшем вырос в транснациональную корпорацию!</p>
+<p>На самом деле, наша сеть интернет является графом – множеством связанных между собой вершин. А любой граф можно представить в виде большой-большой, но очень разреженной матрицы, каждый элемент которой это 1 если между соответствующими вершинами есть ребро и 0, если нет. Например, элемент <span class="math notranslate nohighlight">\(L_{ij}\)</span> будет 1, если между вершинами <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> есть ребро. В 1998-м году, Ларри Пейдж и Сергей Брин нашли очень эффективный способ подсчета первого собственного вектор этой матрицы используя именно модификацию степенного метода. Этот алгоритм получил название <code class="docutils literal notranslate"><span class="pre">PageRank</span></code>, причем <em>Page</em> это фамилия автора, а не отсылка к веб-страницам, как можно было бы подумать. Этот алгоритм лег в основу поисковика <em>Google</em>, который в дальнейшем вырос в транснациональную корпорацию!</p>
 </div>
 </div>
 <div class="section" id="id4">
 <h3>Итерация Арнольди<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>Гораздо более сложный метод, который, однако, является одним из самых эффективных применительно к разреженным матрицам. Объяснить его легко, к сожалению, не получится, так как алгоритм требует понимания Крыловских подпространств и других концептов из области линейной алгебре разреженных систем. Но нам достаточно лишь того, что этот алгоритм имеет очень эффективную реализацию – <a class="reference external" href="https://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, написанную в середине 90-х годов на языке <code class="docutils literal notranslate"><span class="pre">FORTRAN77</span></code>. Именно эта библиотека используется “под капотом” у <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, а также во многих других научных пакетах. Давайте посмотрим, как она работает.</p>
+<p>Это гораздо более сложный метод, который, однако, является одним из самых эффективных применительно к разреженным матрицам <span id="id5">[<a class="reference internal" href="../bibliography.html#id13"><span>Arn51</span></a>]</span>. Объяснить его легко, к сожалению, не получится, так как алгоритм требует понимания Крыловских подпространств и других концептов из области линейной алгебры разреженных систем. Но нам достаточно лишь того, что этот алгоритм имеет очень эффективную реализацию – <a class="reference external" href="https://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, написанную в середине 90-х годов на языке <code class="docutils literal notranslate"><span class="pre">FORTRAN77</span></code>. Именно эта библиотека используется “под капотом” у <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, а также во многих других научных пакетах. Давайте посмотрим, как она работает.</p>
 <p>Сгенерируем большую разреженную матрицу.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -751,7 +751,7 @@ A \Psi_i = e_i \Psi_i
 </div>
 </div>
 </div>
-<p>Матрица размера <span class="math notranslate nohighlight">\(10000 \times 10000\)</span> это большая матрица и работать с ней в “плотном” (dense) представлении было бы очень трудно. Но <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> позволит нам найти минимальное собственное значение за доли секунд используя разреженность матрицы:</p>
+<p>Матрица размера <span class="math notranslate nohighlight">\(10000 \times 10000\)</span> это большая матрица и работать с ней в “плотном” (dense) представлении было бы очень трудно. Но <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> позволит нам найти минимальное собственное значение за доли секунд, используя разреженность матрицы:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">sl</span>
@@ -770,7 +770,7 @@ Max E: (1.0000000000000007+0j)
 </div>
 </div>
 </div>
-<p>Для тех кто забыл, какие параметры принимает функция <code class="docutils literal notranslate"><span class="pre">eigs</span></code> из <code class="docutils literal notranslate"><span class="pre">scipy.linalg.spare</span></code> напомним, что первый параметр это разреженная матрица, второй параметр (<code class="docutils literal notranslate"><span class="pre">k</span></code>) это то, сколько именно собственных значений мы хотим получить. Параметр <code class="docutils literal notranslate"><span class="pre">which</span></code> указывает какие именно собственные значения мы хотим получить:</p>
+<p>Для тех кто забыл, какие параметры принимает функция <code class="docutils literal notranslate"><span class="pre">eigs</span></code> из <code class="docutils literal notranslate"><span class="pre">scipy.linalg.spare</span></code> напомним, что первый параметр это разреженная матрица, второй параметр (<code class="docutils literal notranslate"><span class="pre">k</span></code>) это то, сколько именно собственных значений мы хотим получить. Параметр <code class="docutils literal notranslate"><span class="pre">which</span></code> указывает, какие именно собственные значения мы хотим получить:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SM</span></code> – <em>smallest magnitude</em> – наименьшие по модулю числа</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LM</span></code> – <em>largest magnitude</em> – наибольшие по модулю числа</p></li>
@@ -779,6 +779,7 @@ Max E: (1.0000000000000007+0j)
 <li><p><code class="docutils literal notranslate"><span class="pre">SI</span></code> – <em>smallest image</em> – числа с наименьшей мнимой частью</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">LI</span></code> – <em>largest image</em> – часла с наибольшей мнимой частью</p></li>
 </ul>
+<p>Наконец, параметр <code class="docutils literal notranslate"><span class="pre">return_eigenvectors</span></code> указывает нам, хотим ли мы получить только собственные значения, или еще и собственные вектора.</p>
 <p>Более подробна работа с <code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code>, а также с <code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code> разбирается в [вводном блоке по линейной алгебре](пока пусто).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -787,25 +788,25 @@ Max E: (1.0000000000000007+0j)
 <p>В дальнейшем мы будем использовать <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code>, вызывая его из <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> для проверки того, что наш вариационный квантовый алгоритм нашел верное решение задачи.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>VQE<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>Теперь давайте посмотрим, как эта задача связана с квантовым компьютером, а также как ее можно свести к градиентному спуску в пространстве параметров <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, содержащей лишь гейты вращения. Напомню, что наличие лишь гейтов вращения <a class="reference internal" href="../gradsblock/gradients.html#gradients"><span class="std std-ref">позволяет нам эффективно считать градиенты</span></a>.</p>
 <div class="section" id="id6">
-<h3>Собственные значения как результат измерения<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h2>VQE<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Теперь давайте посмотрим, как эта задача связана с квантовым компьютером, а также как ее можно свести к градиентному спуску в пространстве параметров <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, содержащей лишь гейты вращения. Напомню, что наличие лишь гейтов вращения <a class="reference internal" href="../gradsblock/gradients.html#gradients"><span class="std std-ref">позволяет нам эффективно считать градиенты</span></a>.</p>
+<div class="section" id="id7">
+<h3>Собственные значения как результат измерения<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Итак, у нас есть эрмитова матрица, для которой мы хотим найти минимальное собственное значение. То есть сделать примерно то, что делает <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code>, но на квантовом компьютере.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Если наша матрица <span class="math notranslate nohighlight">\(A\)</span> не эрмитова, то мы всегда можем дополнить ее до эрмитовой. Поэтому далее, без потери общности, мы будем считать эту матрицу именно эрмитовой. Более подробно о том, как именно это можно сделать рассмотрено в <span class="xref myst">водных лекциях по линейной алгебре</span>. Пока же нам достаточно знать, что это возможно.</p>
+<p>Если наша матрица <span class="math notranslate nohighlight">\(A\)</span> не эрмитова, то мы всегда можем дополнить ее до эрмитовой. Поэтому далее, без потери общности, мы будем считать эту матрицу именно эрмитовой. Более подробно о том, как именно это можно сделать рассмотрено в <span class="xref myst">вводных лекциях по линейной алгебре</span>. Пока же нам достаточно знать, что это возможно.</p>
 </div>
-<p>Из первых лекций мы помним, что любое измерение квантового оператора в каком-то состоянии <a class="reference external" href="../qcblock/qubit.html#id31">есть проекция этого состояния на пространство его собственных векторов</a>, а результатом измерения <a class="reference external" href="../qcblock/qubit.html#id25">является одно из его собственных значений</a>. При этом распределение вероятностей получения этих собственных значений определяется нашей волновой функцией <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> измеряемого состояния. А значит, то, какое собственное значение мы получим будет определяться тем, какое состояние мы приготовим! Более того, мы помним, что минимальное значения энергии, или минимальное собственное значение в терминах нашей задачи является наиболее вероятным результатом измерения основного состояния. Напомню, что мы записываем результат измерения оператора <span class="math notranslate nohighlight">\(\hat{A}\)</span> в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> так:</p>
+<p>Из первых лекций мы помним, что любое измерение квантового оператора в каком-то состоянии <a class="reference external" href="../qcblock/qubit.html#id31">есть проекция этого состояния на пространство его собственных векторов</a>, а результатом измерения <a class="reference external" href="../qcblock/qubit.html#id25">является одно из его собственных значений</a>. При этом распределение вероятностей получения этих собственных значений определяется нашей волновой функцией <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> измеряемого состояния. А значит, то, какое собственное значение мы получим, будет определяться тем, какое состояние мы приготовим! Более того, мы помним, что минимальное значение энергии, или минимальное собственное значение в терминах нашей задачи является наиболее вероятным результатом измерения основного состояния. Напомню, что мы записываем результат измерения оператора <span class="math notranslate nohighlight">\(\hat{A}\)</span> в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> так:</p>
 <div class="math notranslate nohighlight">
 \[
 e = \bra{\Psi}\hat{A}\ket{\Psi}
 \]</div>
-<p>А, как мы помним из <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">лекции по параметризированным квантовым схемам</span></a> приготовленное состояние задается собственно самой схемой (еще говорят <em>ansatz</em>), а также набором ее классических параметров, которые варьируются в процессе обучения.</p>
+<p>А, как мы помним из <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">лекции по параметризованным квантовым схемам</span></a>, приготовленное состояние задается собственно самой схемой (еще говорят <em>ansatz</em>), а также набором ее классических параметров, которые варьируются в процессе обучения.</p>
 <p>Так мы приходим к алгоритму <code class="docutils literal notranslate"><span class="pre">VQE</span></code> – <strong>V</strong>ariational <strong>Q</strong>uantum <strong>E</strong>igensolver:</p>
 <ol class="simple">
-<li><p>Выбираем <em>ansatz</em> – параметризированный оператор <span class="math notranslate nohighlight">\(\hat{B}(q)\)</span>, который представляет из себя последовательность гейтов вращения</p></li>
+<li><p>Выбираем <em>ansatz</em> – параметризованный оператор <span class="math notranslate nohighlight">\(\hat{B}(q)\)</span>, который представляет из себя последовательность гейтов вращения</p></li>
 <li><p>Генерируем случайные начальные параметры <span class="math notranslate nohighlight">\(q_0\)</span></p></li>
 <li><p>Цикл обучения, повторяем <span class="math notranslate nohighlight">\(n\)</span> раз</p>
 <ol class="simple">
@@ -817,33 +818,33 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </li>
 <li><p>Результатом обучения являются:</p>
 <ul class="simple">
-<li><p>Набор параметров <span class="math notranslate nohighlight">\(q\)</span> такой, что <span class="math notranslate nohighlight">\(\hat{B}(q)\ket{0}\)</span> является собственным вектором, близким к первому собственному вектору <span class="math notranslate nohighlight">\(\hat{A}\)</span></p></li>
+<li><p>Набор параметров <span class="math notranslate nohighlight">\(q\)</span> такой, что <span class="math notranslate nohighlight">\(\hat{B}(q)\ket{0}\)</span> является вектором, близким к первому собственному вектору <span class="math notranslate nohighlight">\(\hat{A}\)</span></p></li>
 <li><p>Результат измерения <span class="math notranslate nohighlight">\(e\)</span>, близкий к первому собственному значению <span class="math notranslate nohighlight">\(\hat{A}\)</span></p></li>
 </ul>
 </li>
 </ol>
 </div>
 </div>
-<div class="section" id="id7">
-<h2>Гамильтониан Изинга<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>Гамильтониан Изинга<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Хорошо, ну умеем мы находить первое собственное значение большой эрмитовой матрицы и соответствующий собственный вектор. А что нам с этого? Почему это так важно и этот алгоритм такой крутой?</p>
 <p>На самом деле ответ в том, что огромное число задач реального мира, включая такие направления, как логистика, квантовая химия и даже анализ социальных сетей можно свести к задаче нахождения минимальной энергии специальной матрицы. Причем эта матрица ну прямо очень хорошо моделируется на квантовом компьютере! Это так называемый оператор Изинга или гамильтониан Изинга.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Специальные квантовые компьютеры компании D-Wave сконструированы так, что они могут решать вообще только одну задачу – нахождения основного состояния гамильтонианов типа Изинга. Но эта задача настолько распространена и важна, что эти компьютеры стали первыми в мире коммерческими квантовыми компьютерами! Кстати далее этим компьютерам у нас будет посвящена отдельная лекция.</p>
+<p>Специальные квантовые компьютеры компании D-Wave сконструированы так, что они могут решать вообще только одну задачу – нахождения основного состояния гамильтонианов типа Изинга. Но эта задача настолько распространена и важна, что эти компьютеры стали первыми в мире коммерческими квантовыми компьютерами! Кстати, далее этим компьютерам у нас будет посвящена отдельная лекция.</p>
 </div>
 <p>Далее мы посвятим довольно много времени объяснению этой модели. Это может показаться скучным и занудным, но это важно для понимания того, как это все работает и как решать с помощью <code class="docutils literal notranslate"><span class="pre">VQE</span></code> реальные задачи!</p>
-<div class="section" id="id8">
-<h3>Задача Изинга в одномерном случае<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Задача Изинга в одномерном случае<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ниже мы попробуем на пальцах объяснить модель Изинга. Пробовать мы будем через цепочку атомов ферромагнетика во внешнем магнитном поле. Ели вы плохо помните физику и вам это объяснение покажется сложным, то не расстраивайтесь – дальше мы также объясним задачу Изинга как задачу о поиске максимального разреза в графе – известную задачу комбинаторной оптимизации.</p>
 </div>
 <p>Пусть у нас есть, например, цепочка атомов, которые обладают магнитным моментом. Например, цепочка атомов ферромагнетика, такого как железо. И мы прикладываем к этой цепочке внешнее магнитное поле.</p>
 <p>Тогда, если поле маленькое, то наши атомы будут стараться выстроиться в антиферромагнитный порядок, когда соседние из них имеют моменты, направленные в разные стороны. Но если поле уже большое, то оно будет стремиться “повернуть” моменты по своему направлению. А если еще вспомнить, что магнитный момент атома является квантовой величиной и может быть в суперпозиции состояний в одну сторону и в противоположную, то не очень маленькое, но и не слишком большое поле будет переводить часть атомов именно в такие суперпозиции.</p>
-<div class="figure align-default" id="id26">
+<div class="figure align-default" id="id27">
 <a class="reference internal image-reference" href="../../_images/af_ordering.png"><img alt="../../_images/af_ordering.png" src="../../_images/af_ordering.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">Иллюстрация антиферромагнитного порядка</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">Иллюстрация антиферромагнитного порядка</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте теперь запишем Гамильтониан такой системы. Для представления магнитных моментов мы будем использовать оператор <span class="math notranslate nohighlight">\(\sigma^z\)</span> – другими словами, спин в направлении оси <span class="math notranslate nohighlight">\(Z\)</span>. Если кто-то забыл, как выглядит оператор <span class="math notranslate nohighlight">\(\sigma^z\)</span>, то рекомендуем еще раз просмотреть <a class="reference external" href="../qcblock/qubit.html#id24">раздел про операторы Паули первой лекции</a>. Далее мы будем очень активно использовать эти матрицы для представления задач реального мира!</p>
 <p>Для начала, в случае если внешнего поля нет, то мы должны записать взаимодействие соседних атомов. Так как у нас ферромагнетик, то минимальная энергия достигается в случае, если у нас спины противонаправленны. Это просто оператор <span class="math notranslate nohighlight">\(\sigma^z_j\sigma^z_{j+1}\)</span>, который действует на все пары соседних спинов. Ну и сразу введем некоторую константу обменного взаимодействия <span class="math notranslate nohighlight">\(J\)</span>, чтобы потом нам было удобно сравнивать ее с внешним полем. В итоге, для цепочки из <span class="math notranslate nohighlight">\(N\)</span> спинов, получаем:</p>
@@ -857,15 +858,15 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 \hat{H}_{h\neq 0} = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^{z}_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 \]</div>
 </div>
-<div class="section" id="id9">
-<h3>Задача Изинга как задача о максимальном разрезе в графе<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<p>Задача о максимальном разрезе в графе это очень известная задача комбинаторики. Она относится к классу <span class="math notranslate nohighlight">\(NP\)</span>-трудных и к ней можно свести все другие <span class="math notranslate nohighlight">\(NP\)</span> задачи. При этом ее формулировка одна из самых простых среди всего класса задач. Формулируется она следующим образом.</p>
-<p>Нам дан граф – набор вершин <span class="math notranslate nohighlight">\(V\)</span> и связывающих их ребер <span class="math notranslate nohighlight">\(E\)</span>. Нам надо найти такое разделение ребер <span class="math notranslate nohighlight">\(V\)</span> на два не пересекающихся набора <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, что число ребер между вершинами из разных наборов будет максимально.</p>
+<div class="section" id="id10">
+<h3>Задача Изинга как задача о максимальном разрезе в графе<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Задача о максимальном разрезе в графе – это очень известная задача комбинаторики. Она относится к классу <span class="math notranslate nohighlight">\(NP\)</span>-трудных и к ней можно свести все другие <span class="math notranslate nohighlight">\(NP\)</span> задачи. При этом ее формулировка одна из самых простых среди всего класса задач. Формулируется она следующим образом.</p>
+<p>Нам дан граф – набор вершин <span class="math notranslate nohighlight">\(V\)</span> и связывающих их ребер <span class="math notranslate nohighlight">\(E\)</span>. Нам надо найти такое разделение ребер <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся набора <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, что число ребер между вершинами из разных наборов будет максимально.</p>
 <div class="figure align-default" id="maxcut">
 <a class="reference internal image-reference" href="../../_images/Max-cut.png"><img alt="../../_images/Max-cut.png" src="../../_images/Max-cut.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut" title="Permalink to this image">¶</a></p>
 </div>
-<p>Теперь давайте представим, что наши вершины графа мы моделируем спинами (ну или кубитами): спин “вверх” это, например, <span class="math notranslate nohighlight">\(V_1\)</span>, а спин “вниз” это <span class="math notranslate nohighlight">\(V_2\)</span>. Ну и для простоты предположим, что наш граф это просто цепочка, то есть ребра есть лишь между соседними в одномерном пространстве вершинами. Тогда легко записать функцию стоимости:</p>
+<p>Теперь давайте представим, что наши вершины графа мы моделируем спинами (или кубитами): спин “вверх” это, например, <span class="math notranslate nohighlight">\(V_1\)</span>, а спин “вниз” это <span class="math notranslate nohighlight">\(V_2\)</span>. Ну и для простоты предположим, что наш граф это просто цепочка, то есть ребра есть лишь между соседними в одномерном пространстве вершинами. Тогда легко записать функцию стоимости:</p>
 <div class="math notranslate nohighlight">
 \[
 H = \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^{z}_{i+1}
@@ -875,7 +876,7 @@ H = \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^{z}_{i+1}
 \[
 H = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 \]</div>
-<p>Мы и так как у нас собственные значения <span class="math notranslate nohighlight">\(\sigma^z\)</span> это как раз <span class="math notranslate nohighlight">\(\pm 1\)</span>, то мы совершенно справедливо можем записать это все в виде гамильтониана:</p>
+<p>А так как у нас собственные значения <span class="math notranslate nohighlight">\(\sigma^z\)</span> это как раз <span class="math notranslate nohighlight">\(\pm 1\)</span>, то мы совершенно справедливо можем записать это все в виде гамильтониана:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{H} = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^{z}_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
@@ -883,12 +884,12 @@ H = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 <p>Как видно, это тот же самый гамильтониан, который мы получили и для моделирования ферромагнетиков.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Одномерная цепочка атомов, ну или поиск максимального разреза в графе-цепочке является простым случаем и не является NP-задачей. Однако уже в двумерном случае эта задача становится сильно сложнее, как и, например, если в цепочке атомов ферромагнетика мы добавим взаимодействие не только соседних спинов, но и взаимодействие с соседями соседа. Аналогично, модель вида Изинга сильно усложняется при добавлении офф-диагональных элементов гамильтонинана, например, когда внешнее поле направлено в другом направлении и второй член гамильтониана принимает вид, например, <span class="math notranslate nohighlight">\(h\sum_{i=N} \sigma^{x}_i\)</span>. В рамках данной лекции мы не будем очень глубоко погружаться в исследование сложности и решений моделей Изинга, однако любопытный читатель может ознакомится с <span class="xref myst">продвинутой лекцией по этой теме</span>.</p>
+<p>Одномерная цепочка атомов, ну или поиск максимального разреза в графе-цепочке является простым случаем и не является NP-задачей. Однако уже в двумерном случае эта задача становится сильно сложнее, как и, например, если в цепочке атомов ферромагнетика мы добавим взаимодействие не только соседних спинов, но и взаимодействие с соседями соседа. Аналогично, модель вида Изинга сильно усложняется при добавлении вндиагональных (off diagonal elements) элементов гамильтонинана, например, когда внешнее поле направлено в другом направлении и второй член гамильтониана принимает вид, например, <span class="math notranslate nohighlight">\(h\sum_{i=N} \sigma^{x}_i\)</span>. В рамках данной лекции мы не будем очень глубоко погружаться в исследование сложности и решений моделей Изинга, однако любопытный читатель может ознакомиться с <span class="xref myst">продвинутой лекцией по этой теме</span>.</p>
 </div>
 </div>
 <div class="section" id="numpy">
 <h3>Модель Изинга на чистом NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
-<p>Давайте попробуем реализовать гамильтониан Изинга на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>/<code class="docutils literal notranslate"><span class="pre">SciPy</span></code> в виде разреженной матрицы. Для этого вспомним <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">из первых лекций</span></a>, что действуя оператором <span class="math notranslate nohighlight">\(\sigma^z\)</span> на <span class="math notranslate nohighlight">\(i\)</span> кубит мы одновременно действуем единичным оператором на все остальные, а потом перемножаем все операторы произведением Кронекера. Из <span class="xref myst">лекций по линейной алгебре</span> мы помним также об ассоциативности произведения Кронекера, чем и воспользуемся:</p>
+<p>Давайте попробуем реализовать гамильтониан Изинга на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>/<code class="docutils literal notranslate"><span class="pre">SciPy</span></code> в виде разреженной матрицы. Для этого вспомним <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">из первых лекций</span></a>, что действуя оператором <span class="math notranslate nohighlight">\(\sigma^z\)</span> на <span class="math notranslate nohighlight">\(i\)</span>-й кубит, мы одновременно действуем единичным оператором на все остальные, а потом перемножаем все операторы произведением Кронекера. Из <span class="xref myst">лекций по линейной алгебре</span> мы помним также об ассоциативности произведения Кронекера, чем и воспользуемся:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
@@ -938,7 +939,7 @@ H = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 </div>
 </div>
 </div>
-<p>Эта энергия соответствует антиферромагнитному порядку, в этом легко убедиться, нарисовав спины и формулу на бумажке. Внимательный читатель заметил, что в этот раз мы вернули также и первый собственный вектор, который в нашем случае является волновой функцией основного состояния. А, как мы помним, квадраты элементов вектора волновой функции дают нам вероятности соответствующих битовых строк (если для вас это все звучит дико, то очень рекомендуем вернуться к <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">лекции про кубит</span></a>). Давайте посмотрим на эту битовую строку, или, другими словами, на порядок наших спинов в решении (или на разбиение вершин графа на два подмножества в терминах Max-Cut):</p>
+<p>Эта энергия соответствует антиферромагнитному порядку, в этом легко убедиться, нарисовав спины и формулу на бумажке. Внимательный читатель заметил, что в этот раз мы вернули также и первый собственный вектор, который в нашем случае является волновой функцией основного состояния. А как мы помним, квадраты элементов вектора волновой функции дают нам вероятности соответствующих битовых строк (если для вас это все звучит дико, то очень рекомендуем вернуться к <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">лекции про кубит</span></a>). Давайте посмотрим на эту битовую строку, или, другими словами, на порядок наших спинов в решении (или на разбиение вершин графа на два подмножества в терминах Max-Cut):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -1001,29 +1002,29 @@ H = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 </div>
 </div>
 <div class="section" id="np">
-<h2>Ну и причем тут <em>NP</em>-трудные задачи?<a class="headerlink" href="#np" title="Permalink to this headline">¶</a></h2>
-<p>Мы потратили столько времени разбираясь с этой сложной антиферромагнитной моделью, а также совершенно оторванной от мира задачей о максимальном разрезе в графе. Теперь мы наконец-то увидим, что все это было не зря!</p>
-<div class="section" id="id10">
-<h3>Формулировка задач комбинаторной оптимизации в терминах гамильтониана Изинга<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>Мы уже рассмотрели привер того, как задачу комбинаторной оптимизации – Max Cut – можно свести к решению модели Изинга. Далее мы приведем примеры сведения некоторых интересных задач оптимизации к гамильтонианам этого типа. Все эти примеры мы будем брать из публикации <span id="id11">[<a class="reference internal" href="../bibliography.html#id13"><span>Luc14</span></a>]</span>. И перед тем, как мы начнем, нам понадобиться ввести еще одно определение, а именно оператор, у которого собственные вектора совпадают с таковыми у <span class="math notranslate nohighlight">\(\sigma^z\)</span>, а собственные значения равны 0 или 1 (вместо <span class="math notranslate nohighlight">\(\pm1\)</span> для <span class="math notranslate nohighlight">\(\sigma^z\)</span>):</p>
+<h2>Хорошо, а причем тут <em>NP</em>-трудные задачи?<a class="headerlink" href="#np" title="Permalink to this headline">¶</a></h2>
+<p>Мы потратили столько времени, разбираясь с этой сложной антиферромагнитной моделью, а также совершенно оторванной от мира задачей о максимальном разрезе в графе. Теперь мы наконец-то увидим, что все это было не зря!</p>
+<div class="section" id="id11">
+<h3>Формулировка задач комбинаторной оптимизации в терминах гамильтониана Изинга<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Мы уже рассмотрели пример того, как задачу комбинаторной оптимизации – Max-Cut – можно свести к решению модели Изинга. Далее мы приведем примеры сведения некоторых интересных задач оптимизации к гамильтонианам этого типа. Все эти примеры мы будем брать из публикации <span id="id12">[<a class="reference internal" href="../bibliography.html#id14"><span>Luc14</span></a>]</span>. И перед тем, как мы начнем, нам понадобится ввести еще одно определение, а именно оператор, у которого собственные вектора совпадают с таковыми у <span class="math notranslate nohighlight">\(\sigma^z\)</span>, а собственные значения равны 0 или 1 (вместо <span class="math notranslate nohighlight">\(\pm1\)</span> для <span class="math notranslate nohighlight">\(\sigma^z\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \sigma^{z'} = (I + \sigma^z) / 2 = \begin{vmatrix} 1 &amp; 0 \\
 0 &amp; 0 \end{vmatrix}
 \end{split}\]</div>
-<p>Эта штука нам понадобиться, так как в комбинаторной оптимизации очень часто фигурируют именно такие “бинарные” переменные и с ними очень удобно работать. А теперь, поехали!</p>
+<p>Эта штука нам понадобится, так как в комбинаторной оптимизации очень часто фигурируют именно такие “бинарные” переменные и с ними очень удобно работать. А теперь поехали!</p>
 <div class="section" id="cliques">
 <h4>Задача о поиске Cliques в графах<a class="headerlink" href="#cliques" title="Permalink to this headline">¶</a></h4>
 <p><em>Тут будет описание</em></p>
 </div>
-<div class="section" id="id12">
-<h4>Задача о выделении сообществ в графах<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>Задача о выделении сообщества в графах это очень важная и очень интересная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим анализируя контакты людей выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
+<div class="section" id="id13">
+<h4>Задача о выделении сообществ в графах<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>Задача о выделении сообщества в графах это очень важная и очень интересная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим, анализируя контакты людей, выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Для работы с графами мы будем пользоваться библиотекой <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>. Она написана на чистом <code class="docutils literal notranslate"><span class="pre">Python</span></code> и плохо подходит для работы с большими графами, зато имеет простой интерфейс и легко устанавливается на любую систему. Ее можно установить из рерозитория <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> используя команду <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>. Подробнее о пакетах <code class="docutils literal notranslate"><span class="pre">Python</span></code> можно почитать в <a class="reference internal" href="../pythonblock/python_l1.html#python-l1"><span class="std std-ref">одной из вводных лекций</span></a> про этот язык программирования.</p>
+<p>Для работы с графами мы будем пользоваться библиотекой <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>. Она написана на чистом <code class="docutils literal notranslate"><span class="pre">Python</span></code> и плохо подходит для работы с большими графами, зато имеет простой интерфейс и легко устанавливается на любую систему. Ее можно установить из репозитория <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, используя команду <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>. Подробнее о пакетах <code class="docutils literal notranslate"><span class="pre">Python</span></code> можно почитать в <a class="reference internal" href="../pythonblock/python_l1.html#python-l1"><span class="std std-ref">одной из вводных лекций</span></a> про этот язык программирования.</p>
 </div>
-<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id13">[<a class="reference internal" href="../bibliography.html#id28"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит какая из вершин. В этом клубе карате был внутренний конфликт и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая в группе администратора (Officer).</p>
+<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id14">[<a class="reference internal" href="../bibliography.html#id29"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая в группе администратора (Officer).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -1045,13 +1046,13 @@ H = J \sum_{i=0}^{N-1} \sigma^{z}_i\sigma^z_{i+1} - h\sum_{i=0}^N \sigma^{z}_i
 <img alt="../../_images/vqe_17_0.png" src="../../_images/vqe_17_0.png" />
 </div>
 </div>
-<p>На самом деле, задача о максимальном разрезе в графе является простейшим и тривиальным примером задачи о выделении сообществ в графе. И действительно, в случае, если в графе лишь два сообщества, то мы должны разбить все вершины на не перескающиеся подмножества. Правда в отличии от задачи о максимальном разрезе, в случае с сообществами мы хотим, что число ребер между ними было минимальным. Но это можно сделать просто поменяв знак в выражении для гамильтониана Изинга:</p>
+<p>Задачу о выделении сообществ в тривиальном случае разбиения графа на два подмножества можно свести к знакомой нам задаче о максимальном разрезе. Правда, в отличии от задачи о максимальном разрезе, в случае с сообществами мы хотим, что число ребер между ними было минимальным. Но это можно сделать просто поменяв знак в выражении для гамильтониана Изинга:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{H}_{communities} = - \sum_{e \in E} \sigma^z_{e_{srs}} \sigma^z_{e_{dst}}
 \]</div>
 <p>Тут <span class="math notranslate nohighlight">\(e \in E\)</span> это значит суммирование по всем ребрам <span class="math notranslate nohighlight">\(e\)</span> нашего графа, а <span class="math notranslate nohighlight">\(e_{src}\)</span> и <span class="math notranslate nohighlight">\(e_{dst}\)</span> это начальная и конечная вершины, которые соединяет ребро <span class="math notranslate nohighlight">\(e\)</span>.</p>
-<p>Но, на самом деле, выбранная нами метрика (количество ребер) не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id14">[<a class="reference internal" href="../bibliography.html#id21"><span>New06</span></a>]</span>:</p>
+<p>Но на самом деле мы только что свели более простую задачу о минимальном разрезе с неотрицательными весами к более сложной задаче Max-Cut. А еще выбранная нами метрика (количество ребер) не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id15">[<a class="reference internal" href="../bibliography.html#id22"><span>New06</span></a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 Q(C) = \frac{1}{2 |E|}\sum_{e \in E} B_{e_{src}, e_{dst}}\delta (c_{e_{src}}, c_{e_{dst}})
@@ -1059,7 +1060,7 @@ Q(C) = \frac{1}{2 |E|}\sum_{e \in E} B_{e_{src}, e_{dst}}\delta (c_{e_{src}}, c_
 <p>Тут <span class="math notranslate nohighlight">\(B\)</span> – это матрица модулярности (modularity matrix). Ее элементы определяются через степени <span class="math notranslate nohighlight">\(d_i\)</span> соответствующих вершин графа (степень вершины – это число ребер, связанных с данной вершиной) и матрицу смежности <span class="math notranslate nohighlight">\(A\)</span> графа:</p>
 <div class="math notranslate nohighlight">
 \[
-B_{ij} = A_ij - \frac{d_i d_j}{2 |E|}
+B_{ij} = A_{ij} - \frac{d_i d_j}{2 |E|}
 \]</div>
 <p>Условно, модулярность это разница между числом ребер внутри сообществ в нашем графе и числом ребер внутри сообществ в графе с таким же числом ребер, но сгенерированным случайным образом. Это довольно сложное понятие, которое выходит за рамки нашего курса, но все равно потребуется нам, чтобы показать, что задачи оптимизации модулярности может быть сформулирована как задача Изинга.</p>
 <div class="admonition note">
@@ -1068,43 +1069,43 @@ B_{ij} = A_ij - \frac{d_i d_j}{2 |E|}
 </div>
 <p><em>Тут формулировка модулярности в терминах изинга</em></p>
 </div>
-<div class="section" id="id15">
-<h4>Задача о мостах Кеннингсберга (Калининграда)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
-<p><em>Текст</em></p>
-<div class="figure align-default" id="id27">
-<a class="reference internal image-reference" href="../../_images/bridges.png"><img alt="../../_images/bridges.png" src="../../_images/bridges.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых Эйлер изобрел теорию графов</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
-</div>
 <div class="section" id="id16">
-<h5>Оператор Изинга задачи о Гамильтоновых циклах<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<h4>Задача о мостах Кеннингсберга (Калининграда)<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <p><em>Текст</em></p>
 <div class="figure align-default" id="id28">
+<a class="reference internal image-reference" href="../../_images/bridges.png"><img alt="../../_images/bridges.png" src="../../_images/bridges.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых Эйлер изобрел теорию графов</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="id17">
+<h5>Оператор Изинга задачи о Гамильтоновых циклах<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
+<p><em>Текст</em></p>
+<div class="figure align-default" id="id29">
 <a class="reference internal image-reference" href="../../_images/Hamilton.jpg"><img alt="../../_images/Hamilton.jpg" src="../../_images/Hamilton.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p><em>Текст</em></p>
 </div>
 </div>
-<div class="section" id="id17">
-<h4>Задача коммивояжера<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
-<p><em>Тут будет описание</em></p>
-<div class="figure align-default" id="id29">
-<img alt="../../_images/Salesman.png" src="../../_images/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
-</div>
-<p><em>Тут будет описание</em></p>
-</div>
 <div class="section" id="id18">
-<h4>Задача о рюкзаке<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<h4>Задача коммивояжера<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <p><em>Тут будет описание</em></p>
+<div class="figure align-default" id="id30">
+<img alt="../../_images/Salesman.png" src="../../_images/Salesman.png" />
+<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
-</div>
+<p><em>Тут будет описание</em></p>
 </div>
 <div class="section" id="id19">
-<h2>Решение задачи коммивояжера с помощью VQE<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
-<p>Итак, давайте попробуем решить задачу коммивояжера. Нам потребуется определить оператор <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, который мы активно использовали при определении гамильтонинана, также расписать полный оператор, но для начала давайте сгенериуем случайный граф, с которым мы будем экспериментировать.</p>
+<h4>Задача о рюкзаке<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p><em>Тут будет описание</em></p>
+</div>
+</div>
+</div>
 <div class="section" id="id20">
-<h3>Случайный взвешенный граф<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<h2>Решение задачи коммивояжера с помощью VQE<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>Итак, давайте попробуем решить задачу коммивояжера (<strong>T</strong>ravelling <strong>S</strong>alesman <strong>P</strong>roblem, или для краткости <strong>TSP</strong>). Нам потребуется определить оператор <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, который мы активно использовали при определении гамильтонинана, также расписать полный оператор, но для начала давайте сгенериуем случайный граф, с которым мы будем экспериментировать.</p>
+<div class="section" id="id21">
+<h3>Случайный взвешенный граф<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <p>Случайный взвешенный граф проще всего сгенерировать из случайной матрицы весов. Давайте сделаем такую:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1118,7 +1119,7 @@ B_{ij} = A_ij - \frac{d_i d_j}{2 |E|}
 </div>
 </div>
 </div>
-<p>Только эта матрица не является симметричной и имеет не нулевые элементы на диагонали. Элементы на диагонали означают петли (loop или self-loop), что не очень разумно в терминах задачи коммивояжера: не ясно, что значит, например, путь из Москвы в Москву. Аналогично и про то, что матрица не симметричная: если путь из Москвы в Санкт-Петербург займет 6 часов, то и путь обратно тоже займет столько же. Так что мы хотим симметричную матрицу. Давайте это исправим:</p>
+<p>Только эта матрица не является симметричной и имеет ненулевые элементы на диагонали. Элементы на диагонали означают петли (loop или self-loop), что не очень разумно в терминах задачи коммивояжера: не ясно, что значит, например, путь из Москвы в Москву. Аналогично и про то, что матрица не симметричная: если путь из Москвы в Санкт-Петербург займет 6 часов, то и путь обратно тоже займет столько же. Так что мы хотим симметричную матрицу. Давайте это исправим:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rand_adj</span> <span class="o">=</span> <span class="p">(</span><span class="n">rand_mat</span> <span class="o">+</span> <span class="n">rand_mat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1195,7 +1196,7 @@ NetworkX solution (total cost): 213.0
 </div>
 </div>
 </div>
-<p>Напомним, что эта матрица имеет собственные значения 0 и 1, в чем легко убедиться создав оператор маленькой размерности и вычислив все его собственные значения:</p>
+<p>Напомним, что эта матрица имеет собственные значения 0 и 1, в чем легко убедиться, создав оператор маленькой размерности и вычислив все его собственные значения:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma_z_mod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
@@ -1209,7 +1210,7 @@ NetworkX solution (total cost): 213.0
 </div>
 </div>
 </div>
-<p>Легко убедиться, что собственные операторы нашей <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span> совпадают с собственными операторами <span class="math notranslate nohighlight">\(\sigma^z\)</span>, причем они имеют значение 1, когда спин с номером 2 (напомню, что у нас 0-индексация, поэтому <code class="docutils literal notranslate"><span class="pre">sigma_z_mod(1,</span> <span class="pre">3)</span></code> значит что-то типа “построй мне матрицу <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, действующую на второй спин (ну или второй кубит)”) имеет в битовой строке значение 0 и 1 если он имеет значение 1:</p>
+<p>Легко убедиться, что собственные операторы нашей <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span> совпадают с собственными операторами <span class="math notranslate nohighlight">\(\sigma^z\)</span>, причем они имеют значение 1, когда спин с номером 2 имеет в битовой строке значение 0 и 1 если он имеет значение 1. Напомню, что у нас 0-индексация, поэтому <code class="docutils literal notranslate"><span class="pre">sigma_z_mod(1,</span> <span class="pre">3)</span></code> значит что-то типа “построй мне матрицу <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, действующую на второй спин (ну или второй кубит)”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">psi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">eigs</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
@@ -1232,10 +1233,10 @@ Eigenvalue: 0.0	Bit string: 111
 </div>
 </div>
 </div>
-<p>Убедимся также в совпадение собственных векторов с матрицей <span class="math notranslate nohighlight">\(\sigma^z\)</span>:</p>
+<p>Убедимся также в совпадении собственных векторов с матрицей <span class="math notranslate nohighlight">\(\sigma^z\)</span>:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Для чистых состояний без запутывания матрицы собственных векторов могут быть приведены к виду единичных матриц. И действительно, каждый собственный вектор отвечает строго одной конфигурации спинов, а значит его волновая функция имеет вид <span class="math notranslate nohighlight">\(\ket{\Psi} = \ket{0, 0, ..., 1, ..., 0, 0}\)</span>, где 1 соответствует как раз номеру той битовой строке, которая отвечает этой конфигурации.</p>
+<p>Для чистых состояний без запутывания матрицы собственных векторов могут быть приведены к виду единичных матриц. И действительно, каждый собственный вектор отвечает строго одной конфигурации спинов, а значит его волновая функция имеет вид <span class="math notranslate nohighlight">\(\ket{\Psi} = \ket{0, 0, ..., 1, ..., 0, 0}\)</span>, где 1 соответствует как раз номеру той битовой строки, которая отвечает этой конфигурации.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1270,10 +1271,14 @@ Sigma z:
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В общем случае, даже если у двух операторов совпадают собственные вектора, то их порядок (по возрастанию собственных значений) совпадать совсем не обязан. В этом легко убедиться, например, если поменять местами <span class="math notranslate nohighlight">\(\hat{1}\)</span> и <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span> в нашем <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>. Поэтому, чтобы избежать ошибок в будущем, лучше не привыкать сравнивать матрицы собственных векторов при помощи <code class="docutils literal notranslate"><span class="pre">np.allclose</span></code>, а сравнивать их глазами построчно.</p>
 </div>
-<div class="section" id="id21">
-<h3>Гамильтониан<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<p>Давайте еще раз выпишем полный гамильтониан системы. Напомню, что наша задача будет параметризована при помощи <span class="math notranslate nohighlight">\(N^2\)</span> кубит, которые, для удобства мы выстроим в виде матрицы, где <span class="math notranslate nohighlight">\(i\)</span>-я строка соответствует <span class="math notranslate nohighlight">\(i\)</span>-му шагу в цикле по графу, а <span class="math notranslate nohighlight">\(j\)</span>-й элемент строки соответствует номеру вершины и является нашим бинарным оператором:</p>
+</div>
+<div class="section" id="id22">
+<h3>Гамильтониан<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>Давайте еще раз выпишем полный гамильтониан системы. Напомню, что наша задача будет параметризована при помощи <span class="math notranslate nohighlight">\(N^2\)</span> кубит, которые для удобства мы выстроим в виде матрицы, где <span class="math notranslate nohighlight">\(i\)</span>-я строка соответствует <span class="math notranslate nohighlight">\(i\)</span>-му шагу в цикле по графу, а <span class="math notranslate nohighlight">\(j\)</span>-й элемент строки соответствует номеру вершины и является нашим бинарным оператором:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{H} = a\sum_{i=1}^N (1 - \sum_{j=1}^N \sigma^{z_{mod}}_{i,j})^2 + a\sum_{j=1}^N (1 - \sum_{i=1}^N \sigma^{z_{mod}}_{i,j})^2 + a \sum_{u,v \not\in E}\sum_{j=1}^{N-1}\sigma^{z_{mod}}_{u,j}\sigma^{z_{mod}}_{v,j+1} + b \sum_{u,v \in E}\sum_{j=1}^{N-1}\sigma^{z_{mod}}_{u,j}\sigma^{z_{mod}}_{v,j+1}
@@ -1401,7 +1406,7 @@ SciPy solution (total cost): 213.0
 </div>
 </div>
 <p>Мы видим, что решение через матрицу совпадает с тем, что нам выдал <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> (с точностью до инверсии: <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">0]</span></code> и <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">0]</span></code>), как и общая стоимость пути. Энергия основного состояния отличается по причине того, что мы использовали оптимизацию и магию с коэффициентами. Но это нам не важно: по энергиям нам важно лишь отношение порядка, потому что зная битовую строку мы всегда можем проверить стоимость пути за линейное время!</p>
-<p>Теперь можно, наконец-то, приступать к симуляции квантовых вычислений!</p>
+<p>Теперь можно наконец-то, приступать к симуляции квантовых вычислений!</p>
 <div class="section" id="vqe-pennylane">
 <h4>VQE на Pennylane<a class="headerlink" href="#vqe-pennylane" title="Permalink to this headline">¶</a></h4>
 <p>Для начала давайте преобразуем нашу матрицу к тому объекту, с которым умеет работать наш квантовый фреймворк.</p>
@@ -1409,7 +1414,7 @@ SciPy solution (total cost): 213.0
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">Pennylane</span></code> поддерживает также работу с представлением гамильтонианов в виде так называемых Паули-строк, но тут мы не будем еще раз определять весь гамильтониан, а просто перериспользуем нашу разреженную матрицу.</p>
 </div>
-<p>Веса нашего графа имеют разброс значений от 0 до 100. Из-за этого, при некоторых конфигурациях мы можем получать очень большое собственное значение нашего гамильтониана, вплоть до нескольких тысяч. Это не очень хорошо для градиентного спуска методом <code class="docutils literal notranslate"><span class="pre">paramter-shift</span></code>, поэтому для численной устойчивости давайте умножим все значения весов на <span class="math notranslate nohighlight">\(0.1\)</span>. Это сделает наши градиенты не слишком большими и улучшит численную сходимость:</p>
+<p>Веса нашего графа имеют разброс значений от 0 до 100. Из-за этого, при некоторых конфигурациях мы можем получать очень большое собственное значение нашего гамильтониана, вплоть до нескольких тысяч. Это не очень хорошо для градиентного спуска методом <code class="docutils literal notranslate"><span class="pre">paramter-shift</span></code>, поэтому для численной устойчивости давайте умножим все значения весов на <span class="math notranslate nohighlight">\(0.1\)</span>. Это сделает градиенты не слишком большими и улучшит численную устойчивость. Делать это можно совершенно спокойно, так как нам не критично численная величина минимального собственного, а важно лишь отношение порядка собственных значений.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
@@ -1423,12 +1428,12 @@ SciPy solution (total cost): 213.0
 <p>Далее нам необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../_images/sycamore.png"><img alt="../../_images/sycamore.png" src="../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Изображение из <span id="id22">[<a class="reference internal" href="../bibliography.html#id25"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id23">[<a class="reference internal" href="../bibliography.html#id26"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
 </div>
-<p>Поэтому нам, в идеале, хотелось бы делать либо одно-кубитные операции, либо двух-кубитные операции, но над “соседними” кубитами. Так появилась идея, так называемого, <em>hardware efficient ansatz</em> <span id="id23">[<a class="reference internal" href="../bibliography.html#id15"><span>KMT+17</span></a>]</span>. Он заключается в том, что мы формируем несколько “слоев” нашей <strong>VQC</strong>, каждый слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
-<div class="figure align-default" id="id30">
+<p>Поэтому нам, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id24">[<a class="reference internal" href="../bibliography.html#id16"><span>KMT+17</span></a>]</span>. Он заключается в том, что мы формируем несколько “слоев” нашей <strong>VQC</strong>, каждый слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
+<div class="figure align-default" id="id31">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id24">[<a class="reference internal" href="../bibliography.html#id15"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id25">[<a class="reference internal" href="../bibliography.html#id16"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
@@ -1625,8 +1630,8 @@ Quantum solution (total cost): 213.0
 </div>
 </div>
 </div>
-<div class="section" id="id25">
-<h2>Заключение<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id26">
+<h2>Заключение<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
 <p>В будущем вам вряд ли придется самим расписывать матрицы и строить гамильтонианы, так как большинство современных квантовых фреймворков имеют встроенные рутины для самых типичных задач комбинаторной оптимизации. Однако для полного понимания того, как <strong>VQE</strong> работает внутри, нам просто необходимо было проделать это все от начала и до конца самим. Надеюсь, вам было интересно и не слишком сложно!</p>
 </div>
 </div>
