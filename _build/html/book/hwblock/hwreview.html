@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -74,10 +74,6 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -178,6 +174,38 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Вводная лекция про вектора
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/algebra.html">
+   🟦 Алгебра
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Основы машинного обучения
  </span>
 </p>
@@ -214,57 +242,18 @@
    🟩 Квантовые гейты
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Фреймворки
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/progintro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/pennylane.html">
-   🟩 PennyLane
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/tfq.html">
-   🟧 Cirq &amp; TFQ
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Базовые квантовые алгоритмы
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/qcalgointro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
-   🟩 Обзор квантовых алгоритмов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
    🟩 Алгоритм Дойча
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
-   🟩 Квантовая телепортация
+  <a class="reference internal" href="../qcblock/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
    🟧 Алгоритм Гровера
   </a>
  </li>
@@ -293,18 +282,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Квантовое машинное обучение
+  Фреймворки
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+  <a class="reference internal" href="../progblock/progintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
-   🟥 Алгоритм HHL
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/tfq.html">
+   🟧 Cirq &amp; TFQ
   </a>
  </li>
 </ul>
@@ -557,11 +551,11 @@
 <div class="section" id="id2">
 <h2>Радиочастотные и оптические кубиты<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Первый признак, по которому можно классифицировать разные кубиты, это характер тех двух квантовых состояний, в которых
-хранится информация. Рассмотрим, например, фрагмент структуры уровней для иона Yb-171+ <span id="id3">[<a class="reference internal" href="../bibliography.html#id22"><span>Mon</span></a>]</span>. Этот ион часто
+хранится информация. Рассмотрим, например, фрагмент структуры уровней для иона Yb-171+ <span id="id3">[<a class="reference internal" href="../bibliography.html#id19"><span>Mon</span></a>]</span>. Этот ион часто
 используют для квантовых вычислений.</p>
 <div class="figure align-default" id="yb171-energy-levels">
 <img alt="../../_images/Yb171+_energy_levels.png" src="../../_images/Yb171+_energy_levels.png" />
-<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">Фрагмент структуры энергетических уровней иона Yb-171+. У типичного атома очень много степеней свободы:
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">Фрагмент структуры энергетических уровней иона Yb-171+. У типичного атома очень много степеней свободы:
 спин ядра, спин электронной подсистемы, радиус орбитали электрона и проекция момента орбитали электрона.
 Переходы между состояниями имеют очень разные частоты, времена когерентности и восприимчивости к частот к внешним полям.
 Чтобы сделать из иона кубит, надо определиться, какой уровень будет “0”, а какой – “1”.</span><a class="headerlink" href="#yb171-energy-levels" title="Permalink to this image">¶</a></p>
@@ -599,7 +593,7 @@
 немного влияют на частоты переходов в атомах, эту эквивалентность легко испортить.</p>
 <div class="figure align-default" id="single-atom">
 <img alt="../../_images/cropatom-800x603.jpg" src="../../_images/cropatom-800x603.jpg" />
-<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">Фотография уединённого атома в ловушке. Источник: <span id="id5">[<a class="reference internal" href="../bibliography.html#id23"><span>ion</span></a>]</span></span><a class="headerlink" href="#single-atom" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">Фотография уединённого атома в ловушке. Источник: <span id="id5">[<a class="reference internal" href="../bibliography.html#id20"><span>ion</span></a>]</span></span><a class="headerlink" href="#single-atom" title="Permalink to this image">¶</a></p>
 </div>
 <p>Кубиты на искусственных степенях
 свободы получаются когда имеет место коллективная динамика большого числа частиц, например поляризация в материала
@@ -613,7 +607,7 @@
 </ul>
 <div class="figure align-default" id="silicon-qubits">
 <img alt="../../_images/silicon-qubits.png" src="../../_images/silicon-qubits.png" />
-<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">Изображение кремниевой микросхемой с кубитом на квантовой точке. Источник: <span id="id6">[<a class="reference internal" href="../bibliography.html#id24"><span>SZK+18</span></a>]</span></span><a class="headerlink" href="#silicon-qubits" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">Изображение кремниевой микросхемой с кубитом на квантовой точке. Источник: <span id="id6">[<a class="reference internal" href="../bibliography.html#id21"><span>SZK+18</span></a>]</span></span><a class="headerlink" href="#silicon-qubits" title="Permalink to this image">¶</a></p>
 </div>
 <p>На самом деле граница между естественными степенями свободы и искусственными вовсе не такая очевидная, как может
 показаться на первый взгляд. Так, например, фотон, находящийся в открытом пространстве, можно поместить между двумя
@@ -637,7 +631,7 @@
 <li><p>Атомы и ридберговские состояния в них.</p></li>
 </ul>
 <div class="figure align-default" id="transmon-wavefunctions">
-<img alt="../../_images/transmon-wavefunctions.svg" src="../../_images/transmon-wavefunctions.svg" /><p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">Потенциал и уровни энергии в сверхпровониковом кубите-трансмоне. Построено с помощью scqubits <span id="id8">[<a class="reference internal" href="../bibliography.html#id25"><span>GK21</span></a>]</span>.
+<img alt="../../_images/transmon-wavefunctions.svg" src="../../_images/transmon-wavefunctions.svg" /><p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">Потенциал и уровни энергии в сверхпровониковом кубите-трансмоне. Построено с помощью scqubits <span id="id8">[<a class="reference internal" href="../bibliography.html#id22"><span>GK21</span></a>]</span>.
 Как правило используются нижние два уровня, однако и остальные уровни можно использовать для алгоритмов</span><a class="headerlink" href="#transmon-wavefunctions" title="Permalink to this image">¶</a></p>
 </div>
 <p>Бывают модели квантовых вычислений на непрерывных степенях свободы, например:</p>
@@ -659,7 +653,7 @@
 <li><p>Кубиты на нейтральных атомах в дипольных ловушках.</p></li>
 </ul>
 <div class="figure align-default" id="ion-computation-schematic">
-<img alt="../../_images/ions-computation-schematic.svg" src="../../_images/ions-computation-schematic.svg" /><p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Схема квантового компьютера на ионах. Источник: <span id="id10">[<a class="reference internal" href="../bibliography.html#id26"><span>WBD+19</span></a>]</span>.
+<img alt="../../_images/ions-computation-schematic.svg" src="../../_images/ions-computation-schematic.svg" /><p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">Схема квантового компьютера на ионах. Источник: <span id="id10">[<a class="reference internal" href="../bibliography.html#id23"><span>WBD+19</span></a>]</span>.
 Кубиты расположены рядом друг с другом в вакуумной камере, а управляющие сигналы представляют собой лазерные лучи,
 направленные на каждый ион. Для однокубитных и двухкубитных операций используют разные лазеры, для считывания – ещё
 лазер. Рассеянное на ионе излучение пследнего лазера детектируется, чтобы определить состояние кубита.
@@ -724,7 +718,7 @@
 может сделать такие модели вычислений универсальными.</p>
 <div class="figure align-default" id="xanadu-principle-schematic">
 <img alt="../../_images/xanadu.webp" src="../../_images/xanadu.webp" />
-<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">Принципиальная схема работы оптического квантого чипа Xanadu. Вязто из работы <span id="id12">[<a class="reference internal" href="../bibliography.html#id27"><span>ABBradler+21</span></a>]</span>.
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Принципиальная схема работы оптического квантого чипа Xanadu. Вязто из работы <span id="id12">[<a class="reference internal" href="../bibliography.html#id24"><span>ABBradler+21</span></a>]</span>.
 a – квантовый алгоритм, выполняемый схемой: 1) сжатие света в до 8 модах и создание запутанности
 (формирование двухмодового сжатового состояния света, эквивлент однокубитных гейтов), 2) программируемые двухкубитные
 гейты в каждом четырёхмодовом подпространстве, 3) считывание всех 8 мод в фоковском базисе;
@@ -808,7 +802,7 @@ d – фотография всей системы (кроме управлен�
         
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
