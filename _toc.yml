@@ -32,6 +32,19 @@
     - file: book/pythonblock/python_l10.md
       title: 🟦 Финальная лекция
 
+- part: Линейная алгебра и numpy
+  chapters:
+    - file: book/linalgblock/intro.md
+      title: ⬜ О блоке
+    - file: book/linalgblock/vectors.md
+      title: 🟦 Вводная лекция про вектора
+    - file: book/linalgblock/algebra.md
+      title: 🟦 Алгебра
+    - file: book/linalgblock/bra-ket.md
+      title: 🟦 Нотация Дирака
+    - file: book/linalgblock/numpy.md
+      title: 🟦 Numpy fun
+
 - part: Основы машинного обучения
   chapters:
     - file: book/mlblock/ml_intro
@@ -104,34 +117,10 @@
 
 - part: Проблемы квантового машинного обучения
   chapters:
-    - file: book/problemsblock/problemsintro
-      title: ⬜ О блоке
     - file: book/problemsblock/quantchembasic
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-    - file: book/problemsblock/ising
-      title: 🟩 Модель Изинга
-    - file: book/problemsblock/copt
-      title: 🟩 Комбинаторная оптимизация
-
-- part: От проблем к обучению
-  chapters:
-    - file: book/problems2qml/problems2qmlintro
-      title: ⬜ О блоке
-    - file: book/problems2qml/np2ising
-      title: 🟩 NP как модели Изинга
-    - file: book/problems2qml/eigenvals
-      title: 🟩 О собственных значениях
-
-- part: VQE
-  chapters:
-    - file: book/vqeblock/vqeintro
-      title: ⬜ О блоке
-    - file: book/vqeblock/vqe
-      title: 🟩 Основы VQE
-    - file: book/vqeblock/tspvqe
-      title: 🟩 TSP с помощью VQE
 
 - part: О курсе
   chapters:
