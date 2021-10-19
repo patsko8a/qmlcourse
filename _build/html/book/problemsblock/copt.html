@@ -572,36 +572,41 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
+   Задача о максимальном разрезе в графе
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
    Задача о выделении сообществ в графах
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    Задача о Гамильтоновых циклах
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    Задача коммивояжера
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    Задача о рюкзаке
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id9">
    Метод ветвей и границ
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
+  <a class="reference internal nav-link" href="#id10">
    Метод имитации отжига
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    Заключение
   </a>
  </li>
@@ -621,7 +626,8 @@
 <p>В этой лекции мы поговорим об известных задачах комбинаторной оптимизации. Мы уже касались темы задач, для которых не существует эффективных классических алгоритмов в <a class="reference external" href="../qcalgo/quantum_algorithms_overview.html#id2">обзоре квантовых алгоритмов</a>, а сегодня разберем еще больше примеров таких задач. В конце мы кратко обсудим пару способов решать такие задачи на классических компьютерах, а также в чем их принципиальные проблемы и ограничения.</p>
 <p>Лекция будет построена так:</p>
 <ul class="simple">
-<li><p>задачи о выделении сообществ в графе</p></li>
+<li><p>задача о максимальном разрезе в графе</p></li>
+<li><p>задача о выделении сообществ в графе</p></li>
 <li><p>задача о Гамильтоновых циклах и коммивояжере</p></li>
 <li><p>задача о рюкзаке</p></li>
 <li><p>метод ветвей и границ</p></li>
@@ -629,20 +635,32 @@
 </ul>
 <p>Какого-то кода, или больших страшных формул из квантовой механики тут не будет, так что можно немного передохнуть, расслабиться и насладиться чтением. Для тех, кто хорошо знаком с задачами целочисленной оптимизации в этой лекции точно не будет ничего нового и ее можно будет пропускать, ну или пролистать по диагонали.</p>
 <div class="section" id="id2">
-<h2>Задача о выделении сообществ в графах<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Задача о выделении сообщества в графах это очень важная и очень интересная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим, анализируя контакты людей, выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
+<h2>Задача о максимальном разрезе в графе<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Мы уже немного говорили об этой задаче в лекции про модель Изинга из-за их очень большого сходства. Но давайте еще раз вспомним, что это за модель такая. Ну и сразу рассмотрим ее максимально общий случай. Итак, у нас есть граф на множестве вершин <span class="math notranslate nohighlight">\(V\)</span>, связанных множеством ребер <span class="math notranslate nohighlight">\(E\)</span>. Каждое ребро имеет две инцедентных вершины <span class="math notranslate nohighlight">\(u,v\)</span>, в общем случае порядок <span class="math notranslate nohighlight">\(u,v\)</span> важен, тогда мы говорим о направленном (directed) графе. Каждому ребру можно также сопоставить действительное число <span class="math notranslate nohighlight">\(w\)</span>, тогда у нас будет так называемый взвешенный граф. Наша цель разбить сообщество вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся сообщества <span class="math notranslate nohighlight">\(V_1, V_2\)</span>. Давайте сформулируем нашу функцию стоимости:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_2, v \in V_1))
+\]</div>
+<p>То есть в общем случае это просто сумма всех весов ребер между двумя сообществами. В общем случае эта задача является <span class="math notranslate nohighlight">\(NP\)</span>-полной. В теории к этой задаче можно также свести любую другую <span class="math notranslate nohighlight">\(NP\)</span>-полную задачу за полиномиальное время.</p>
+<div class="figure align-default" id="maxcut">
+<a class="reference internal image-reference" href="../../_images/Max-cut.png"><img alt="../../_images/Max-cut.png" src="../../_images/Max-cut.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Задача о выделении сообществ в графах<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Задача о выделении сообщества в графах это уже более практическая и понятная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим, анализируя контакты людей, выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Для работы с графами мы будем пользоваться библиотекой <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>. Она написана на чистом <code class="docutils literal notranslate"><span class="pre">Python</span></code> и плохо подходит для работы с большими графами, зато имеет простой интерфейс и легко устанавливается на любую систему. Ее можно установить из репозитория <code class="docutils literal notranslate"><span class="pre">PyPI</span></code>, используя команду <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code>. Подробнее о пакетах <code class="docutils literal notranslate"><span class="pre">Python</span></code> можно почитать в <a class="reference internal" href="../pythonblock/python_l1.html#python-l1"><span class="std std-ref">одной из вводных лекций</span></a> про этот язык программирования.</p>
 </div>
-<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id3">[<a class="reference internal" href="../bibliography.html#id32"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая в группе администратора (Officer).</p>
-<p>Задачу о выделении сообществ в тривиальном случае разбиения графа на два подмножества можно свести к знакомой нам задаче о максимальном разрезе. Правда, в отличии от задачи о максимальном разрезе, в случае с сообществами мы хотим, что число ребер между ними было минимальным. Но это можно сделать просто поменяв знак в выражении для гамильтониана Изинга:</p>
+<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id4">[<a class="reference internal" href="../bibliography.html#id32"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая в группе администратора (Officer).</p>
+<p>Задачу о выделении сообществ в тривиальном случае разбиения графа на два подмножества можно свести к знакомой нам задаче о максимальном разрезе. Правда, в отличии от задачи о максимальном разрезе, в случае с сообществами мы хотим, что число ребер между ними было минимальным. Но это можно сделать просто поменяв пару символов в выражении для стоимости:</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{H}_{communities} = - \sum_{e \in E} \sigma^z_{e_{srs}} \sigma^z_{e_{dst}}
+C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_1) + \mathbf{1}(u \in V_2, v \in V_2))
 \]</div>
-<p>Тут <span class="math notranslate nohighlight">\(e \in E\)</span> это значит суммирование по всем ребрам <span class="math notranslate nohighlight">\(e\)</span> нашего графа, а <span class="math notranslate nohighlight">\(e_{src}\)</span> и <span class="math notranslate nohighlight">\(e_{dst}\)</span> это начальная и конечная вершины, которые соединяет ребро <span class="math notranslate nohighlight">\(e\)</span>.</p>
-<p>Но на самом деле мы только что свели более простую задачу о минимальном разрезе с неотрицательными весами к более сложной задаче Max-Cut. А еще выбранная нами метрика (количество ребер) не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id4">[<a class="reference internal" href="../bibliography.html#id25"><span>New06</span></a>]</span>:</p>
+<p>Но на самом деле мы только что свели более простую задачу о минимальном разрезе с неотрицательными весами к более сложной задаче Max-Cut. А еще выбранная нами метрика (количество ребер) не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id5">[<a class="reference internal" href="../bibliography.html#id25"><span>New06</span></a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 Q(C) = \frac{1}{2 |E|}\sum_{e \in E} B_{e_{src}, e_{dst}}\delta (c_{e_{src}}, c_{e_{dst}})
@@ -655,44 +673,66 @@ B_{ij} = A_{ij} - \frac{d_i d_j}{2 |E|}
 <p>Условно, модулярность это разница между числом ребер внутри сообществ в нашем графе и числом ребер внутри сообществ в графе с таким же числом ребер, но сгенерированным случайным образом. Это довольно сложное понятие, которое выходит за рамки нашего курса, но все равно потребуется нам, чтобы показать, что задачи оптимизации модулярности может быть сформулирована как задача Изинга.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Это интересно, но одним из первых алгоритмов для решения задачи о выделении сообществ в графах был алгоритм имитации отжига, который изначально был создан именно для решения проблемы гамильтонианов типа Изинга. Причина заключается в том, что модулярность очень схожа по виду с выражением энергии для ферромагнетика или антиферромагнетка.</p>
+<p>Это интересно, но одним из первых алгоритмов для решения задачи о выделении сообществ в графах был алгоритм имитации отжига, который изначально был создан именно для решения проблемы гамильтонианов типа Изинга. Причина заключается в том, что модулярность очень схожа по виду с выражением энергии для магнетиков.</p>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>Задача о Гамильтоновых циклах<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>Перед тем, как мы перейдем к интересной и важной задаче поиска Гамильтоновыз циклов мы вспомним задачу о мостах Кеннингсберга (Калининграда). Ведь именно гуляя по этому городу и пытаясь решить эту задачу Леонард Эйльер изобрел теорию графов. Суть задачи в том, что надо обойти все острова города, пройдя по каждому мосту лишь один раз и вернуться на тот остров, откуда мы начала. Эйлер, создав математический аппарат теории графов сумел доказать, что это невозможно, ну а дальше завертелось и вот мы с вами тут :)</p>
-<div class="figure align-default" id="id11">
-<a class="reference internal image-reference" href="../../_images/bridges.png"><img alt="../../_images/bridges.png" src="../../_images/bridges.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых Эйлер изобрел теорию графов</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-<p>Такой путь в графе, когда мы проходим по каждому ребру лишь один раз называется Эйлеров цикл. Но нам будет более интересен схожий класс циклом – Гамильтоновы циклы.</p>
-<div class="figure align-default" id="id12">
-<a class="reference internal image-reference" href="../../_images/Hamilton.jpg"><img alt="../../_images/Hamilton.jpg" src="../../_images/Hamilton.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
+<p>Мы тут пока описали лишь простой случай модулярности для не взвешенного и ненаправленного графа. Но даже в таком случае для задачи точной оптимизации модулярности не известно полиномиального алгоритма решения. Поэтому обычно применяют приближенные или жадные алгоритмы и они вроде даже неплохо работают. Но мы почти не знаем насколько действительно далеко они от самых оптимальных решений, особенно для больших графов.</p>
 </div>
 <div class="section" id="id6">
-<h2>Задача коммивояжера<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p><em>Тут будет описание</em></p>
-<div class="figure align-default" id="id13">
-<img alt="../../_images/Salesman.png" src="../../_images/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<h2>Задача о Гамильтоновых циклах<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Перед тем, как мы перейдем к интересной и важной задаче поиска Гамильтоновыз циклов мы вспомним задачу о мостах Кеннингсберга (Калининграда). Ведь именно гуляя по этому городу и пытаясь решить эту задачу Леонард Эйльер изобрел теорию графов. Суть задачи в том, что надо обойти все острова города, пройдя по каждому мосту лишь один раз и вернуться на тот остров, откуда мы начала. Эйлер, создав математический аппарат теории графов сумел доказать, что это невозможно, ну а дальше завертелось и вот мы с вами тут :)</p>
+<div class="figure align-default" id="id12">
+<a class="reference internal image-reference" href="../../_images/bridges.png"><img alt="../../_images/bridges.png" src="../../_images/bridges.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых Эйлер изобрел теорию графов</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
+<p>Такой путь в графе, когда мы проходим по каждому ребру лишь один раз называется Эйлеров цикл. Но нам будет более интересен схожий класс циклов – Гамильтоновы циклы. Это такие циклы, которые проходят через каждую вершину графа ровно один раз.</p>
+<div class="figure align-default" id="id13">
+<a class="reference internal image-reference" href="../../_images/Hamilton.jpg"><img alt="../../_images/Hamilton.jpg" src="../../_images/Hamilton.jpg" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>Для Гамильтонова цикла мы можем ввести <span class="math notranslate nohighlight">\(N^2\)</span> бинарных переменных <span class="math notranslate nohighlight">\(x_{i,p}\)</span>. Каждая переменная <span class="math notranslate nohighlight">\(x_{i,p}\)</span> равна <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span>-я вершина находится на <span class="math notranslate nohighlight">\(p\)</span>-м шаге пути и <span class="math notranslate nohighlight">\(0\)</span> если нет. Тогда легко ввести условия существования такого цикла:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\sum_p x_{i,p} = 1\text{  }\forall i \\
+\sum_i x_{i,p} = 1\text{  }\forall p \\
+x_{i, p} = 1 \land x_{j, p + 1} = 0\text{ }\forall i,j \notin E
+\end{cases}
+\end{split}\]</div>
+<p>Тут первое условие говорит нам о том, что каждая вершина должна попасть в путь. Второе условие говорит о том, что каждый шаг пути содержит строго одну вершину. Ну а третий шаг это просто утверждение о том, что между вершинами соседних шагов пути должно быть ребро. На самом деле, эти три условия можно переписать в единую функцию стоимости:</p>
+<div class="math notranslate nohighlight">
+\[
+C = (1 - \sum_i x_{i,p})^2 + (1 - \sum_p x_{i,p})^2 + \sum_{u,v \notin E} x_{u,p} x_{v,p+1}
+\]</div>
+<p>Правда в этом случае мы должны минимизировать, а не максимизировать эту величину.</p>
 </div>
 <div class="section" id="id7">
-<h2>Задача о рюкзаке<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p><em>Тут будет описание</em></p>
+<h2>Задача коммивояжера<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Задачу коммивояжера мы (а точнее наш смартфон) решаем каждый раз, когда строим в <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Maps</span></code> маршрут, включающий несколько точек. Зная, как формулируется задача о Гамильтоновы циклах сформулировать задачу коммивояжера очень легко.</p>
+<div class="figure align-default" id="id14">
+<img alt="../../_images/Salesman.png" src="../../_images/Salesman.png" />
+<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>По сути нам требуется взять все Гамильтоновы циклы и выбрать из них тот, для которого сумма весов по содержащимся в нем ребрам будет минимальной. Но надо помнить, что цикл обязательно должен быть в первую очередь Гамильтоновым, поэтому мы добавим веса слагаемых в выражении для стоимости, причем веса, отвечающие за сам цикл будут больше:</p>
+<div class="math notranslate nohighlight">
+\[
+C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} x_{u,p} x_{v,p+1} + B \sum_{u,v,w \in E} w x_{u,p} x_{v,p+1}
+\]</div>
+<p>Тут <span class="math notranslate nohighlight">\(A,B\)</span> это веса, которые лучше выбирать так, что <span class="math notranslate nohighlight">\(0 &lt; Bw &lt; A\text{ }\forall u,v,e \in E\)</span>.</p>
 </div>
 <div class="section" id="id8">
-<h2>Метод ветвей и границ<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p><em>пусто</em></p>
+<h2>Задача о рюкзаке<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p><em>Тут будет описание</em></p>
 </div>
 <div class="section" id="id9">
-<h2>Метод имитации отжига<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>Метод ветвей и границ<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p><em>пусто</em></p>
 </div>
 <div class="section" id="id10">
-<h2>Заключение<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Метод имитации отжига<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p><em>пусто</em></p>
+</div>
+<div class="section" id="id11">
+<h2>Заключение<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p><em>что-то тут точно будет</em></p>
 </div>
 </div>

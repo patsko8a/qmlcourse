@@ -704,7 +704,7 @@ A \Psi_i = e_i \Psi_i
 <p>Таким образом, собственные вектора – это такие вектора, которые при применении оператора не меняют свое направление. Например, в примере ниже собственный вектор – это ось симметрии оператора:</p>
 <div class="figure align-default" id="mona-lisa-eigen">
 <a class="reference internal image-reference" href="../../_images/Mona_Lisa.png"><img alt="../../_images/Mona_Lisa.png" src="../../_images/Mona_Lisa.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id2">
 <h3>Алгоритмы нахождения собственных значений<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -1091,12 +1091,12 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <p>Далее нам необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../_images/sycamore.png"><img alt="../../_images/sycamore.png" src="../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id11">[<a class="reference internal" href="../bibliography.html#id29"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id11">[<a class="reference internal" href="../bibliography.html#id29"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
 </div>
 <p>Поэтому нам, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id12">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span>. Он заключается в том, что мы формируем несколько “слоев” нашей <strong>VQC</strong>, каждый слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id15">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id13">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id13">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">

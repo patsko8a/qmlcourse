@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -573,6 +575,13 @@
                 
   <div class="section" id="np2ising">
 <span id="id1"></span><h1>От задач оптимизации к модели Изинга<a class="headerlink" href="#np2ising" title="Permalink to this headline">¶</a></h1>
+<p>Мы уже рассмотрели пример того, как задачу комбинаторной оптимизации – Max-Cut – можно свести к решению модели Изинга. Далее мы приведем примеры сведения некоторых интересных задач оптимизации к гамильтонианам этого типа. Все эти примеры мы будем брать из публикации <span id="id2">[<a class="reference internal" href="../bibliography.html#id15"><span>Luc14</span></a>]</span>. И перед тем, как мы начнем, нам понадобится ввести еще одно определение, а именно оператор, у которого собственные вектора совпадают с таковыми у <span class="math notranslate nohighlight">\(\sigma^z\)</span>, а собственные значения равны 0 или 1 (вместо <span class="math notranslate nohighlight">\(\pm1\)</span> для <span class="math notranslate nohighlight">\(\sigma^z\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma^{z'} = (I + \sigma^z) / 2 = \begin{vmatrix} 1 &amp; 0 \\
+0 &amp; 0 \end{vmatrix}
+\end{split}\]</div>
+<p>Эта штука нам понадобится, так как в комбинаторной оптимизации очень часто фигурируют именно такие “бинарные” переменные и с ними очень удобно работать. А теперь поехали!</p>
 </div>
 
     <script type="text/x-thebe-config">

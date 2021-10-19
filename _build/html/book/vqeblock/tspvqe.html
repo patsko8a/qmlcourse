@@ -989,12 +989,12 @@ SciPy solution (total cost): 213.0
 <p>Далее нам необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../_images/sycamore.png"><img alt="../../_images/sycamore.png" src="../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id29"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id29"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
 </div>
 <p>Поэтому нам, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span>. Он заключается в том, что мы формируем несколько “слоев” нашей <strong>VQC</strong>, каждый слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id6">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id18"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
