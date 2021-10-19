@@ -29,7 +29,7 @@ from pennylane import numpy as np
 # In[2]:
 
 
-dev = qml.device('default.qubit', shots=1000, wires=2, analytic=False)
+dev = qml.device('default.qubit', shots=1000, wires=2)
 
 
 # In[3]:
@@ -171,7 +171,7 @@ U = np.array([[1, 0, 0, 0],
 # In[14]:
 
 
-dev = qml.device('default.qubit', shots=1, wires=2, analytic=False)
+dev = qml.device('default.qubit', shots=1, wires=2)
 
 
 # Создадим и запустим схему, в которой перед применением операции SWAP, реализованной с помощью `qml.QubitUnitary`, один кубит будет находиться в состоянии 1, а другой – в состоянии 0.

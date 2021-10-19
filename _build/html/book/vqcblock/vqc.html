@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -74,6 +74,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -210,18 +214,57 @@
    🟩 Квантовые гейты
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
-   🟩 Алгоритм Дойча
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/quantum_algorithms_overview.html">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/tfq.html">
+   🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
    🟩 Обзор квантовых алгоритмов
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
    🟧 Алгоритм Гровера
   </a>
  </li>
@@ -250,23 +293,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Фреймворки
+  Квантовое машинное обучение
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/progintro.html">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/pennylane.html">
-   🟩 PennyLane
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/tfq.html">
-   🟧 Cirq &amp; TFQ
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
   </a>
  </li>
 </ul>
@@ -635,7 +673,7 @@
 <p>В течение всего курса мы будем говорить преимущественно о комбинированном квантово-классическом машинном обучении, построенном на базе вариационных квантовых схем. Именно он является наиболее перспективным в эпоху <span class="xref std std-term">NISQ</span>. Давайте забежим немного вперед и посмотрим, как выглядит типичный цикл такого обучения.</p>
 <div class="figure align-default" id="vqcdiag">
 <a class="reference internal image-reference" href="../../_images/diagram.png"><img alt="../../_images/diagram.png" src="../../_images/diagram.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
 </div>
 <p>Красным цветом на диаграмме помечены блоки, выполняемые на квантовом устройстве, зеленым – те, что считает обычный компьютер. Квантовая часть, которая включает в себя операторы <span class="math notranslate nohighlight">\(\hat{U(X)}\)</span> и <span class="math notranslate nohighlight">\(\hat{U(\theta})\)</span>, а также измерение наблюдаемой <span class="math notranslate nohighlight">\(\hat{M}\)</span>, называется вариационной квантовой схемой. Именно ей посвящена данная лекция.</p>
 <p>Но сначала сделаем шаг назад и обсудим в общих чертах идеи, которые лежат в основе квантово-классического обучения.</p>
@@ -900,7 +938,7 @@ Try 3.14159265359: -1.0
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
