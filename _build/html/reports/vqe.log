@@ -29,7 +29,7 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1873/66337358.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1881/66337358.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mg[0m [0;34m=[0m [0mnx[0m[0;34m.[0m[0mGraph[0m[0;34m([0m[0mrand_adj[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;34m[0m[0m
 [1;32m      3[0m [0mpos[0m [0;34m=[0m [0mnx[0m[0;34m.[0m[0mdrawing[0m[0;34m.[0m[0mlayout[0m[0;34m.[0m[0mrandom_layout[0m[0;34m([0m[0mg[0m[0;34m,[0m [0mseed[0m[0;34m=[0m[0;36m42[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

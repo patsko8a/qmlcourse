@@ -12,7 +12,7 @@
 
 1. [Семен Синченко](https://github.com/SemyonSinchenko)
 2. [Илья Беседин](https://github.com/ooovector)
-3. [Сергей Ширкин](https://github.com/SergeiShirkin)
+3. [Сергей Ширкин](https://github.com/doktrster)
 4. [Александр Березутский](https://github.com/meandmytram)
 5. [Котенков Игорь](https://github.com/stalkermustang)
 
@@ -128,7 +128,7 @@
 ```
 
 ```{dropdown} **Ш**
-[Ширкин Сергей](https://github.com/SergeiShirkin)
+[Ширкин Сергей](https://github.com/doktrster)
 ```
 
 ```{dropdown} **Э**
