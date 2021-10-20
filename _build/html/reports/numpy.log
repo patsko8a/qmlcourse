@@ -25,7 +25,7 @@ print(f"{a[None].shape = }")
 print(f"{a[:, :, None].shape = }")
 
 # : превращается в slice (None), берет все элементы вдоль размерности
-print(f"{a[2, :] = "})
+print(f"{a[2, :] = }")
 print(f"a[2, 0:None] = }")
 
 # ... ellipsis, превращается в необходимое число двоеточий :,:,:
@@ -36,10 +36,10 @@ z = np.arange(27).reshape(3, 3, 3)
 print(f"{z[0, ..., 1] = }, {z[0, :, 1] = }")
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_2196/4242459594.py"[0;36m, line [0;32m9[0m
-[0;31m    print(f"{a[2, :] = "})[0m
-[0m                        ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m closing parenthesis '}' does not match opening parenthesis '('
+[0;36m  File [0;32m"/tmp/ipykernel_2269/69581353.py"[0;36m, line [0;32m10[0m
+[0;31m    print(f"a[2, 0:None] = }")[0m
+[0m          ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m f-string: single '}' is not allowed
 
-SyntaxError: closing parenthesis '}' does not match opening parenthesis '(' (4242459594.py, line 9)
+SyntaxError: f-string: single '}' is not allowed (69581353.py, line 10)
 
