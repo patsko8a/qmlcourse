@@ -17,22 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# создадим вектор
-a = np.array([2, 4, 6, 8])
-print(np.where(a < 5))
-
-# дополнительно мы можем передать два значения или вектора, при выполнении условия выбираются элементы из первого значения/вектора, при невыполнении - из второго
-print(np.where(a < 5, 2, a * 2)
-
-# np.where работает и с многомерными массивами
-a = np.array([[8, 8, 2, 6], [0, 5, 3, 4]])
-print(np.where(a < 4, a, 1))
+a = np.array([[1., 2.], [3., 4.]])
+print(numpy.linalg.inv(a)) # array([[-2. ,  1. ], [ 1.5, -0.5]])
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1948/3387821508.py"[0;36m, line [0;32m9[0m
-[0;31m    a = np.array([[8, 8, 2, 6], [0, 5, 3, 4]])[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
-
-SyntaxError: invalid syntax (3387821508.py, line 9)
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1929/480430449.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0ma[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;34m[[0m[0;36m1.[0m[0;34m,[0m [0;36m2.[0m[0;34m][0m[0;34m,[0m [0;34m[[0m[0;36m3.[0m[0;34m,[0m [0;36m4.[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0mnumpy[0m[0;34m.[0m[0mlinalg[0m[0;34m.[0m[0minv[0m[0;34m([0m[0ma[0m[0;34m)[0m[0;34m)[0m [0;31m# array([[-2. ,  1. ], [ 1.5, -0.5]])[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mNameError[0m: name 'numpy' is not defined
+NameError: name 'numpy' is not defined
 
