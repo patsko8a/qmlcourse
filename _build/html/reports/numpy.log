@@ -19,7 +19,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 # создадим вектор
 a = np.array([2, 4, 6, 8])
-print(np.where(a < 5)
+print(np.where(a < 5))
 
 # дополнительно мы можем передать два значения или вектора, при выполнении условия выбираются элементы из первого значения/вектора, при невыполнении - из второго
 print(np.where(a < 5, 2, a * 2)
@@ -29,10 +29,10 @@ a = np.array([[8, 8, 2, 6], [0, 5, 3, 4]])
 print(np.where(a < 4, a, 1))
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1907/2315507945.py"[0;36m, line [0;32m6[0m
-[0;31m    print(np.where(a < 5, 2, a * 2)[0m
+[0;36m  File [0;32m"/tmp/ipykernel_1948/3387821508.py"[0;36m, line [0;32m9[0m
+[0;31m    a = np.array([[8, 8, 2, 6], [0, 5, 3, 4]])[0m
 [0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (2315507945.py, line 6)
+SyntaxError: invalid syntax (3387821508.py, line 9)
 
