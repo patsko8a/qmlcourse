@@ -612,7 +612,7 @@
 <h2>Массивы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># создадим вектор</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -625,6 +625,36 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a=array([1, 2, 3])
+b=array([[0., 0.],
+       [0., 0.]])
+c=array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+q=array([[0.06386128, 0.65336907, 0.46841928, 0.60732283, 0.28954344,
+        0.16910143, 0.09216393, 0.72863515, 0.76218305, 0.9971869 ,
+        0.13046268, 0.11452328, 0.5484082 , 0.97121189, 0.07335811,
+        0.31666155, 0.69109277, 0.2119708 , 0.20405354, 0.48059035,
+        0.395689  , 0.52002569, 0.64699697, 0.97722776, 0.53526465,
+        0.48201101, 0.92793049, 0.97523349, 0.1619291 , 0.09816969,
+        0.32132199, 0.73204432, 0.97790937, 0.19771633, 0.97138366,
+        0.44247031, 0.27405911, 0.6550012 , 0.68150798, 0.76660065,
+        0.67218506, 0.17569958, 0.13086829, 0.15402804, 0.09253279,
+        0.02741459, 0.98620279, 0.44237585, 0.59795419, 0.93960663,
+        0.19554344, 0.48523206, 0.13011124, 0.72603291, 0.80908769,
+        0.46694355, 0.90314427, 0.50409221, 0.48809871, 0.14912362,
+        0.28223662, 0.70705966, 0.70557501, 0.94254408, 0.10548348,
+        0.16170904, 0.46518997, 0.05146841, 0.33522234, 0.59253913,
+        0.78381714, 0.28804496, 0.85552011, 0.02522896, 0.2689839 ,
+        0.93797695, 0.78513519, 0.24754138, 0.11995733, 0.26875241,
+        0.57341137, 0.12217952, 0.77766537, 0.39769108, 0.25137594,
+        0.85491511, 0.90890147, 0.83331182, 0.34962114, 0.94869036,
+        0.27763607, 0.79499595, 0.41610213, 0.52211609, 0.63400059,
+        0.10371824, 0.94245385, 0.78799668, 0.9825232 , 0.89618539]])
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="math-ops">
@@ -632,7 +662,7 @@
 <p>Для удобства использования np.ndarray определены арифметические операторы, так чтобы соответствовать ожиданиям:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">diff</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">diff</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -643,6 +673,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diff=array([ 2, -1, -1])
+mult=array([-1,  6, 12])
+scalar_mult=17
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="indexing-slicing-and-sugar">
@@ -650,7 +687,7 @@
 <p>Numpy поддерживает кажется все разумные варианты индексации:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># просто по индексам</span>
@@ -670,11 +707,29 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a=array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+a_{0,1} 1 1
+a_{1,1..3} [1 2]
+a_{2} [ 8  9 10 11] [ 8  9 10 11] [ 8  9 10 11]
+mask=array([[ True, False, False,  True],
+       [False, False,  True, False],
+       [False,  True, False, False],
+       [ True, False, False,  True]])
+[ 0  3  6  9 12 15]
+[[0 1 2 3]
+ [4 5 6 7]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Для работы с размерностями часто используются еще три конструкции: <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">...</span></code> (ellipsis, многоточие) и <code class="docutils literal notranslate"><span class="pre">:</span></code> (двоеточие).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># None добавляет ось размерности 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># None добавляет ось размерности 1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -692,11 +747,31 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a=array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+(1, 4, 4)
+(4, 4, 1)
+[ 8  9 10 11]
+[ 8  9 10 11]
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]] [[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]]
+[1 4 7] [1 4 7]
+</pre></div>
+</div>
+</div>
 </div>
 <p>В целом, в numpy очень здорово реализованы методы <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>/<code class="docutils literal notranslate"><span class="pre">__setitem__</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">element</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">element</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
@@ -704,11 +779,17 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>element=3
+a=array([1, 2, 5])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Кроме того, мы можем делать индексацию по заданному условию с помощью <code class="docutils literal notranslate"><span class="pre">np.where</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим вектор</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим вектор</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <span class="n">selection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">selection</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -724,6 +805,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>selection=(array([0, 1]),)
+a2=array([ 2,  2, 12, 16])
+a3=array([[1, 1, 2, 1],
+       [0, 1, 3, 1]])
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="broadcasting">
@@ -731,10 +820,15 @@
 <p>Что происходит, если мы хотим арифметику с массивами разных размеров?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">broad</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">k</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">broad</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>broad=array([2, 4, 6])
 </pre></div>
 </div>
 </div>
@@ -743,10 +837,15 @@
 Однако матричные операции в numpy справляются и с менее очевидными случаями, например при сложении или вычитании вектора и скаляра:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">broad</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">k</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">broad</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>broad=array([-1,  0,  1])
 </pre></div>
 </div>
 </div>
@@ -771,7 +870,7 @@
 В результате одно и то же значение может выглядеть по-разному, если хранить его с разной точностью.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f16</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f16</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">(</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
 <span class="n">f32</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">f16</span><span class="p">)</span>
 <span class="n">f64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">f32</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f16</span> <span class="o">==</span> <span class="n">f32</span> <span class="o">==</span> <span class="n">f64</span><span class="p">)</span>
@@ -786,12 +885,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+0.1 0.099975586 0.0999755859375
+f16=0.1 f32=0.099975586 f64=0.0999755859375
+f16=0.1 f32=0.1 f64=0.1
+False
+</pre></div>
+</div>
+</div>
 </div>
 <p>Из-за этого для сравнения массивов с типом float используют <code class="docutils literal notranslate"><span class="pre">np.allclose</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">([</span><span class="mf">1e10</span><span class="p">,</span><span class="mf">1e-7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.00001e10</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">([</span><span class="mf">1e10</span><span class="p">,</span><span class="mf">1e-7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.00001e10</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">([</span><span class="mf">1e10</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.00001e10</span><span class="p">,</span><span class="mf">1e-9</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
 </pre></div>
 </div>
 </div>
@@ -806,10 +920,15 @@
 <p>Numpy позволяет решить систему линейных уравнений.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">solution</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">solution</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>solution=array([ 1.4, -1.2])
 </pre></div>
 </div>
 </div>
@@ -820,9 +939,15 @@
 <p>Numpy даёт возможность выполнить операцию обращения матриц.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
-<span class="n">inv</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
+<span class="n">inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">inv</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inv=array([[-2. ,  1. ],
+       [ 1.5, -0.5]])
 </pre></div>
 </div>
 </div>
@@ -833,7 +958,14 @@
 <p>Вычисление собственных векторов и чисел.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1., 2., 3.]), array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]]))
 </pre></div>
 </div>
 </div>
