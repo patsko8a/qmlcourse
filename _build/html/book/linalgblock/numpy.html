@@ -623,7 +623,7 @@
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">q</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -635,26 +635,10 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.57082139, 0.36993029, 0.45401214, 0.33005512, 0.95674083,
-        0.56040096, 0.76824237, 0.38268489, 0.73166959, 0.87361145,
-        0.12698558, 0.92720012, 0.77417621, 0.78957571, 0.44840018,
-        0.00716917, 0.64616837, 0.19758688, 0.63979546, 0.59636372,
-        0.61757197, 0.22045616, 0.23542215, 0.90696162, 0.79538996,
-        0.47896193, 0.88868939, 0.41718578, 0.00407227, 0.71176224,
-        0.9534245 , 0.46106395, 0.21498149, 0.00511336, 0.90288084,
-        0.69911752, 0.46673178, 0.75085726, 0.9203732 , 0.88056869,
-        0.29311809, 0.4974451 , 0.06512541, 0.26783214, 0.5687371 ,
-        0.8912709 , 0.40351702, 0.52259953, 0.81962311, 0.7531149 ,
-        0.88216758, 0.16963851, 0.01449336, 0.83310114, 0.87939821,
-        0.77549904, 0.23409649, 0.85438279, 0.83709866, 0.95591167,
-        0.94138284, 0.91189771, 0.96388879, 0.38486917, 0.3454493 ,
-        0.66420765, 0.28559998, 0.11767726, 0.29117043, 0.71658991,
-        0.36149553, 0.78541404, 0.58577237, 0.22932507, 0.54185195,
-        0.17363579, 0.09979029, 0.95104471, 0.43015973, 0.47899484,
-        0.86167288, 0.07991797, 0.53486822, 0.578505  , 0.85162983,
-        0.93049196, 0.145157  , 0.847595  , 0.64200214, 0.13028915,
-        0.77803293, 0.38018961, 0.45421157, 0.24081315, 0.10410314,
-        0.14967679, 0.3123686 , 0.26248208, 0.86739447, 0.36548075]])
+q = array([[0.5908345 , 0.28283717, 0.29131035, 0.86139461, 0.99653541,
+        0.81214827, 0.67797447, 0.82692437, 0.25649858, 0.12108616,
+        0.44247058, 0.81127934, 0.12053721, 0.97389252, 0.44845319,
+        0.04390217, 0.85720839, 0.93330115, 0.88100912, 0.79721087]])
 </pre></div>
 </div>
 </div>
@@ -697,19 +681,22 @@ scalar_mult = 17
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># просто по индексам</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_</span><span class="si">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># по слайсам</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a_{1,1..3}&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_</span><span class="si">{</span><span class="mi">2</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># по маске</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">mask</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">first_rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="n">first_rows</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="n">first_rows</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -718,14 +705,21 @@ scalar_mult = 17
        [ 4,  5,  6,  7],
        [ 8,  9, 10, 11],
        [12, 13, 14, 15]])
-a_(0, 1): a[0, 1] = 1, a[0][1] = 1
-a_{1,1..3} [1 2]
-a_2: a[2] = array([ 8,  9, 10, 11]), a[2, :] = array([ 8,  9, 10, 11]), a[2, ...] = array([ 8,  9, 10, 11])
+
+a[0, 1] = 1
+a[0][1] = 1
+
+a[0, 1:3] = array([1, 2])
+a[2] = array([ 8,  9, 10, 11])
+a[2, :] = array([ 8,  9, 10, 11])
+a[2, ...] = array([ 8,  9, 10, 11])
+
 mask = array([[ True, False, False,  True],
        [False, False,  True, False],
        [False,  True, False, False],
        [ True, False, False,  True]])
 a[mask] = array([ 0,  3,  6,  9, 12, 15])
+
 a[first_rows] = array([[0, 1, 2, 3],
        [4, 5, 6, 7]])
 </pre></div>
@@ -739,19 +733,20 @@ a[first_rows] = array([[0, 1, 2, 3],
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># None добавляет ось размерности 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[:,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># : превращается в slice (None), берет все элементы вдоль размерности</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="kc">None</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># ... ellipsis, превращается в необходимое число двоеточий :,:,:</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># также ... удобен когда мы не знаем настоящий шейп массива или нужно не трогать несколько подряд идущих размерностей</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -760,15 +755,20 @@ a[first_rows] = array([[0, 1, 2, 3],
        [ 4,  5,  6,  7],
        [ 8,  9, 10, 11],
        [12, 13, 14, 15]])
+
 a[None].shape = (1, 4, 4)
 a[:, :, None].shape = (4, 4, 1)
+
 a[2, :] = array([ 8,  9, 10, 11])
 a[2, 0:None] = array([ 8,  9, 10, 11])
+
 a[...] = array([[ 0,  1,  2,  3],
        [ 4,  5,  6,  7],
        [ 8,  9, 10, 11],
        [12, 13, 14, 15]])
-z[0, ..., 1] = array([1, 4, 7]), z[0, :, 1] = array([1, 4, 7])
+
+z[0, ..., 1] = array([1, 4, 7])
+z[0, :, 1] = array([1, 4, 7])
 </pre></div>
 </div>
 </div>
@@ -846,12 +846,12 @@ b_mult = array([[1, 1, 2, 1],
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">broad</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">k</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">broad</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">broad</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>broad = array([-1,  0,  1])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1  0  1]
 </pre></div>
 </div>
 </div>
@@ -886,7 +886,7 @@ b_mult = array([[1, 1, 2, 1],
 <span class="n">f32</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
 <span class="n">f64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="s2">&quot;0.1&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f16</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">f32</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">f64</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f16</span> <span class="o">==</span> <span class="n">f32</span> <span class="o">==</span> <span class="n">f64</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f16</span> <span class="o">==</span> <span class="n">f32</span> <span class="o">==</span> <span class="n">f64</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -894,7 +894,7 @@ b_mult = array([[1, 1, 2, 1],
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f16 = 0.1, f32 = 0.099975586, f64 = 0.0999755859375
 f16 == f32 == f64 = True
 f16 = 0.1, f32 = 0.1, f64 = 0.1
-False
+f16 == f32 == f64 = False
 </pre></div>
 </div>
 </div>
@@ -927,12 +927,12 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">solution</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solution</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>solution = array([ 1.4, -1.2])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.4 -1.2]
 </pre></div>
 </div>
 </div>
@@ -945,13 +945,13 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
 <span class="n">inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">inv</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inv = array([[-2. ,  1. ],
-       [ 1.5, -0.5]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.   1. ]
+ [ 1.5 -0.5]]
 </pre></div>
 </div>
 </div>
