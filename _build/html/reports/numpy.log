@@ -29,7 +29,7 @@ a = np.array([[8, 8, 2, 6], [0, 5, 3, 4]])
 print(np.where(a < 4, a, 1))
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1933/2315507945.py"[0;36m, line [0;32m6[0m
+[0;36m  File [0;32m"/tmp/ipykernel_1865/2315507945.py"[0;36m, line [0;32m6[0m
 [0;31m    print(np.where(a < 5, 2, a * 2)[0m
 [0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
