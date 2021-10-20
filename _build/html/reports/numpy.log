@@ -36,7 +36,7 @@ z = np.arange(27).reshape(3, 3, 3)
 print(f"{z[0, ..., 1] = }, {z[0, :, 1] = }")
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_2218/4242459594.py"[0;36m, line [0;32m9[0m
+[0;36m  File [0;32m"/tmp/ipykernel_2196/4242459594.py"[0;36m, line [0;32m9[0m
 [0;31m    print(f"{a[2, :] = "})[0m
 [0m                        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m closing parenthesis '}' does not match opening parenthesis '('
