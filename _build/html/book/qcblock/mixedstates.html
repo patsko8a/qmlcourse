@@ -569,24 +569,29 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    Описания эволюции смешанного состояния
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id12">
      Квантовая динамика
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Измерения и томография
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id14">
    Энтропия
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
+  <a class="reference internal nav-link" href="#id15">
    Что мы узнали?
   </a>
  </li>
@@ -726,12 +731,8 @@ Tr (\rho^2) \leq 1,
 </div>
 <p>Приведем пару примеров запутанных состояний:</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(b = c = 0, a = d = \pm 1/\sqrt{2}\)</span> – состояние “<em>шредингеровского кота</em>”, см. <span id="id9">[<a class="reference internal" href="../bibliography.html#id11"><span>01</span></a>]</span> и {cite}
-<code class="docutils literal notranslate"><span class="pre">mogilevtsevkilin</span></code>, такая формула для вектора состояния возникает для суперпозиции двух макроскопически
-различимых состояний одной из подсистем (живой или мертвый кот), например различные конфигурации (моды) излучения
-лазера.</p></li>
-<li><p><span class="math notranslate nohighlight">\(a = d = 0, b = -c = \pm 1/\sqrt{2}\)</span> – такое состояние называется ЭПР-парой (EPR, от Einstein-Podolsky-Rosen) и
-это очень важный пример из истории изучения запутанности в квантовой физике.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b = c = 0, a = d = \pm 1/\sqrt{2}\)</span> – состояние “<em>шредингеровского кота</em>”, см. <span id="id9">[<a class="reference internal" href="../bibliography.html#id11"><span>01</span></a>]</span> и <span id="id10">[<a class="reference internal" href="../bibliography.html#id10"><span>07</span></a>]</span>, такая формула для вектора состояния возникает для суперпозиции двух макроскопически различимых состояний одной из подсистем (живой или мертвый кот), например различные конфигурации (моды) излучения лазера.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = d = 0, b = -c = \pm 1/\sqrt{2}\)</span> – такое состояние называется ЭПР-парой (EPR, от Einstein-Podolsky-Rosen) и это очень важный пример из истории изучения запутанности в квантовой физике.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -777,10 +778,10 @@ Tr (\rho^2) \leq 1,
 </div>
 <p>(код взят из официальной <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_advanced_usage.html">демонстрации</a> для библиотеки PennyLane)</p>
 </div>
-<div class="section" id="id10">
-<h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id11">
-<h3>Квантовая динамика<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>Квантовая динамика<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>Напомним, что квантовая динамика в терминах волновых функций <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> описывается при помощи уравнения Шредингера:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -791,22 +792,28 @@ i\hbar \frac{\partial \Psi(x, t)}{\partial t} = \hat{H} \Psi(x, t)
 \[
 i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho]
 \]</div>
-<p>Измерение</p>
-<p>Вычисление производных, см. <a class="reference internal" href="../gradsblock/hogradients.html#hogradients"><span class="std std-ref">Градиенты высших порядков</span></a></p>
-<p>Декогеренция</p>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>Энтропия<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<p>Разложение Шмидта
-Число Шмидта, (степень) чистота состояния (= линейная энтропия) - примеры для кубита и в общем случае (?)
-Энтропия Шеннона
-Энтропия фон Неймана
-Обобщенная энтропия (Реньи, Тсаллиса?)
-Близость матриц плотности (?)</p>
 </div>
 <div class="section" id="id13">
-<h2>Что мы узнали?<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h3>Измерения и томография<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>В квантовой механике существует такая проблема, что любое <a class="reference external" href="../qcblock/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции и является необратимым. А еще измерение, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>. В общем получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая проблема, если добавить сюда вероятностный характер измерения.</p>
+<div class="figure align-default" id="id16">
+<a class="reference internal image-reference" href="../../_images/MarginalDistribution.png"><img alt="../../_images/MarginalDistribution.png" src="../../_images/MarginalDistribution.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>Эта задача обычно решается при помощи квантовой томографии и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>, а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>, потому что это оказывается проще. Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих базисных векторов соответствует свое собственное значение – результат измерения (подробнее об этом было в <a class="reference external" href="../qcblock/qubit.html#id31">лекции про кубит</a>). Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i}
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(q_i\)</span> – это частота получения собственного значения, соответствующего волновой функции <span class="math notranslate nohighlight">\(\ket{y_i}\)</span> (потому что измерение переводит наше состояние в базисный вектор, соответствующий результату измерения). В итоге увеличивая число измерений мы приближаем частоты <span class="math notranslate nohighlight">\(q_i\)</span> к вероятностям <span class="math notranslate nohighlight">\(\bra{\Psi}(\ket{y_i}\bra{y_i})\ket{\Psi}\)</span>, а нашу матрицу <span class="math notranslate nohighlight">\(\rho\)</span> к ее истинному виду</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>Энтропия<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>В итоге останется пока только энтропия фон Неймана.</p>
+</div>
+<div class="section" id="id15">
+<h2>Что мы узнали?<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Формализм матрицы плотности позволяет описывать составные системы (например, один кубит в многокубитной системе)</p></li>
 <li><p>Что такое квантовая запутанность и как.</p></li>
