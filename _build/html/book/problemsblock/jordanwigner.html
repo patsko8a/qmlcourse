@@ -598,8 +598,8 @@
 </div>
 <div class="section" id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Для того чтобы просимулировать квантовую систему на квантовом же компьютере, нам необходимо закодировать
-состояние системы и операторы которые могут на нее действовать (добавить fig. 1 из https://arxiv.org/pdf/1208.5986.pdf
+<p>Для того чтобы просимулировать квантовую систему на квантовом же компьютере, нам необходимо закодировать состояние
+системы и операторы которые могут на нее действовать (добавить fig. 1 из https://arxiv.org/pdf/1208.5986.pdf
 или что-то похожее).</p>
 </div>
 <div class="section" id="id4">
@@ -607,21 +607,22 @@
 </div>
 <div class="section" id="id5">
 <h2>Вторичное квантование<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>В квантовой механике мы <a class="reference external" href="../qcblock/gates.html#id11">можем описать</a> состояние нескольких частиц как тензорное произведение состояний каждой из частиц.
-Например, если у нас есть две частицы, и их квантовое состояние описывается положением частицы в пространстве, <span class="math notranslate nohighlight">\(r_i\)</span>,
-мы можем записать состояние частиц как</p>
+<p>В квантовой механике мы <a class="reference external" href="../qcblock/gates.html#id11">можем описать</a> состояние нескольких частиц как тензорное
+произведение состояний каждой из частиц. Например, если у нас есть две частицы, и их квантовое состояние описывается
+положением частицы в пространстве, <span class="math notranslate nohighlight">\(r_i\)</span>, мы можем записать состояние частиц как</p>
 <div class="math notranslate nohighlight">
 \[
 | \psi \rangle = | r_1 \rangle \otimes |r_2 \rangle. 
 \]</div>
-<p>У этого подхода есть два главных недостатка – во первых, работать с системами в которых разное количество частиц, или где
-это количество может меняться, не очень удобно. Во-вторых, не учитывается неразличимость квантовых частиц.</p>
+<p>У этого подхода есть два главных недостатка – во первых, работать с системами в которых разное количество частиц, или
+где это количество может меняться, не очень удобно. Во-вторых, не учитывается неразличимость квантовых частиц.</p>
 <p>Обе эти проблемы решаются вторичным квантованием, где вместо использования состояния каждой частицы мы описываем систему
 количеством частиц в каждом из возможных состояний. Так как частицы неразличимы, такое описание достаточно для полного
 описания системы. Вместо Гильбертова пространства фиксированной размерности наши состояния теперь являются элементами
 пространства Фока (суммы Гильбертовых пространств для всех возможных значений количества частиц). Основное состояние,
 или вакуум, теперь это состояние с 0 частиц.</p>
-<p>Мы так же можем определить операторы, которые добавляют или убирают частицу в определенном состоянии из системы. На языке первой квантизации:</p>
+<p>Мы так же можем определить операторы, которые добавляют или убирают частицу в определенном состоянии из системы. На
+языке первой квантизации:</p>
 <div class="math notranslate nohighlight">
 \[
 b^\dagger_\alpha | \Psi \rangle =\frac{1}{\sqrt{N+1}} | \psi_\alpha \rangle  \otimes | \Psi \rangle
@@ -666,13 +667,11 @@ b_\alpha | \Psi \rangle=0.
 </div>
 <div class="section" id="id6">
 <h2>Переход от спинов к фермионам<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Мы можем попробовать сопоставить спину фермион сказав что спин вниз значит что фермион есть, а спин вверх – что его нет.
-Другими словами, используя оператор количества частиц <span class="math notranslate nohighlight">\(\hat{n}_i = c^\dagger_i c_i\)</span>, где <span class="math notranslate nohighlight">\(c^\dagger_i\)</span> и <span class="math notranslate nohighlight">\(c_i\)</span> это операторы
-создания и разрушения  соответсвенно, мы хотели бы сопоставить</p>
+<p>Мы можем попробовать сопоставить спину фермион сказав что спин вниз значит что фермион есть, а спин вверх – что его
+нет. Другими словами, используя оператор количества частиц <span class="math notranslate nohighlight">\(\hat{n}_i = c^\dagger_i c_i\)</span>, где <span class="math notranslate nohighlight">\(c^\dagger_i\)</span> и <span class="math notranslate nohighlight">\(c_i\)</span> это
+операторы создания и разрушения соответсвенно, мы хотели бы сопоставить</p>
 <div class="math notranslate nohighlight">
-\[
-\hat{\sigma}_i^z = 1 - 2\hat{n}_i
-\]</div>
+\[ \hat{\sigma}_i^z = 1 - 2\hat{n}_i \]</div>
 <p>Тогда лестничные (ladder) операторы <span class="math notranslate nohighlight">\(\sigma^- = (\hat{\sigma}_i^x-i\hat{\sigma}_i^y)/2\)</span> и
 <span class="math notranslate nohighlight">\(\sigma^+= (\hat{\sigma}_i^x+i\hat{\sigma}_i^y)/2\)</span> соответствуют операторам создания и разрушения.
 Действительно, на одной вершине эти операторы выполняют фермионное антикоммутационное отношение</p>
@@ -690,40 +689,45 @@ b_\alpha | \Psi \rangle=0.
 \[
 \sigma^-_i = \left[ \prod_{j&lt; i} (1-2c^\dagger_j c_j) \right] c^\dagger_i
 \]</div>
-<p>Oператор <span class="math notranslate nohighlight">\(\prod_{j_i} (1-2c^\dagger_j c_j)\)</span> равен <span class="math notranslate nohighlight">\(\pm 1\)</span> в зависимости от четности количества фермионов слева от вершины <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>Заметим, что  <span class="math notranslate nohighlight">\(c_k\)</span> антикоммутирует с  <span class="math notranslate nohighlight">\((1-2c^\dagger_k c_k)\)</span>:</p>
+<p>Oператор <span class="math notranslate nohighlight">\(\prod_{j_i} (1-2c^\dagger_j c_j)\)</span> равен <span class="math notranslate nohighlight">\(\pm 1\)</span> в зависимости от четности количества фермионов слева от
+вершины <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Заметим, что <span class="math notranslate nohighlight">\(c_k\)</span> антикоммутирует с <span class="math notranslate nohighlight">\((1-2c^\dagger_k c_k)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ 
 \{ c_j, (1-2c^\dagger_j c_j) \} = c_j (1-2c^\dagger_j c_j) +  c_j (1-2c^\dagger_j c_j)c_j  =
-c_j  -2c_jc^\dagger_j c_j +  c_j -2c^\dagger_j c_jc_j = c_j  -2c_j+  c_j  = 0,
+c_j  -2\underbrace_{c_jc^\dagger_j}_{1-c^\dagger_j c_j} c_j +  c_j -2c^\dagger_j \underbrace_{c_jc_j}_{0} = 
+c_j  - 2c_j + 2 c^\dagger_j \underbrace_{c_jc_j}_{0} +  c_j  = 0,
 \]</div>
-<p>и, следовательно с нитью <span class="math notranslate nohighlight">\(\prod_{j_i} (1-2c^\dagger_j c_j) \)</span> (интуивно, если сначала разрушить фермион, то четность изменится).</p>
+<p>и, следовательно с нитью <span class="math notranslate nohighlight">\(\prod_{j_i} (1-2c^\dagger_j c_j) \)</span> (интуивно, если сначала разрушить фермион, то четность
+изменится).</p>
 <p>Пусть, без ограничения общности, <span class="math notranslate nohighlight">\(\ell&gt;k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma^+_k \sigma^-_\ell = \left[ \prod_{j&lt;k} (1-2c^\dagger_j c_j) \right] c_k \left[ \prod_{m&lt; \ell} (1-2c^\dagger_m c_m) \right] c^\dagger_\ell 
 \]</div>
-<p>Если мы перенесем <span class="math notranslate nohighlight">\(c_k\)</span> вправо, то выражение умножится на -1 дважды (один раз из-за изменения четности <span class="math notranslate nohighlight">\(\ell\)</span>-нити,
-и один раз из-за обмена с <span class="math notranslate nohighlight">\(c^\dagger_\ell\)</span>) <span class="math notranslate nohighlight">\(i\)</span>-нить коммутирует со всем, поэтому ее мы можем перенести вправо без изменений:</p>
+<p>Если мы перенесем <span class="math notranslate nohighlight">\(c_k\)</span> вправо, то выражение умножится на -1 дважды (один раз из-за изменения четности <span class="math notranslate nohighlight">\(\ell\)</span>-нити, и
+один раз из-за обмена с <span class="math notranslate nohighlight">\(c^\dagger_\ell\)</span>). В то же время, <span class="math notranslate nohighlight">\(i\)</span>-нить коммутирует со всем, поэтому ее мы можем перенести
+вправо без изменений:</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma^+_k \sigma^-_\ell 
 = \left[ \prod_{j&lt;k} (1-2c^\dagger_j c_j) \right] c_k \left[ \prod_{m&lt; \ell} (1-2c^\dagger_m c_m) \right] c^\dagger_\ell
-=  \left[ \prod_{m&lt; \ell} (1-2c^\dagger_m c_m) \right] c^\dagger_\ell \left[ \prod_{j&lt;k} (1-2c^\dagger_j c_j) \right] c_k =
+=  \left[ \prod_{m&lt; \ell} (1-2c^\dagger_m c_m) \right] c^\dagger_\ell \left[ \prod_{j&lt;k} (1-2c^\dagger_j c_j) \right] c_k
 = \sigma^-_\ell  \sigma^+_k, 
 \]</div>
 <p>как и требовалось. Мы так же можем записать обратное отношение:</p>
 <div class="math notranslate nohighlight">
 \[
-c_i = \left[ \prod_{j&lt; i} \sigma^z_j \right] \sigma^+_i
+c_i = \prod_{j&lt; i} \sigma^z_j  \sigma^+_i
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-c^\dagger_i = \left[ \prod_{j&lt; i} \sigma^z_j \right] \sigma^+_j.
+c^\dagger_i = \prod_{j&lt; i} \sigma^z_j  \sigma^+_i.
 \]</div>
 <p>Проверка антикоммутаторов оставляется читателю в качестве упражнения.</p>
-<p>Таким образом мы установили соответсвие между фермионной и спиновой системами, но операторы в обоих случаях очень нелокальны.
-В частности, один фермионный оператор соответветсвует произведению <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> спиновых операторов (и наоборот).</p>
+<p>Таким образом мы установили соответсвие между фермионной и спиновой системами, но операторы в обоих случаях очень
+нелокальны. В частности, один фермионный оператор соответветсвует произведению <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> спиновых операторов (и
+наоборот).</p>
 <div class="section" id="id7">
 <h3>Пример<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Какой-нибудь Hubbard model?</p>
