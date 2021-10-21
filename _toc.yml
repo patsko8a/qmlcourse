@@ -52,8 +52,6 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-    - file: book/qcblock/mixedstates
-      title: 🟨 Смешанные состояния
 
 - part: Фреймворки
   chapters:
@@ -129,6 +127,8 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+    - file: book/problemsblock/jordanwigner
+      title: 🟧 Jordan-Wigner
 
 - part: О курсе
   chapters:
