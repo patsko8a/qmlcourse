@@ -560,6 +560,13 @@
   <a class="reference internal nav-link" href="#id6">
    Переход от спинов к фермионам
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Пример
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -579,6 +586,9 @@
 </div>
 <div class="section" id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Для того чтобы просимулировать квантовую систему на квантовом же компьютере, нам необходимо закодировать
+состояние системы и операторы которые могут на нее действовать (добавить fig. 1 из https://arxiv.org/pdf/1208.5986.pdf
+или что-то похожее).</p>
 </div>
 <div class="section" id="id4">
 <h2>Спины, фермионы и бозоны<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -646,7 +656,12 @@ $<span class="math notranslate nohighlight">\(\sigma^+_k \sigma^-_\ell = \left[ 
 \)</span><span class="math notranslate nohighlight">\(c_i = \left[ \prod_{j&lt; i} \sigma^z_j \right] \sigma^+_i\)</span><span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(c^\dagger_i = \left[ \prod_{j&lt; i} \sigma^z_j \right] \sigma^+_j.\)</span>$
 Проверка антикоммутаторов оставляется читателю в качестве упражнения.</p>
-<p>Таким образом мы установили соответсвие между фермионной и спиновой системами, но операторы в обоих случаях очень нелокальны.</p>
+<p>Таким образом мы установили соответсвие между фермионной и спиновой системами, но операторы в обоих случаях очень нелокальны.
+В частности, один фермионный оператор соответветсвует произведению <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> спиновых операторов (и наоборот).</p>
+<div class="section" id="id7">
+<h3>Пример<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Какой-нибудь Hubbard model?</p>
+</div>
 </div>
 </div>
 
