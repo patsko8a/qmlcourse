@@ -635,10 +635,10 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.5908345 , 0.28283717, 0.29131035, 0.86139461, 0.99653541,
-        0.81214827, 0.67797447, 0.82692437, 0.25649858, 0.12108616,
-        0.44247058, 0.81127934, 0.12053721, 0.97389252, 0.44845319,
-        0.04390217, 0.85720839, 0.93330115, 0.88100912, 0.79721087]])
+q = array([[0.48537794, 0.8532297 , 0.10463916, 0.03006101, 0.43498416,
+        0.53511882, 0.69958236, 0.86392357, 0.53426394, 0.4083104 ,
+        0.40648143, 0.44753786, 0.5956567 , 0.24024589, 0.73514324,
+        0.08700628, 0.34770559, 0.09967504, 0.80865647, 0.18061376]])
 </pre></div>
 </div>
 </div>
@@ -919,8 +919,46 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 </div>
 <div class="section" id="numpy-linalg-fun">
 <h2>numpy &amp; linalg fun<a class="headerlink" href="#numpy-linalg-fun" title="Permalink to this headline">¶</a></h2>
-<p>[Не знаю, что имеется ввиду под “Матричные трюки”]</p>
-<p>[“вычисление попарных расстояний” - вроде обычно используется scipy/sklearn?]</p>
+<p>В Numpy есть много удобных функций, которые позволяют упростить код, приведём несколько примеров:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># матрица с единицами по диагонали и с нулями в остальных ячейках.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># есть возможность указать индекс диагонали</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># в Numpy есть свой генератор случайных чисел и векторов</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Numpy позволяет заменить значений основной диагонали матрицы.</span>
+<span class="c1"># Внимание, эта функция работает in-place</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Можно сделать и наоборот - получить вектор значений диагонали матрица</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.eye(2, dtype=int) = array([[1, 0],
+       [0, 1]])
+np.eye(3, k=-1, dtype=int) = array([[0, 0, 0],
+       [1, 0, 0],
+       [0, 1, 0]])
+np.random.beta(1, 2) = 0.2563716897181023
+np.random.randint(1, 5, (2, 3)) = array([[3, 2, 2],
+       [3, 2, 1]])
+a = array([[4, 3, 1],
+       [4, 4, 1],
+       [4, 3, 4]])
+np.diag(a) = array([4, 4, 4])
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="id3">
 <h3>Решение системы линейных уравнений<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Numpy позволяет решить систему линейных уравнений.</p>
