@@ -178,6 +178,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Основы машинного обучения
  </span>
 </p>
@@ -597,8 +609,11 @@
 <h2>Вторичное квантование<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>В квантовой механике мы можем описать состояние нескольких частиц как тензорное произведение состояний каждой из частиц.
 Например, если у нас есть две частицы, и их квантовое состояние описывается положением частицы в пространстве, <span class="math notranslate nohighlight">\(r_i\)</span>,
-мы можем записать состояние частиц как
-$<span class="math notranslate nohighlight">\(| \psi \rangle = | r_1 \rangle \otimes |r_2 \rangle. \)</span>$</p>
+мы можем записать состояние частиц как</p>
+<div class="math notranslate nohighlight">
+\[
+| \psi \rangle = | r_1 \rangle \otimes |r_2 \rangle. 
+\]</div>
 <p>У этого подхода есть два главных недостатка – во первых, работать с системами в которых разное количество частиц, или где
 это количество может меняться, не очень удобно. Во-вторых, не учитывается неразличимость квантовых частиц.</p>
 <p>Обе эти проблемы решаются вторичным квантованием, где вместо использования состояния каждой частицы мы описываем систему
@@ -606,24 +621,47 @@ $<span class="math notranslate nohighlight">\(| \psi \rangle = | r_1 \rangle \ot
 описания системы. Вместо Гильбертова пространства фиксированной размерности наши состояния теперь являются элементами
 пространства Фока (суммы Гильбертовых пространств для всех возможных значений количества частиц). Основное состояние,
 или вакуум, теперь это состояние с 0 частиц.</p>
-<p>Мы так же можем определить операторы, которые добавляют или убирают частицу в определенном состоянии из системы. На языке первой квантизации:
-$<span class="math notranslate nohighlight">\(b^\dagger_\alpha | \Psi \rangle =\frac{1}{\sqrt{N+1}} | \psi_\alpha \rangle  \otimes | \Psi \rangle \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(b_\alpha | \psi_\alpha \rangle  \otimes | \Psi \rangle=\frac{1}{\sqrt{N}}| \Psi \rangle.  \)</span><span class="math notranslate nohighlight">\(
-\)</span>b^\dagger_\alpha<span class="math notranslate nohighlight">\( называется оператором создания (creation), а \)</span>b_\alpha<span class="math notranslate nohighlight">\( -- уничтожения (annihilation). Заметим, что 
-эти операторы не эрмитовы, т.е., \)</span>b^\dagger_\alpha \neq b_\alpha<span class="math notranslate nohighlight">\(. Нормализация операторов выбрана таким образом, что
-собственные значения (эрмитова) оператора \)</span>b^\dagger_\alpha b_\alpha<span class="math notranslate nohighlight">\( -- количество частиц в состоянии \)</span>\alpha$.</p>
-<p>Если в системе нет ни одной частицы в состоянии <span class="math notranslate nohighlight">\(\alpha\)</span>, то оператор уничтожения уничтожает состояние:
-$<span class="math notranslate nohighlight">\(b_\alpha | \Psi \rangle=0.  \)</span>$</p>
+<p>Мы так же можем определить операторы, которые добавляют или убирают частицу в определенном состоянии из системы. На языке первой квантизации:</p>
+<div class="math notranslate nohighlight">
+\[
+b^\dagger_\alpha | \Psi \rangle =\frac{1}{\sqrt{N+1}} | \psi_\alpha \rangle  \otimes | \Psi \rangle
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+b_\alpha | \psi_\alpha \rangle  \otimes | \Psi \rangle=\frac{1}{\sqrt{N}}| \Psi \rangle. 
+\]</div>
+<p><span class="math notranslate nohighlight">\(b^\dagger_\alpha\)</span> называется оператором создания (creation), а <span class="math notranslate nohighlight">\(b_\alpha\)</span> – уничтожения (annihilation). Заметим, что
+эти операторы не эрмитовы, т.е., <span class="math notranslate nohighlight">\(b^\dagger_\alpha \neq b_\alpha\)</span>. Нормализация операторов выбрана таким образом, что
+собственные значения (эрмитова) оператора <span class="math notranslate nohighlight">\(b^\dagger_\alpha b_\alpha\)</span> – количество частиц в состоянии <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>Если в системе нет ни одной частицы в состоянии <span class="math notranslate nohighlight">\(\alpha\)</span>, то оператор уничтожения уничтожает состояние:</p>
+<div class="math notranslate nohighlight">
+\[
+b_\alpha | \Psi \rangle=0.  
+\]</div>
 <p>В зависимости от типа частиц, операторы создания и уничтожения подчиняются определенным отношениям. В случае бозонов,
 разные операторы коммутируют:
-$<span class="math notranslate nohighlight">\([b^\dagger_i, b_j ] = \delta_{ij}  \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\([b^\dagger_i, b^\dagger_j ] = [b_i, b_j ] =0.  \)</span>$</p>
-<p>В случае фермионов, операторы антикоммутируют:
-$<span class="math notranslate nohighlight">\(\{с^\dagger_i, с_j \} = \delta_{ij}  \)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\{c^\dagger_i, c^\dagger_j \} = \{c_i, c_j \} =0.  \)</span><span class="math notranslate nohighlight">\(
-В частности, 
-\)</span><span class="math notranslate nohighlight">\(\{c^\dagger_j, c^\dagger_j \} = 2(c^\dagger_j)^2 = 0,\)</span>$
-и, следовательно, в системе не может быть больше одного фермиона в одном состоянии.</p>
+$<span class="math notranslate nohighlight">\(
+[b^\dagger_i, b_j ] = \delta_{ij}  
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+[b^\dagger_i, b^\dagger_j ] = [b_i, b_j ] =0.  
+\]</div>
+<p>В случае фермионов, операторы антикоммутируют:</p>
+<div class="math notranslate nohighlight">
+\[
+\{с^\dagger_i, с_j \} = \delta_{ij} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\{c^\dagger_i, c^\dagger_j \} = \{c_i, c_j \} =0.  
+\]</div>
+<p>В частности,</p>
+<div class="math notranslate nohighlight">
+\[
+\{c^\dagger_j, c^\dagger_j \} = 2(c^\dagger_j)^2 = 0,
+\]</div>
+<p>и, следовательно, в системе не может быть больше одного фермиона в одном состоянии.</p>
 </div>
 <div class="section" id="id6">
 <h2>Переход от спинов к фермионам<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
