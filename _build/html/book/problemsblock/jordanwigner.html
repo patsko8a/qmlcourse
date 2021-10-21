@@ -678,13 +678,14 @@ b_\alpha | \Psi \rangle=0.
 Действительно, на одной вершине эти операторы выполняют фермионное антикоммутационное отношение</p>
 <div class="math notranslate nohighlight">
 \[ 
-\{ \sigma^+_j, \sigma^-_j} = 1. 
+\{ \sigma^+_j, \sigma^-_j \} = 1. 
 \]</div>
 <p>К сожалению, на разных вершинах эти операторы коммутируют, а не антикоммутируют. Чтобы это исправить, мы “прикрепляем”
-к каждому фермиону “нить” (string):
-$<span class="math notranslate nohighlight">\(
+к каждому фермиону “нить” (string):</p>
+<div class="math notranslate nohighlight">
+\[
 \sigma^+_i = \left[ \prod_{j&lt; i} (1-2c^\dagger_j c_j) \right] c_i
-\)</span>$</p>
+\]</div>
 <div class="math notranslate nohighlight">
 \[
 \sigma^-_i = \left[ \prod_{j&lt; i} (1-2c^\dagger_j c_j) \right] c^\dagger_i
@@ -693,7 +694,7 @@ $<span class="math notranslate nohighlight">\(
 <p>Заметим, что  <span class="math notranslate nohighlight">\(c_k\)</span> антикоммутирует с  <span class="math notranslate nohighlight">\((1-2c^\dagger_k c_k)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ 
-\{ c_j, (1-2c^\dagger_j c_j)} = c_j (1-2c^\dagger_j c_j) +  c_j (1-2c^\dagger_j c_j)c_j  =
+\{ c_j, (1-2c^\dagger_j c_j) \} = c_j (1-2c^\dagger_j c_j) +  c_j (1-2c^\dagger_j c_j)c_j  =
 c_j  -2c_jc^\dagger_j c_j +  c_j -2c^\dagger_j c_jc_j = c_j  -2c_j+  c_j  = 0,
 \]</div>
 <p>и, следовательно с нитью <span class="math notranslate nohighlight">\(\prod_{j_i} (1-2c^\dagger_j c_j) \)</span> (интуивно, если сначала разрушить фермион, то четность изменится).</p>
