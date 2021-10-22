@@ -127,8 +127,6 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-    - file: book/problemsblock/jordanwigner
-      title: 🟧 Jordan-Wigner
 
 - part: О курсе
   chapters:
