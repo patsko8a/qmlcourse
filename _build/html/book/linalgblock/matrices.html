@@ -55,6 +55,8 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Numpy" href="numpy.html" />
+    <link rel="prev" title="Скобки" href="bra-ket.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -179,7 +181,32 @@
   Линейная алгебра и numpy
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors.html">
+   🟦 Вводная лекция про вектора
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="algebra.html">
+   🟦 Алгебра
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟦 Mатрицы
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numpy.html">
    🟦 Numpy fun
@@ -624,8 +651,8 @@ $<span class="math notranslate nohighlight">\(
 <p>Вспомним, что матрицу можно рассматривать либо как набор вектор-строк, либо как набор вектор-столбцов, а для набор векторов определенно понятие линейной независимости.</p>
 <p>Таким образом мы приходим двум следующим понятиям:</p>
 <ul class="simple">
-<li><p><strong>строчный ранг</strong> матрицы - это максимальное число линейно независимых строк (вектор-строк)</p></li>
-<li><p><strong>столбцовый ранг</strong> матрицы - это максимальное число линейно независимых столбцов (вектор-столбцов)</p></li>
+<li><p><strong>строчный ранг</strong> матрицы - это максимальное число линейно независимых строк (вектор-строк)</p></li>
+<li><p><strong>столбцовый ранг</strong> матрицы - это максимальное число линейно независимых столбцов (вектор-столбцов)</p></li>
 </ul>
 <p>Тут мы можем задаться вопрос о том, равны ли эти ранги между собой, и если равны, то при каких условиях, и на помощь нам приходит <strong>фундаментальная теорема «о ранге матрицы»</strong>, которая говорит, что ранг, посчитанный по строкам всегда равен рангу, посчитанному по столбцам. Поэтому обычно говорят просто о ранге матрицы.</p>
 </div>
@@ -657,7 +684,7 @@ f: V \rightarrow W ,
 <p>Ранее упоминалось, что при умножении вектора на матрицу мы получаем вектор, поэтому матрица задает преобразование, которое, если проверить условия линейности, является линейным. Соответственно, <strong>матрица задает линейное отображение</strong>.</p>
 <p>Например, матрица <span class="math notranslate nohighlight">\(\mathbf{A} \in \reals^{n \times m}\)</span> задает преобразование из векторного пространства размерности <span class="math notranslate nohighlight">\(n\)</span> в векторное пространство размерности <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <p><strong>Замечание 1</strong>: Для того, чтобы матрица задавала линейное преобразование, она должна быть квадратной, т.к. в результате умножение вектора на квадратную матрицу его размерность не меняется. Таким образом вектор, как элемент векторного пространства, отображается в то же векторное пространство.</p>
-<p><strong>Замечание 2</strong>: Пусть имеются две матрицы <span class="math notranslate nohighlight">\(\mathbf{A} \in \reals^{n \times p}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{B} \in \reals^{p \times m}\)</span>. Умножив матрицу <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> на матрицу <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> мы получим матрицу <span class="math notranslate nohighlight">\(\mathbf{C} \in \reals^{n \times m}\)</span>. Матрица <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> задает линейное отображение, равное последовательному применению отображений, задаваемых матрицами <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Таким образом операция умножения матриц имеет простую интерпретацию - последовательное применение линейных отображений.</p>
+<p><strong>Замечание 2</strong>: Пусть имеются две матрицы <span class="math notranslate nohighlight">\(\mathbf{A} \in \reals^{n \times p}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{B} \in \reals^{p \times m}\)</span>. Умножив матрицу <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> на матрицу <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> мы получим матрицу <span class="math notranslate nohighlight">\(\mathbf{C} \in \reals^{n \times m}\)</span>. Матрица <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> задает линейное отображение, равное последовательному применению отображений, задаваемых матрицами <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Таким образом операция умножения матриц имеет простую интерпретацию - последовательное применение линейных отображений.</p>
 </div>
 </div>
 
@@ -690,6 +717,24 @@ f: V \rightarrow W ,
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="bra-ket.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Скобки</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="numpy.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Numpy</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
