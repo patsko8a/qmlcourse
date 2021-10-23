@@ -574,13 +574,16 @@
   <a class="reference internal nav-link" href="#id6">
    Пример
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Ссылки
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Приложение
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Ссылки
+  </a>
  </li>
 </ul>
 
@@ -611,6 +614,7 @@
 <div class="figure align-default" id="simon-principal">
 <a class="reference internal image-reference" href="../../_images/simon_principal.svg"><img alt="../../_images/simon_principal.svg" src="../../_images/simon_principal.svg" width="400px" /></a>
 </div>
+<p>В принципе, есть небольшие вариации в реализации алгоритма, мы рассмотрим наиболее простую (все необходимые ссылки в конце приведены):</p>
 <ol>
 <li><p>Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров в следующем состоянии:</p>
 <div class="math notranslate nohighlight">
@@ -618,46 +622,89 @@
 </li>
 <li><p>Применяем матрицы Адамара на первом регистре:</p>
 <div class="math notranslate nohighlight">
-\[ (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n-1}|k\rangle |0\rangle \]</div>
+\[ (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle \]</div>
 </li>
 <li><p>Применяем оператор <span class="math notranslate nohighlight">\(U_f\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[ U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n-1}|k\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n-1}|k\rangle |f(k) \rangle \]</div>
+\[ U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle \]</div>
 </li>
 <li><p>Снова применяем матрицы Адамара на первом регистре:</p>
 <div class="math notranslate nohighlight">
-\[ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{k=0}^{2^n-1}(-1^{\langle k, z\rangle}) \sum_{z=0}^{2^n-1}|z\rangle |f(k) \rangle \]</div>
-<p>где <span class="math notranslate nohighlight">\(\langle k, z\rangle = \bigoplus_{i=0}^{2^n-1} k_i \wedge z_i \)</span>.</p>
+\[ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{x \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle}) \sum_{z=0}^{2^n-1}|z\rangle |f(x) \rangle \]</div>
+<p>где <span class="math notranslate nohighlight">\(\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i \)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Для чисел <span class="math notranslate nohighlight">\(k = 110111\)</span> и <span class="math notranslate nohighlight">\(z = 010101\)</span> получим</p>
-<p><span class="math notranslate nohighlight">\(\langle k, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1\)</span>.</p>
+<p>Для чисел <span class="math notranslate nohighlight">\(x = 110111\)</span> и <span class="math notranslate nohighlight">\(z = 010101\)</span> получим</p>
+<p><span class="math notranslate nohighlight">\(\langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1\)</span>.</p>
 <p><span class="math notranslate nohighlight">\((-1)^{1} = -1\)</span></p>
 </div>
 </li>
 <li><p>Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\( x \oplus y = s = 0^n \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( x \oplus y = s \neq 0^n \)</span></p></li>
-</ol>
-<p>Здесь мы рассмотрим оба случая отдельно.</p>
+<ol>
+<li><p><span class="math notranslate nohighlight">\( x \oplus y = s = 0^n \)</span></p>
 <p>Вероятность получить первый случай <span class="math notranslate nohighlight">\( x \oplus y = 0^n \)</span> равна:</p>
 <div class="math notranslate nohighlight">
-\[ \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{k \in \{0, 1\}^n}(-1^{\langle k, z\rangle}) |f(k) \rangle \]</div>
+\[ \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{x \in \{0, 1\}^n}(-1^{\langle x, z\rangle}) |f(x) \rangle \]</div>
 <div class="math notranslate nohighlight">
-\[ p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, k\rangle} |f(k)\rangle \right) \right\|^2 = \frac{1}{2^n}\]</div>
+\[ p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}\]</div>
 <p>Имеет место <strong>равномерное распределение</strong>.</p>
-<p>Гораздо интереснее случай <span class="math notranslate nohighlight">\( x \oplus y = s \)</span>, <span class="math notranslate nohighlight">\( s \neq 0^n\)</span>. В данном случае функция <span class="math notranslate nohighlight">\(f\)</span> преобразует два различных входных значения <span class="math notranslate nohighlight">\(x_1, x_2 \in \{0,1\}^n\)</span> в одно <span class="math notranslate nohighlight">\(f(x_1) = f(x_2) = s \in \{0, 1\}^n\)</span> .
-Также в данном случае справедливо <span class="math notranslate nohighlight">\(x_1 \oplus x_2 = s\)</span>, что переписывается в виде <span class="math notranslate nohighlight">\(x_1 \oplus s = x_2\)</span> .</p>
-<div class="math notranslate nohighlight">
-\[ p_y = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, y\rangle} |f(x)\rangle \right) \right\|^2 =
-     \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, y\rangle} (-1)^{\langle x_2, y\rangle})|z\rangle \right) \right\|^2\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\( x \oplus y = s \neq 0^n \)</span></p>
+<p>Этот случай гораздо интереснее. Функция <span class="math notranslate nohighlight">\(f\)</span> преобразует два различных входных значения <span class="math notranslate nohighlight">\(x_1, x_2 \in \{0,1\}^n\)</span> в одно <span class="math notranslate nohighlight">\(f(x_1) = f(x_2) = s \in \{0, 1\}^n\)</span> .
+Также, справедливо <span class="math notranslate nohighlight">\(x_1 \oplus x_2 = s\)</span>, что переписывается в виде <span class="math notranslate nohighlight">\(x_1 \oplus s = x_2\)</span> .</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle= \\ 
-    
-    \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle \\
-    \end{split}\]</div>
-<p>Здесь необходимо пояснить и расписать.</p>
+        
+        \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle \\
+        \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} p(z) = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
+        \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2 \\
+        = \begin{cases}
+            \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
+            0, \text{ если }  \langle z, s \rangle = 1
+          \end{cases}
+        \end{split}\]</div>
+</li>
+</ol>
+</li>
+</ol>
+<p>Выполняем алгоритм <span class="math notranslate nohighlight">\(n\)</span> раз. После чего у нас будет система <span class="math notranslate nohighlight">\(n\)</span> линейно независимых уравнений.</p>
+<p>Теперь приступаем к вычислению строки <span class="math notranslate nohighlight">\(s\)</span>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Постобработка<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Итак, для того, чтобы найти <span class="math notranslate nohighlight">\(\vec{s} = (s_0, s_1, s_2, ..., s_{n-1})^T\)</span>, нам потребуется <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(\vec{z_i}\)</span>, для которых выполняется <span class="math notranslate nohighlight">\(\langle \vec{z_i}, \vec{s} \rangle = 0\)</span>.</p>
+<p>В нашем же случае получится <span class="math notranslate nohighlight">\(n-1\)</span> уравнение. Будем использовать метод, похожий на метод Гаусса.</p>
+<p>Пусть заданы <strong>бинарные векторы</strong> <span class="math notranslate nohighlight">\(\vec{z_0}, \vec{z_1}, ..., \vec{z_{n-1}}\)</span> и булевы значения <span class="math notranslate nohighlight">\(b_0, b_1, ..., b_{n-1}\)</span>. Тогда множество векторов <span class="math notranslate nohighlight">\(\{\vec{z_i} \} i \in \{0, ..., n-1\}\)</span>  <strong>линейно независимо</strong>
+, если:</p>
+<div class="math notranslate nohighlight">
+\[
+  (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) = \vec{0}
+\]</div>
+<p>имеет только тривиальные решения <span class="math notranslate nohighlight">\(b_0 = b_1 = ... = b_{n-1} = 0\)</span>. Иначе, векторы <span class="math notranslate nohighlight">\(\vec{z_i}, i \in \{0, ..., n-1\}\)</span> <strong>линейно зависимы</strong>.</p>
+<p>Отсюда следует <span class="math notranslate nohighlight">\(\vec{ z_{i} } \neq \vec{0}, i \in [0, ..., n-1] \)</span> .</p>
+<p>Пусть <span class="math notranslate nohighlight">\(z_0, z_1, ..., z_{n-1}\)</span> линейно зависимы, тогда, хотя бы <span class="math notranslate nohighlight">\(1\)</span> из <span class="math notranslate nohighlight">\(n\)</span> линейных уравнений <span class="math notranslate nohighlight">\(\langle \vec{z_0}, \vec{s} \rangle = 0, \langle \vec{z_1}, \vec{s} \rangle = 0, ..., \langle \vec{z_{n-1}}, \vec{s} \rangle = 0\)</span>, могут быть сокращены.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+  0 = \langle \vec{0}, \vec{s} \rangle
+  = \langle (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\\end{split}\\\begin{split}  = \langle (b_0 \wedge \vec{z_0}), \vec{s} \rangle \oplus \langle (b_1 \wedge \vec{z_1}), \vec{s} \rangle \oplus \langle (b_2 \wedge \vec{z_2}), \vec{s} \rangle \oplus ... \oplus \langle (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\\end{split}\\\begin{split}  = b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle) \oplus b_1 \wedge (\langle \vec{z_1}, \vec{s} \rangle) \oplus b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle) \oplus ... \oplus b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle) \\\end{split}\end{aligned}\end{align} \]</div>
+<p>Также, из-за того, что <span class="math notranslate nohighlight">\(z_0, z_1, ..., z_{n-1}\)</span> линейно зависимы, можно утверждать, что <span class="math notranslate nohighlight">\(b_i \neq 0 (b_i = 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+  \langle \vec{z_i}, \vec{s}\rangle = b_i \wedge \langle \vec{z_i}, \vec{s}\rangle = (b_i \wedge (\langle \vec{z_i}, \vec{s} \rangle)) \oplus 0 \\
+  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus (b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle)) \oplus
+  (b_1 \wedge (\langle\vec{z_1}, \vec{s}\rangle)) \oplus (b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle)) \oplus ... \oplus (b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle ))  \\\end{split}\\\begin{split}  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle )) \oplus (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  = 0 \oplus  \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  =\bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  =\bigoplus_{j \neq i}(b_j \wedge 0) \\\end{split}\\\begin{split}  = \bigoplus_{j \neq i} 0 \\\end{split}\\\begin{split}  = 0\\\end{split}\end{aligned}\end{align} \]</div>
+<p>Т.е. мы сократили <span class="math notranslate nohighlight">\(\langle \vec{z_i}, s\rangle\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>Пример<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id7">
+<h1>Приложение<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Расчёт вероятностей.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \langle f(x), f(y)\rangle = \langle f(x), f(y) \rangle = 
     \begin{cases}
@@ -685,43 +732,14 @@
         0, \text{ если }  \langle z, s \rangle = 1
       \end{cases}
     \end{split}\]</div>
-<p>Пусть мы замеряем первый регистр <span class="math notranslate nohighlight">\(k\)</span> раз и получаем <span class="math notranslate nohighlight">\(z_0, z_1, z_2, ..., z_{k-1}\)</span>. Теперь мы знаем, что <span class="math notranslate nohighlight">\(\langle z_i, s \rangle = 0\)</span> для всех <span class="math notranslate nohighlight">\(i \in [0, k-1]\)</span>.</p>
-<p>Теперь приступаем к вычислению строки <span class="math notranslate nohighlight">\(s\)</span>.</p>
 </li>
 </ol>
 </div>
-<div class="section" id="id5">
-<h2>Постобработка<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>Итак, для того, чтобы найти <span class="math notranslate nohighlight">\(\vec{s} = (s_0, s_1, s_2, ..., s_{n-1})^T\)</span>, нам потребуется <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(\vec{z_i}\)</span>, для которых выполняется <span class="math notranslate nohighlight">\(\langle \vec{z_i}, \vec{s} \rangle = 0\)</span>.</p>
-<p>Пусть заданы <strong>бинарные векторы</strong> <span class="math notranslate nohighlight">\(\vec{z_0}, \vec{z_1}, ..., \vec{z_{n-1}}\)</span> и булевы значения <span class="math notranslate nohighlight">\(b_0, b_1, ..., b_{n-1}\)</span>. Тогда множество векторов <span class="math notranslate nohighlight">\(\{\vec{z_i} \} i \in \{0, ..., n-1\}\)</span>  <strong>линейно независимо</strong>
-, если:</p>
-<div class="math notranslate nohighlight">
-\[
-  (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) = \vec{0}
-\]</div>
-<p>имеет только тривиальные решения <span class="math notranslate nohighlight">\(b_0 = b_1 = ... = b_{n-1} = 0\)</span>. Иначе, векторы <span class="math notranslate nohighlight">\(\vec{z_i}, i \in \{0, ..., n-1\}\)</span> <strong>линейно зависимы</strong>.</p>
-<p>Отсюда следует <span class="math notranslate nohighlight">\(\vec{ z_{i} } \neq \vec{0}, i \in [0, ..., n-1] \)</span> .</p>
-<p>Пусть <span class="math notranslate nohighlight">\(z_0, z_1, ..., z_{n-1}\)</span> линейно зависимы, тогда, хотя бы <span class="math notranslate nohighlight">\(1\)</span> из <span class="math notranslate nohighlight">\(n\)</span> линейных уравнений <span class="math notranslate nohighlight">\(\langle \vec{z_0}, \vec{s} \rangle = 0, \langle \vec{z_1}, \vec{s} \rangle = 0, ..., \langle \vec{z_{n-1}}, \vec{s} \rangle = 0\)</span>, могут быть сокращены.</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}
-  0 = \langle \vec{0}, \vec{s} \rangle
-  = \langle (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\\end{split}\\\begin{split}  = \langle (b_0 \wedge \vec{z_0}), \vec{s} \rangle \oplus \langle (b_1 \wedge \vec{z_1}), \vec{s} \rangle \oplus \langle (b_2 \wedge \vec{z_2}), \vec{s} \rangle \oplus ... \oplus \langle (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\\end{split}\\\begin{split}  = b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle) \oplus b_1 \wedge (\langle \vec{z_1}, \vec{s} \rangle) \oplus b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle) \oplus ... \oplus b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle) \\\end{split}\end{aligned}\end{align} \]</div>
-<p>Также, из-за того, что <span class="math notranslate nohighlight">\(z_0, z_1, ..., z_{n-1}\)</span> линейно зависимы, можно утверждать, что <span class="math notranslate nohighlight">\(b_i \neq 0 (b_i = 1)\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}
-  \langle \vec{z_i}, \vec{s}\rangle = b_i \wedge \langle \vec{z_i}, \vec{s}\rangle = (b_i \wedge (\langle \vec{z_i}, \vec{s} \rangle)) \oplus 0 \\
-  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus (b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle)) \oplus
-  (b_1 \wedge (\langle\vec{z_1}, \vec{s}\rangle)) \oplus (b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle)) \oplus ... \oplus (b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle ))  \\\end{split}\\\begin{split}  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle )) \oplus (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  = 0 \oplus  \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  =\bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\\end{split}\\\begin{split}  =\bigoplus_{j \neq i}(b_j \wedge 0) \\\end{split}\\\begin{split}  = \bigoplus_{j \neq i} 0 \\\end{split}\\\begin{split}  = 0\\\end{split}\end{aligned}\end{align} \]</div>
-<p>Т.е. мы сократили <span class="math notranslate nohighlight">\(\langle \vec{z_i}, s\rangle\)</span>.</p>
-</div>
-</div>
-<div class="section" id="id6">
-<h1>Пример<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id7">
-<h2>Ссылки<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h1>Ссылки<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://leimao.github.io/blog/Simon-Algorithm/">Simon Algorithm</a></p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Simon%27s_problem">Simon’s problem</a></p>
-</div>
+<p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/simon.html">Qiskit Simon algorithm</a></p>
 </div>
 
     <script type="text/x-thebe-config">
