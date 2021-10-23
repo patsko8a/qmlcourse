@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -74,10 +74,6 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -241,57 +237,18 @@
    🟩 Квантовые гейты
   </a>
  </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Фреймворки
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/progintro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/pennylane.html">
-   🟩 PennyLane
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../progblock/tfq.html">
-   🟧 Cirq &amp; TFQ
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Базовые квантовые алгоритмы
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/qcalgointro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
-   🟩 Обзор квантовых алгоритмов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
    🟩 Алгоритм Дойча
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
-   🟩 Квантовая телепортация
+  <a class="reference internal" href="../qcblock/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
    🟧 Алгоритм Гровера
   </a>
  </li>
@@ -320,18 +277,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Квантовое машинное обучение
+  Фреймворки
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+  <a class="reference internal" href="../progblock/progintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
-   🟥 Алгоритм HHL
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/tfq.html">
+   🟧 Cirq &amp; TFQ
   </a>
  </li>
 </ul>
@@ -599,7 +561,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="section" id="id3">
 <h2>Операции с векторами<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Как было сказано ранее в формальном определении, существует две основные операции над векторами:</p>
+<p>Как было сказано ранее в формальном определении, существуют две основные операции над векторами:</p>
 <ul class="simple">
 <li><p>сложение:
 $<span class="math notranslate nohighlight">\(
@@ -613,10 +575,10 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="section" id="id4">
 <h2>Норма (длина) вектора<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>В линейной алгебре для обобщения понятия длины вектора используется термин <strong>норма</strong>. Можно сказать что понятия длины и нормы тождественно эквивалентны.</p>
+<p>В линейной алгебре для обобщения понятия длины вектора используется термин <strong>норма</strong>. Можно сказать что понятия длины и нормы эквивалентны.</p>
 <p>Формально норма определяется как функционал в векторном пространстве, удовлетворяющий <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">3 аксиомам</a> и отображающий элементы этого пространства (векторы) в множество неотрицательных вещественных чисел.</p>
 <p>Данному определению нормы удовлетворяет множество функционалов, но мы будем рассматривать наиболее часто используемый - <strong>Евклидову норму</strong>.</p>
-<p>Для простоты понимания рассмотрим вектор на плоскости. С геометрической точки зрения он представляет из себя направленный отрезок. Направленность вектора никак не влияет на его длину, поэтому, при расчете длины, мы можем работать с ним как с отрезком на плоскости и посчитать длину по школьным формулам.
+<p>Для простоты понимания рассмотрим вектор на плоскости. С геометрической точки зрения он представляет собой направленный отрезок. Направленность вектора никак не влияет на его длину, поэтому, при расчете длины, мы можем работать с ним как с отрезком на плоскости и посчитать длину по школьным формулам.
 Заметим тот факт, что координаты вектора соответствуют числам, умноженным на орты координатных осей, поэтому формула длины вектора выглядит следующим образом:
 $<span class="math notranslate nohighlight">\(
 \lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}
@@ -646,7 +608,7 @@ $<span class="math notranslate nohighlight">\(
 $<span class="math notranslate nohighlight">\(
 \cos{\theta} = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert} = \frac{a_1  b_1 + a_2  b_2 + ... + a_n b_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}
 \)</span>$</p>
-<p>С помощью данной формулы можно вывести одно из главных свойств скалярного произведения, которое заключается в том, что <strong>два вектора перпендикулярно тогда и только тогда, как их скалярное произведение равно 0</strong>:
+<p>С помощью данной формулы можно вывести одно из главных свойств скалярного произведения, которое заключается в том, что <strong>два вектора перпендикулярны тогда и только тогда, как их скалярное произведение равно 0</strong>:
 $<span class="math notranslate nohighlight">\(
 \mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0
 \)</span>$</p>
@@ -662,7 +624,7 @@ $<span class="math notranslate nohighlight">\(
 $<span class="math notranslate nohighlight">\(
 \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \\ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0} 
 \)</span>$</p>
-<p>Если набор векторов не является линейно зависимым, то есть не существует ненулевой линейной комбинация векторов данного набора равной нулевому вектору, то такой набор векторов называется <strong>линейно независимым</strong>.</p>
+<p>Если набор векторов не является линейно зависимым, то есть не существует ненулевой линейной комбинации векторов данного набора равной нулевому вектору, то такой набор векторов называется <strong>линейно независимым</strong>.</p>
 <p><strong>Пример</strong>:</p>
 <ul class="simple">
 <li><p>линейно независимый набор векторов (только нулевые коэффициенты линейно комбинации приводят к нулевому вектору):
@@ -742,7 +704,7 @@ $<span class="math notranslate nohighlight">\(
         
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
