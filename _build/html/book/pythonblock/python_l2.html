@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Знакомство с инструментарием: Jupyter" href="python_l3.html" />
+    <link rel="next" title="Знакомство с инструментарием: Jupyter" href="jupyter_l3.html" />
     <link rel="prev" title="Вводная лекция про Python" href="python_l1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -134,7 +134,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_l3.html">
+  <a class="reference internal" href="jupyter_l3.html">
    🟦 Ориентация в Jupyter
   </a>
  </li>
@@ -410,6 +410,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке "D-Wave"
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩  Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   О курсе
  </span>
 </p>
@@ -645,7 +662,8 @@
 <p>Поздравляем, вы создали исполняемый файл! В своем роде это скрипт, который и запустит установку. Для этого нужно открыть <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code> (терминал в рамках операционной системы  Windows). Его вы можете найти очень просто - достаточно набрать название в меню “Пуск”. После этого выполните команду (скопируйте, вставьте и нажмите <code class="docutils literal notranslate"><span class="pre">Enter</span></code>): <code class="docutils literal notranslate"><span class="pre">Set-ExecutionPolicy</span> <span class="pre">Bypass</span> <span class="pre">-Scope</span> <span class="pre">Process</span> <span class="pre">-Force;</span></code>.</p>
 <p>После этого перетащите в терминал файл (прямо мышкой с рабочего стола) и отпустите левую кнопку: в терминале должен появиться путь до файла. Снова выполните команду (<code class="docutils literal notranslate"><span class="pre">Enter</span></code>). Дождитесь окончания установки.</p>
 <p>И, наконец, закончим установкой вспомогательных инструментов: запустите команду <code class="docutils literal notranslate"><span class="pre">choco</span> <span class="pre">install</span> <span class="pre">make</span> <span class="pre">curl</span> <span class="pre">miniconda3</span></code>. Все сопроводительное обеспечение установлено, осталось непосредственно собрать окружение и собственный экземпляр книги - в этом нам поможет запуск двух команд (<strong>но перед этим нужно перейти в директорию со скачанным курсом</strong> . Для этого нужно воспользоваться командой <code class="docutils literal notranslate"><span class="pre">cd</span></code> (change directory, сменить директорию) и указать путь к директории. Самый простой способ это сделать - перетащить папку из окна проводника с файлами (или рабочего стола) в терминал: путь подставится автоматически. Пример правильной команды: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/ivan.petrov/Downloads/course/qmlcourse-master/</span></code>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span><span class="o">-</span><span class="n">windows</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">build</span><span class="o">-</span><span class="n">windows</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span><span class="o">-</span><span class="n">windows</span>
+<span class="n">make</span> <span class="n">build</span><span class="o">-</span><span class="n">windows</span>
 </pre></div>
 </div>
 <p>Если вам интересно, то первая установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">poetry</span></code> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, и, наконец, сами библиотеки, необходимые для прохождения курса.</p>
@@ -662,15 +680,10 @@
 </pre></div>
 </div>
 <p>И из этой папки вызовите последовательность из двух команд:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install-macos-latest
-make build-linux-macos
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install-macos-latest <span class="o">&amp;&amp;</span> make build-linux-macos
 </pre></div>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Что какая команда длелает
-первая команда установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <a class="reference external" href="https://python-poetry.org"><code class="docutils literal notranslate"><span class="pre">poetry</span></code></a> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>, то что по ссылке https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html (так что можете не выполнять если не хотите, трава и так будет расти)</p>
-</div>
+<p>Если вам интересно, то первая установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">poetry</span></code> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, и, наконец, сами библиотеки, необходимые для прохождения курса.</p>
 <p>Все! Можете переходить к следующему блоку ниже в лекции.</p>
 </div>
 <div class="section" id="ubuntu">
@@ -691,22 +704,17 @@ sudo apt-get install git wget -y
 </pre></div>
 </div>
 <p>И из этой папки вызовите последовательность из двух команд:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install-ubuntu-latest
-make build-linux-macos
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install-ubuntu-latest <span class="o">&amp;&amp;</span> make build-linux-macos
 </pre></div>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Что какая команда длелает
-Первая команда установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <a class="reference external" href="https://python-poetry.org"><code class="docutils literal notranslate"><span class="pre">poetry</span></code></a> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>, то что по ссылке https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html (так что можете не выполнять если не хотите, трава и так будет расти)</p>
-</div>
+<p>Если вам интересно, то первая установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">poetry</span></code> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, и, наконец, сами библиотеки, необходимые для прохождения курса.</p>
 <p>Все! Можете переходить к следующему блоку ниже в лекции.</p>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>Проверка корректности установки<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Чтобы убедиться в том, что все отработало штатно, и у вас полный комплект, запустим очень мощный инструмент для работы в машинном обучении - <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code>. С ним вы познакомитесь ближе в следующей лекции, а пока введите в терминале команду</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run jupyter notebook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>
 </div>
 <p>В терминале должна появиться надпись о том, что запущен сервер, а также будет предоставлено две или три ссылки.</p>
@@ -792,7 +800,7 @@ make build-linux-macos
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="python_l3.html" title="next page">
+        <a class="right-next" href="jupyter_l3.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
                 <p class="prevnext-title">Знакомство с инструментарием: Jupyter</p>

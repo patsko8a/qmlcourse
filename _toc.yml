@@ -15,7 +15,7 @@
       title: 🟦 Вводная лекция про Python
     - file: book/pythonblock/python_l2.md
       title: 🟦 Установка инструментов
-    - file: book/pythonblock/python_l3.md
+    - file: book/pythonblock/jupyter_l3.md
       title: 🟦 Ориентация в Jupyter
     - file: book/pythonblock/python_l4.md
       title: 🟦 Переменные, типы и вывод
@@ -127,6 +127,13 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+
+- part: D-Wave – квантовый отжиг и семплирование
+  chapters:
+    - file: book/dwaveblock/dwaveintro
+      title: ⬜ О блоке "D-Wave"
+    - file: book/dwaveblock/dwave
+      title: 🟩  Квантовый отжиг и семплирование
 
 - part: О курсе
   chapters:
