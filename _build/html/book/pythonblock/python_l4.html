@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Условные конструкции, булева логика и сравнения" href="python_l5.html" />
-    <link rel="prev" title="Знакомство с инструментарием: Jupyter" href="jupyter_l3.html" />
+    <link rel="prev" title="Знакомство с инструментарием: Jupyter" href="python_l3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -136,7 +136,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="jupyter_l3.html">
+  <a class="reference internal" href="python_l3.html">
    🟦 Ориентация в Jupyter
   </a>
  </li>
@@ -278,11 +278,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
    🟧 Алгоритм Гровера
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
-   Алгоритм Саймона
   </a>
  </li>
 </ul>
@@ -700,10 +695,10 @@
 <span class="c1"># без создания лишней переменной</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 
-<span class="c1"># и даже трёх функций, включая приведение типа</span>
+<span class="c1"># и даже трех функций, включая приведение типа</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
 
-<span class="c1"># деление числа на само себя даёт единицу, но..</span>
+<span class="c1"># деление числа на само себя дает единицу, но..</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span> <span class="o">/</span> <span class="n">c</span><span class="p">)</span>
@@ -724,7 +719,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Обратите внимание, что операции не изменяют переменную саму по себе (то есть операция <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> не меняет ни <code class="docutils literal notranslate"><span class="pre">a</span></code>, ни <code class="docutils literal notranslate"><span class="pre">b</span></code>). Чтобы сохранить получаемое значение, нужно присвоить его некоторой переменной (в примере выше это <code class="docutils literal notranslate"><span class="pre">c</span></code>). Если вы хотите изменить непосредственно саму переменную, то можно переприсвоить ей значение на основе расчёта: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> или <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">12</span></code>.</p>
+<p>Обратите внимание, что операции не изменяют переменную саму по себе (то есть операция <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> не меняет ни <code class="docutils literal notranslate"><span class="pre">a</span></code>, ни <code class="docutils literal notranslate"><span class="pre">b</span></code>). Чтобы сохранить получаемое значение, нужно присвоить его некоторой переменной (в примере выше это <code class="docutils literal notranslate"><span class="pre">c</span></code>). Если вы хотите изменить непосредственно саму переменную, то можно переприсвоить ей значение на основе расчета: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> или <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">12</span></code>.</p>
 </div>
 <p>Даже несмотря на то, что кейс с делением числа на само себя очевиден (всегда получается единица, кроме деления на нуль), будет выведено вещественное значение.
 Сами же вещественные значения можно складывать, вычитать, умножать и возводить в степень как с целыми, так и с вещественными числами (и наоборот). Если в таком выражении используется хотя бы одна <code class="docutils literal notranslate"><span class="pre">float</span></code>-переменная, то и результат будет не целочисленным. Однако:</p>
@@ -957,7 +952,7 @@ print(another_error_string)
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="jupyter_l3.html" title="previous page">
+        <a class="left-prev" href="python_l3.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
