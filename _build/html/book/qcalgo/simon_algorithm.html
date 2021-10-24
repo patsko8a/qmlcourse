@@ -563,12 +563,12 @@
      Описание алгоритма
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Пример
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   Пример
-  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
@@ -625,9 +625,15 @@
       U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle 
     \]</div>
 </li>
+<li><p>Производим измерение на втором регистре. Измеренное значение будет соответствовать либо <span class="math notranslate nohighlight">\(x\)</span> либо <span class="math notranslate nohighlight">\(y = x \oplus b\)</span> . А первый регистр примет значение:</p>
+<div class="math notranslate nohighlight">
+\[ 
+      |\psi \rangle_3 = \frac{1}{\sqrt{2}} \left( |x\rangle_1 + |y\rangle_1\rangle \right)
+    \]</div>
+</li>
 <li><p>Снова применяем матрицы Адамара на первом регистре:</p>
 <div class="math notranslate nohighlight">
-\[ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{x \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle}) \sum_{z \in \{ 0, 1\}^n}|z\rangle |f(x) \rangle \]</div>
+\[ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{z \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle} + -1^{\langle y, z\rangle}) |z\rangle \]</div>
 <p>где <span class="math notranslate nohighlight">\(\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i \)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -664,19 +670,17 @@
         \end{split}\]</div>
 </li>
 </ol>
-</li>
-</ol>
 <p>Выполняем алгоритм <span class="math notranslate nohighlight">\(n\)</span> раз. После чего у нас будет система <span class="math notranslate nohighlight">\(n\)</span> линейно независимых уравнений.</p>
 <p>Теперь приступаем к вычислению строки <span class="math notranslate nohighlight">\(s\)</span>.</p>
-<ol class="simple">
-<li><p>Постобработка</p></li>
-</ol>
-<p>Итак, для того, чтобы найти <span class="math notranslate nohighlight">\(\vec{s} = (s_0, s_1, s_2, ..., s_{n-1})^T\)</span>, нам потребуется <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(\vec{z_i}\)</span>, для которых выполняется <span class="math notranslate nohighlight">\(\langle \vec{z_i}, \vec{s} \rangle = 0\)</span>.</p>
+</li>
+<li><p>Постобработка.</p>
+<p>Итак, для того, чтобы найти <span class="math notranslate nohighlight">\(s = (s_0, s_1, s_2, ..., s_{n-1})^T\)</span>, нам потребуется <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(\vec{z_i}\)</span>, для которых выполняется <span class="math notranslate nohighlight">\(\langle \vec{z_i}, s \rangle = 0\)</span>.</p>
 <p>После того, как получена система из <span class="math notranslate nohighlight">\(n\)</span> линейно независимых уравнений, решение можно найти методом Гауаса.</p>
-</div>
+</li>
+</ol>
 </div>
 <div class="section" id="id5">
-<h1>Пример<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<h2>Пример<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Давайте возьмём n = 3, строка <span class="math notranslate nohighlight">\(s = 100\)</span>, и функцию <span class="math notranslate nohighlight">\(f\)</span>, которая соответствует критерию <span class="math notranslate nohighlight">\(f(x) = f(y) \Leftrightarrow x \oplus s = y\)</span>.</p>
 <p>Обычно функция <span class="math notranslate nohighlight">\(f(x)\)</span> задана наперёд. Ну а мы выберем её простейшей: <span class="math notranslate nohighlight">\(f(x) = x \oplus s\)</span> .</p>
 <p>Давайте посмотрим таблицу истинности всех нужных переменных.</p>
@@ -695,7 +699,7 @@
 \hline  
 \end{array}
 \end{split}\]</div>
-<p>Сразу же нарисуем схему на Qiskit:</p>
+<p>Нарисуем схему на Qiskit, которая будет показывать одну итерацию алгоритма:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
@@ -711,16 +715,20 @@
 <span class="c1"># Шаг 1. Создаём квантовую схему (инициализация состояния)</span>
 <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr1</span><span class="p">,</span> <span class="n">qr2</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
 
-<span class="c1"># Шаг 1. Применяем гейт Адамара ко всем кубитам первого регистра</span>
+<span class="c1"># Шаг 2. Применяем гейт Адамара ко всем кубитам первого регистра</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
-<span class="c1"># Шаг 2. Применяем U_f</span>
+<span class="c1"># Шаг 3. Применяем U_f</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="n">qr1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">qr2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># Шаг 3. Ещё раз применяем гейт адамара к каждому из кубитов</span>
+<span class="c1"># Шаг 4. Производим измерение первого регистра</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr2</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
+
+
+<span class="c1"># Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
-<span class="c1"># Шаг 4. Производим измерение первого регистра</span>
+<span class="c1"># Шаг 6. Производим измерение первого регистра</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr1</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
 
 <span class="c1"># Рисуем схему</span>
@@ -735,15 +743,15 @@ q1_0: ┤ H ├──■──┤ H ├──────┤M├
 q1_1: ┤ H ├──┼──┤ H ├┤M├────╫─
       ├───┤  │  ├───┤└╥┘┌─┐ ║ 
 q1_2: ┤ H ├──┼──┤ H ├─╫─┤M├─╫─
-      └───┘┌─┴─┐└───┘ ║ └╥┘ ║ 
-q2_0: ─────┤ X ├──────╫──╫──╫─
-           └───┘      ║  ║  ║ 
-q2_1: ────────────────╫──╫──╫─
-                      ║  ║  ║ 
-q2_2: ────────────────╫──╫──╫─
-                      ║  ║  ║ 
-c1: 3/════════════════╩══╩══╩═
-                      1  2  0 </pre></div></div>
+      └───┘┌─┴─┐└┬─┬┘ ║ └╥┘ ║ 
+q2_0: ─────┤ X ├─┤M├──╫──╫──╫─
+       ┌─┐ └───┘ └╥┘  ║  ║  ║ 
+q2_1: ─┤M├────────╫───╫──╫──╫─
+       └╥┘  ┌─┐   ║   ║  ║  ║ 
+q2_2: ──╫───┤M├───╫───╫──╫──╫─
+        ║   └╥┘   ║   ║  ║  ║ 
+c1: 3/══╩════╩════╩═══╩══╩══╩═
+        1    2    0   1  2  0 </pre></div></div>
 </div>
 <p>Теперь пройдём по всем шагам алгоритма:</p>
 <ol>
@@ -771,12 +779,26 @@ c1: 3/════════════════╩══╩══╩═
       
     \end{split}\end{aligned}\end{align} \]</div>
 </li>
-<li><p>Ещё один раз применяем гейты Адамара на первый регистр:</p></li>
-</ol>
+<li><p>Измеряем второй регистр. С вероятностью <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> мы получим либо значение <span class="math notranslate nohighlight">\(|000\rangle\)</span> или <span class="math notranslate nohighlight">\(|100\rangle\)</span>.
+Допустим результат равен <span class="math notranslate nohighlight">\(|100\rangle\)</span>.</p>
+<p>Тогда состояние первого регистра примет вид: <span class="math notranslate nohighlight">\(|\psi_3\rangle = (|100\rangle_{1} + |101\rangle_{1} + |110\rangle_{1} + |111\rangle_{1})\)</span>.</p>
+</li>
+<li><p>Ещё один раз применяем гейты Адамара на первый регистр:</p>
 <div class="math notranslate nohighlight">
-\[ 
-    (H^n \otimes I)(|\psi_2\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2} 
-  \]</div>
+\[\begin{split}
+      |\psi_4\rangle = \frac{1}{4} \left[ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right) \\
+        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \\  
+        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)  \\ 
+        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \right]
+    \end{split}\]</div>
+</li>
+<li><p>Производим измерение первого регистра, записывая результат.</p></li>
+</ol>
+<p>Выполняем шаги <span class="math notranslate nohighlight">\(n\)</span> раз.</p>
+<ol class="simple">
+<li><p>Здесь решаем систему уравнений.</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="id6">
 <h1>Приложение<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
