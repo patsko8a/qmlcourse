@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -72,10 +72,6 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -180,21 +176,6 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../linalgblock/intro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../linalgblock/vectors.html">
-   🟦 Векторы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../linalgblock/matrices.html">
-   🟦 Матрицы
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalgblock/numpy.html">
    🟦 Numpy fun
@@ -420,6 +401,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
    🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке "D-Wave"
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
   </a>
  </li>
 </ul>
@@ -673,7 +671,7 @@
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Скорее всего, для выполнения этой команды, нужно задействовать команду <code class="docutils literal notranslate"><span class="pre">sudo</span></code>, это вполне нормальная история.</p>
+<p>Скорее всего, для выполнения этой команды, нужно задействовать sudo команду, это вполне нормальная история.</p>
 </div>
 <p>Затем выполнить простую команду (тоже в терминале), предварительно перейдя в папку с курсом, которую вы извлекли из архива. Для этого нужно воспользоваться командой <code class="docutils literal notranslate"><span class="pre">cd</span></code> (change directory, сменить директорию) и указать путь до папки. Самый простой способ это сделать - перетащить папку из окна Finder в терминал: путь подставится автоматически. Например:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/ivan.petrov/Downloads/course/qmlcourse-master/
@@ -709,7 +707,8 @@ make build-linux-macos
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Первая команда установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <a class="reference external" href="https://python-poetry.org"><code class="docutils literal notranslate"><span class="pre">poetry</span></code></a> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>, то что по ссылке https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html (так что можете не выполнять если не хотите, трава и так будет расти)</p>
+<p>Что какая команда длелает
+Первая команда установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <a class="reference external" href="https://python-poetry.org"><code class="docutils literal notranslate"><span class="pre">poetry</span></code></a> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>, то что по ссылке https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html (так что можете не выполнять если не хотите, трава и так будет расти)</p>
 </div>
 </div>
 </div>
@@ -721,7 +720,8 @@ make build-linux-macos
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Для того, чтобы запустить что-либо в текущем окружении, вам нужно начинать писать команду с <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code> (как в примере выше), ибо все ваши установленные библиотеки (которые в свою очередь устанавливаются как <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;name_lib&gt;</span></code>) не будут подгружаться</p>
+<p>Окружение
+Для того, чтобы запустить что-либо в текущем окружении, вам нужно начинать писать команду с <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code> (как в примере выше), ибо все ваши установленные библиотеки (которые в свою очередь устанавливаются как <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;name_lib&gt;</span></code>) не будут подгружаться</p>
 </div>
 <p>В терминале должна появиться надпись о том, что запущен сервер, а также будет предоставлено две или три ссылки.</p>
 <div class="figure align-default" id="jupyter-console">
@@ -819,7 +819,7 @@ make build-linux-macos
         
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
