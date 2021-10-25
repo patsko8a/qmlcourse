@@ -34,6 +34,16 @@
 
 - part: Линейная алгебра и numpy
   chapters:
+    - file: book/linalgblock/intro.md
+      title: ⬜ О блоке
+    - file: book/linalgblock/vectors.md
+      title: 🟦 Векторы
+    # - file: book/linalgblock/algebra.md
+    #   title: 🟦 Алгебра
+    # - file: book/linalgblock/bra-ket.md
+    #   title: 🟦 Нотация Дирака
+    - file: book/linalgblock/matrices.md
+      title: 🟦 Матрицы
     - file: book/linalgblock/numpy.md
       title: 🟦 Numpy fun
 
@@ -127,13 +137,6 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-
-- part: D-Wave – квантовый отжиг и семплирование
-  chapters:
-    - file: book/dwaveblock/dwaveintro
-      title: ⬜ О блоке "D-Wave"
-    - file: book/dwaveblock/dwave
-      title: 🟩 Квантовый отжиг и семплирование
 
 - part: О курсе
   chapters:
