@@ -17,46 +17,31 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-bqm = dwavebinarycsp.stitch(csp)
+def plot_map(sample: dict[str, bool], provinces: list[str], neighbors: list[tuple[str]]):
+    G = nx.Graph()
+    G.add_nodes_from(provinces)
+    G.add_edges_from(neighbors)
+    color_map = {}
+    for province in provinces:
+          for i in range(colors):
+            if sample[province+str(i)]:
+                color_map[province] = i
+    node_colors = [color_map.get(node) for node in G.nodes()]
+    nx.draw_circular(G, with_labels=True, node_color=node_colors, node_size=3000, cmap=plt.cm.rainbow)
+    plt.show()
+
+plot_map(sample, provinces, neighbors)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mStopIteration[0m                             Traceback (most recent call last)
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/__init__.py[0m in [0;36massert_penaltymodel_factory_available[0;34m()[0m
-[1;32m     53[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 54[0;31m         [0mnext[0m[0;34m([0m[0mfactories[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     55[0m     [0;32mexcept[0m [0mStopIteration[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3745/937785334.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mdef[0m [0mplot_map[0m[0;34m([0m[0msample[0m[0;34m:[0m [0mdict[0m[0;34m[[0m[0mstr[0m[0;34m,[0m [0mbool[0m[0;34m][0m[0;34m,[0m [0mprovinces[0m[0;34m:[0m [0mlist[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m,[0m [0mneighbors[0m[0;34m:[0m [0mlist[0m[0;34m[[0m[0mtuple[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m     [0mG[0m [0;34m=[0m [0mnx[0m[0;34m.[0m[0mGraph[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m     [0mG[0m[0;34m.[0m[0madd_nodes_from[0m[0;34m([0m[0mprovinces[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m     [0mG[0m[0;34m.[0m[0madd_edges_from[0m[0;34m([0m[0mneighbors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0mcolor_map[0m [0;34m=[0m [0;34m{[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mStopIteration[0m: 
-
-During handling of the above exception, another exception occurred:
-
-[0;31mAssertionError[0m                            Traceback (most recent call last)
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/compilers/stitcher.py[0m in [0;36mstitch[0;34m(csp, min_classical_gap, max_graph_size)[0m
-[1;32m    128[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 129[0;31m         [0mdwavebinarycsp[0m[0;34m.[0m[0massert_penaltymodel_factory_available[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    130[0m     [0;32mexcept[0m [0mAssertionError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/__init__.py[0m in [0;36massert_penaltymodel_factory_available[0;34m()[0m
-[1;32m     55[0m     [0;32mexcept[0m [0mStopIteration[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 56[0;31m         raise AssertionError(
-[0m[1;32m     57[0m             [0;34m"To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. "[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mAssertionError[0m: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
-
-During handling of the above exception, another exception occurred:
-
-[0;31mRuntimeError[0m                              Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2177/3648982378.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mbqm[0m [0;34m=[0m [0mdwavebinarycsp[0m[0;34m.[0m[0mstitch[0m[0;34m([0m[0mcsp[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/compilers/stitcher.py[0m in [0;36mstitch[0;34m(csp, min_classical_gap, max_graph_size)[0m
-[1;32m    129[0m         [0mdwavebinarycsp[0m[0;34m.[0m[0massert_penaltymodel_factory_available[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    130[0m     [0;32mexcept[0m [0mAssertionError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 131[0;31m         [0;32mraise[0m [0mRuntimeError[0m[0;34m([0m[0me[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    132[0m [0;34m[0m[0m
-[1;32m    133[0m     [0;32mdef[0m [0maux_factory[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mRuntimeError[0m: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
-RuntimeError: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
+[0;31mTypeError[0m: 'type' object is not subscriptable
+TypeError: 'type' object is not subscriptable
 
