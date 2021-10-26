@@ -666,10 +666,20 @@ c_{ij} = \mathbf{a_{i:}} \cdot \mathbf{b_{:j}} = a_{i1}  b_{1j} + a_{i2}  b_{2j}
 </div>
 <div class="section" id="id4">
 <h2>Норма матрицы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Понятие нормы для матриц определяется тем же образом, что и для векторов. Существует множество матричных норм, но наиболее распространенной является <strong>Евклидова норма</strong>, она же <strong>норма Фробениуса</strong>:</p>
+<p>Понятие матричной нормы несколько сложнее, чем векторной. Обычно принято рассматривать так называемые <strong>операторные нормы</strong>. Такая норма показывает насколько максимально растягивается произвольный вектор <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> при отображении <span class="math notranslate nohighlight">\(y = \mathbf{Ax}\)</span>. Формально операторная норма определяется следующим образом:</p>
 <div class="math notranslate nohighlight">
 \[
-\lVert \mathbf{A} \rVert_{2} = \lVert \mathbf{A} \rVert_{F} = \sqrt{\sum_{i}\sum_{j}a_{ij}^2}
+\lVert \mathbf{A} \rVert_{p} = \sup_{\mathbf{x} \neq 0}\frac{\lVert \mathbf{Ax} \rVert_{p}}{\lVert \mathbf{x} \rVert_{p}}
+\]</div>
+<p>Существует множество матричных норм, но наиболее полезной является <strong>спектральная норма</strong>. Опуская математические выкладки, можно показать, что спектральная норма равна максимальному собственному числу матрицы <span class="math notranslate nohighlight">\(\mathbf{A}^T\mathbf{A}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lVert \mathbf{A} \rVert_{2} =\sqrt{\lambda_{max}(\mathbf{A}^T\mathbf{A})}
+\]</div>
+<p>Про собственные числа поговорим позже, а пока вернемся к нормам. Иногда также рассматривают <strong>поэлементные нормы</strong> матриц. Такая норма определяется тем же образом, что и для векторов. Наиболее распространенной из данного вида является <strong>Евклидова норма</strong>, она же <strong>норма Фробениуса</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lVert \mathbf{A} \rVert_{F} = \sqrt{\sum_{i}\sum_{j}a_{ij}^2}
 \]</div>
 </div>
 <div class="section" id="id5">
