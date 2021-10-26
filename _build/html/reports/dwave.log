@@ -17,44 +17,46 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-sampler = EmbeddingComposite(DWaveSampler())  
-sampleset = sampler.sample(bqm, num_reads=1000, label='Canada Map Coloring')
+bqm = dwavebinarycsp.stitch(csp)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3836/3940459392.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0msampler[0m [0;34m=[0m [0mEmbeddingComposite[0m[0;34m([0m[0mDWaveSampler[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0msampleset[0m [0;34m=[0m [0msampler[0m[0;34m.[0m[0msample[0m[0;34m([0m[0mbqm[0m[0;34m,[0m [0mnum_reads[0m[0;34m=[0m[0;36m1000[0m[0;34m,[0m [0mlabel[0m[0;34m=[0m[0;34m'Canada Map Coloring'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mStopIteration[0m                             Traceback (most recent call last)
+[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/__init__.py[0m in [0;36massert_penaltymodel_factory_available[0;34m()[0m
+[1;32m     53[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 54[0;31m         [0mnext[0m[0;34m([0m[0mfactories[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     55[0m     [0;32mexcept[0m [0mStopIteration[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/system/samplers/dwave_sampler.py[0m in [0;36m__init__[0;34m(self, failover, retry_interval, **config)[0m
-[1;32m    140[0m         [0mdefaults[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0msolver[0m[0;34m=[0m[0mdict[0m[0;34m([0m[0morder_by[0m[0;34m=[0m[0;34m'-num_active_qubits'[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    141[0m [0;34m[0m[0m
-[0;32m--> 142[0;31m         [0mself[0m[0;34m.[0m[0mclient[0m [0;34m=[0m [0mClient[0m[0;34m.[0m[0mfrom_config[0m[0;34m([0m[0;34m**[0m[0mconfig[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    143[0m         [0mself[0m[0;34m.[0m[0msolver[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mclient[0m[0;34m.[0m[0mget_solver[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    144[0m [0;34m[0m[0m
+[0;31mStopIteration[0m: 
 
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/client/base.py[0m in [0;36mfrom_config[0;34m(cls, config_file, profile, client, **kwargs)[0m
-[1;32m    358[0m [0;34m[0m[0m
-[1;32m    359[0m         [0mlogger[0m[0;34m.[0m[0mdebug[0m[0;34m([0m[0;34m"Creating %s.Client() with: %r"[0m[0;34m,[0m [0m_client[0m[0;34m,[0m [0mconfig[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 360[0;31m         [0;32mreturn[0m [0m_clients[0m[0;34m[[0m[0m_client[0m[0;34m][0m[0;34m([0m[0;34m**[0m[0mconfig[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    361[0m [0;34m[0m[0m
-[1;32m    362[0m     def _resolve_region_endpoint(self, *,
+During handling of the above exception, another exception occurred:
 
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/events.py[0m in [0;36mwrapped[0;34m(*pargs, **kwargs)[0m
-[1;32m    103[0m             [0mdispatch_event[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mbefore_eventname[0m[0;34m,[0m [0mobj[0m[0;34m=[0m[0mobj[0m[0;34m,[0m [0margs[0m[0;34m=[0m[0margs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    104[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 105[0;31m                 [0mrval[0m [0;34m=[0m [0mfn[0m[0;34m([0m[0;34m*[0m[0mpargs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    106[0m             [0;32mexcept[0m [0mException[0m [0;32mas[0m [0mexc[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    107[0m                 [0mdispatch_event[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mafter_eventname[0m[0;34m,[0m [0mobj[0m[0;34m=[0m[0mobj[0m[0;34m,[0m [0margs[0m[0;34m=[0m[0margs[0m[0;34m,[0m [0mexception[0m[0;34m=[0m[0mexc[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mAssertionError[0m                            Traceback (most recent call last)
+[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/compilers/stitcher.py[0m in [0;36mstitch[0;34m(csp, min_classical_gap, max_graph_size)[0m
+[1;32m    128[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 129[0;31m         [0mdwavebinarycsp[0m[0;34m.[0m[0massert_penaltymodel_factory_available[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    130[0m     [0;32mexcept[0m [0mAssertionError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/client/base.py[0m in [0;36m__init__[0;34m(self, endpoint, token, solver, **kwargs)[0m
-[1;32m    451[0m         [0mtoken[0m [0;34m=[0m [0moptions[0m[0;34m[[0m[0;34m'token'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m    452[0m         [0;32mif[0m [0;32mnot[0m [0mtoken[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 453[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"API token not defined"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    454[0m [0;34m[0m[0m
-[1;32m    455[0m         [0;31m# parse optional client certificate[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/__init__.py[0m in [0;36massert_penaltymodel_factory_available[0;34m()[0m
+[1;32m     55[0m     [0;32mexcept[0m [0mStopIteration[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 56[0;31m         raise AssertionError(
+[0m[1;32m     57[0m             [0;34m"To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. "[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mValueError[0m: API token not defined
-ValueError: API token not defined
+[0;31mAssertionError[0m: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
+
+During handling of the above exception, another exception occurred:
+
+[0;31mRuntimeError[0m                              Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3700/3648982378.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mbqm[0m [0;34m=[0m [0mdwavebinarycsp[0m[0;34m.[0m[0mstitch[0m[0;34m([0m[0mcsp[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwavebinarycsp/compilers/stitcher.py[0m in [0;36mstitch[0;34m(csp, min_classical_gap, max_graph_size)[0m
+[1;32m    129[0m         [0mdwavebinarycsp[0m[0;34m.[0m[0massert_penaltymodel_factory_available[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    130[0m     [0;32mexcept[0m [0mAssertionError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 131[0;31m         [0;32mraise[0m [0mRuntimeError[0m[0;34m([0m[0me[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    132[0m [0;34m[0m[0m
+[1;32m    133[0m     [0;32mdef[0m [0maux_factory[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mRuntimeError[0m: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
+RuntimeError: To use 'dwavebinarycsp', at least one penaltymodel factory must be installed. Try 'pip install dwavebinarycsp[maxgap]' or 'pip install dwavebinarycsp[mip]'.
 

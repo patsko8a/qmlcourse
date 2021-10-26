@@ -8,7 +8,7 @@ neighbors = [('AB', 'BC'), ('AB', 'NT'), ('AB', 'SK'), ('BC', 'NT'), ('BC', 'YT'
              ('MB', 'NU'), ('MB', 'ON'), ('MB', 'SK'), ('NB', 'NS'), ('NB', 'QC'),
              ('NL', 'QC'), ('NT', 'NU'), ('NT', 'SK'), ('NT', 'YT'), ('ON', 'QC')]
 
-def not_both_1(v, u):
+def not_both_1(v: bool, u: bool) -> bool:
     return not (v and u)
 
 one_color_configurations = {(0, 0, 0, 1), (0, 0, 1, 0), (0, 1, 0, 0), (1, 0, 0, 0)}
@@ -28,16 +28,19 @@ for neighbor in neighbors:
 
 bqm = dwavebinarycsp.stitch(csp)
 
-sampler = EmbeddingComposite(DWaveSampler())  
+import os
+base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
+
+sampler = EmbeddingComposite(base_sampler)
 sampleset = sampler.sample(bqm, num_reads=1000, label='Canada Map Coloring')
 
-sample = sampleset.first.sample  
-if not csp.check(sample):  
+sample = sampleset.first.sample
+if not csp.check(sample):
     print("Failed to color map. Try sampling again.")
 else:
     print(sample)
 
-def plot_map(sample):
+def plot_map(sample: dict[str, bool], provinces: list[str], neighbors: list[tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
@@ -50,4 +53,4 @@ def plot_map(sample):
     nx.draw_circular(G, with_labels=True, node_color=node_colors, node_size=3000, cmap=plt.cm.rainbow)
     plt.show()
 
-plot_map(sample)
+plot_map(sample, provinces, neighbors)
