@@ -17,7 +17,11 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def plot_map(sample: dict[str, bool], provinces: list[str], neighbors: list[tuple[str]]):
+from typing import List
+from typing import Tuple
+
+
+def plot_map(sample: dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
@@ -35,12 +39,12 @@ plot_map(sample, provinces, neighbors)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3745/937785334.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mdef[0m [0mplot_map[0m[0;34m([0m[0msample[0m[0;34m:[0m [0mdict[0m[0;34m[[0m[0mstr[0m[0;34m,[0m [0mbool[0m[0;34m][0m[0;34m,[0m [0mprovinces[0m[0;34m:[0m [0mlist[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m,[0m [0mneighbors[0m[0;34m:[0m [0mlist[0m[0;34m[[0m[0mtuple[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m     [0mG[0m [0;34m=[0m [0mnx[0m[0;34m.[0m[0mGraph[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m     [0mG[0m[0;34m.[0m[0madd_nodes_from[0m[0;34m([0m[0mprovinces[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m     [0mG[0m[0;34m.[0m[0madd_edges_from[0m[0;34m([0m[0mneighbors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m     [0mcolor_map[0m [0;34m=[0m [0;34m{[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_2187/2748254597.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[0;32m----> 5[0;31m [0;32mdef[0m [0mplot_map[0m[0;34m([0m[0msample[0m[0;34m:[0m [0mdict[0m[0;34m[[0m[0mstr[0m[0;34m,[0m [0mbool[0m[0;34m][0m[0;34m,[0m [0mprovinces[0m[0;34m:[0m [0mList[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m,[0m [0mneighbors[0m[0;34m:[0m [0mList[0m[0;34m[[0m[0mTuple[0m[0;34m[[0m[0mstr[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m     [0mG[0m [0;34m=[0m [0mnx[0m[0;34m.[0m[0mGraph[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m     [0mG[0m[0;34m.[0m[0madd_nodes_from[0m[0;34m([0m[0mprovinces[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mTypeError[0m: 'type' object is not subscriptable
 TypeError: 'type' object is not subscriptable

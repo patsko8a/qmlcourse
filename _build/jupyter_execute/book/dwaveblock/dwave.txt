@@ -40,7 +40,11 @@ if not csp.check(sample):
 else:
     print(sample)
 
-def plot_map(sample: dict[str, bool], provinces: list[str], neighbors: list[tuple[str]]):
+from typing import List
+from typing import Tuple
+
+
+def plot_map(sample: dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
