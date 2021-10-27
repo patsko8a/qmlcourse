@@ -802,7 +802,7 @@
 <p>Это первая лекция основного блока нашего курса. Прежде чем мы начнем детально разбирать понятие кубита, давайте взглянем на общий пайплайн квантовых схем.</p>
 <div class="figure align-default" id="qscheme">
 <img alt="../../_images/diagram1.png" src="../../_images/diagram1.png" />
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Схема любого квантового алгоритма</span><a class="headerlink" href="#qscheme" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Схема любого квантового алгоритма</span><a class="headerlink" href="#qscheme" title="Permalink to this image">¶</a></p>
 </div>
 <p>Любая квантовая схема включает в себя:</p>
 <ul class="simple">
@@ -828,7 +828,7 @@
 <p>Давайте вспомним мысленный эксперимента Шредингера. Кот, который одновременно и жив, и мертв. Понятно, что <em>значение</em> кота точно одно: он либо жив, либо мертв. Но <em>состояние</em> его более сложное. Он находится в <em>суперпозиции</em> состояний “жив” и “мертв” одновременно.</p>
 <div class="figure align-default" id="schrodingers-cat">
 <a class="reference internal image-reference" href="../../_images/Schrodingers_cat.svg"><img alt="../../_images/Schrodingers_cat.svg" src="../../_images/Schrodingers_cat.svg" width="600px" /></a>
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Код Шредингера</span><a class="headerlink" href="#schrodingers-cat" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Кот Шредингера</span><a class="headerlink" href="#schrodingers-cat" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id7">
@@ -844,8 +844,8 @@ c_1
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Может возникнуть вопрос, а почему комплексные числа? Короткий ответ на этот вопрос дать сложно. Если в двух словах, то использование комплексных чисел связано с удобством представления матричных групп, используемых в квантовой механике.</p>
-<p>Все еще звучит сложно??? Тогда нужно вспомнить, что изначально квантовая механика возникла, в том числе из-за того, что физики экпериментально обнаружили у фундаментальных
-частиц свойство <code class="docutils literal notranslate"><span class="pre">корпускулярно-волнового</span> <span class="pre">дуализма</span></code>. Иными словами, электроны, фотоны и другие частицы проявляли как типичные свойства волнового движения (например
+<p>Все еще звучит сложно? Тогда нужно вспомнить, что изначально квантовая механика возникла в том числе из-за того, что физики экпериментально обнаружили у фундаментальных
+частиц свойство <code class="docutils literal notranslate"><span class="pre">корпускулярно-волнового</span> <span class="pre">дуализма</span></code>. Иными словами, электроны, фотоны и другие частицы проявляли как типичные свойства волнового движения (например,
 интерференцию и дифракцию), и свойства частиц – например, всегда есть минимальная порция (<code class="docutils literal notranslate"><span class="pre">квант</span></code>!) света или электричества. Кстати, часто вместо вектора состояния
 используется понятие <code class="docutils literal notranslate"><span class="pre">волновой</span> <span class="pre">функции</span></code>, которая описывает плотность вероятности обнаружить частицу в той или иной точке пространства (обычного или специального). Ко
 времени создания квантоваой механики для описания волнового движения ученые уже привыкли использовать комплескные числа, которые позволяют упростить описание многих
@@ -948,7 +948,7 @@ True
 </div>
 </div>
 </div>
-<p>Мы будем очень часто пользоваться транспонированием и взятием комплексно сопряженного от векторов. В квантовой механике это имеет специальное обозначение <span class="math notranslate nohighlight">\(\bra{\Psi} = \Psi^{T*} = \Psi^\dagger\)</span> (бра – вектор-строка). Тогда наше правило нормировки из =NumPy= кода может быть записано в нотации Дирака так:</p>
+<p>Мы будем очень часто пользоваться транспонированием и взятием комплексно сопряженного от векторов. В квантовой механике это имеет специальное обозначение <span class="math notranslate nohighlight">\(\bra{\Psi} = \Psi^{T*} = \Psi^\dagger\)</span> (бра – вектор-строка). Тогда наше правило нормировки из <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> кода может быть записано в нотации Дирака так:</p>
 <div class="math notranslate nohighlight">
 \[
 \braket{\Psi} = 1
@@ -1005,7 +1005,7 @@ True
 </div>
 </div>
 </div>
-<p>Заметьте, что в наших векторных пространствах скалярное произведение – это <span class="math notranslate nohighlight">\(\vec{a}\vec{b} = \left\langle a\middle| b\right\rangle\)</span> (бра-кет). Именно поэтому нужно делать транспонирование и комплексное сопряжение первого вектора в паре.</p>
+<p>Заметьте, что в наших векторных пространствах скалярное произведение – это <span class="math notranslate nohighlight">\(\vec{a}\vec{b} = \left\langle a\middle| b\right\rangle\)</span> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">бра-кет</a>). Именно поэтому нужно делать транспонирование и комплексное сопряжение первого вектора в паре.</p>
 </div>
 </div>
 <div class="section" id="id13">
@@ -1013,10 +1013,10 @@ True
 <p>Обозначения <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}, \ket{+}, \ket{-}, \ket{R}, \ket{L}\)</span> выбраны неслучайно: они имеют геометрический смысл.</p>
 <div class="figure align-default" id="blochcphere">
 <a class="reference internal image-reference" href="../../_images/Blochsphere.svg"><img alt="../../_images/Blochsphere.svg" src="../../_images/Blochsphere.svg" width="400px" /></a>
-<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochcphere" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochcphere" title="Permalink to this image">¶</a></p>
 </div>
 <p>Принято считать, что ось <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – это основная ось, так как физически квантовые компьютеры измеряют именно по ней. Ось <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> “смотрит на нас” и поэтому обозначается <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span>. А ось <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> направлена как бы вдоль, поэтому базис обозначают как “право” (<span class="math notranslate nohighlight">\(\ket{R}\)</span>) и “лево” (<span class="math notranslate nohighlight">\(\ket{L}\)</span>).</p>
-<p>Вектор состояния кубита еще называют волновой функцией и этот вектор может идти в любую точку сферы Блоха. Сама сфера имеет единичный радиус и это гарантирует нам, что для всех состояний сумма квадратов амплитуд будет равна единице.</p>
+<p>Вектор состояния кубита еще называют волновой функцией, и этот вектор может идти в любую точку сферы Блоха. Сама сфера имеет единичный радиус, и это гарантирует нам, что для всех состояний сумма квадратов амплитуд будет равна единице.</p>
 <div class="section" id="id14">
 <h4>Состояние в полярных координатах<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <p>Состояние кубита можно выразить через полярные координаты на сфере Блоха:</p>
@@ -1027,7 +1027,7 @@ True
 <p>где <span class="math notranslate nohighlight">\(\theta,\phi\)</span> – это угловые координаты на сфере Блоха. В этом смысле сфера Блоха очень удобна для представления состояний одного кубита.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Тут мы воспользовались формулой Эйлера, а также вынесли за скобки локальные фазы множителей <span class="math notranslate nohighlight">\(c_0\)</span> и <span class="math notranslate nohighlight">\(c_1\)</span>. Если у вас возникают трудности с подобными операциями над комплексными числами, то рекомендуем еще раз пересмотреть базовую лекцию по линейной алгебре и комплексным числам, там эти моменты освещаются более подробно.</p>
+<p>Тут мы воспользовались формулой Эйлера, а также вынесли за скобки локальные фазы множителей <span class="math notranslate nohighlight">\(c_0\)</span> и <span class="math notranslate nohighlight">\(c_1\)</span>. Если у вас возникают трудности с подобными операциями над комплексными числами, то рекомендуем еще раз пересмотреть базовый <a class="reference external" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/linalgblock/intro.html">блок</a> нашего курса по линейной алгебре и комплексным числам, там эти моменты освещаются более подробно.</p>
 </div>
 </div>
 </div>
@@ -1040,7 +1040,7 @@ True
 </div>
 <div class="section" id="id17">
 <h3>Унитарность<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
-<p>Как мы уже говорили, квадраты амплитуд – это вероятности. Следовательно, волновая функция должна быть нормирована на единицу. А значит, любой оператор, который переводит одно состояние в другое <span class="math notranslate nohighlight">\(\hat{U}\ket{\Psi} = \ket{\Phi}\)</span>, должен сохранять эту нормировку, то есть должен быть <em>унитарным</em>. Более того, свойство унитарности приводит к тому, что любой квантовый оператор еще и сохраняет скалярное произведение:</p>
+<p>Как мы уже говорили, квадраты амплитуд – это вероятности. Следовательно, волновая функция должна быть нормирована на единицу. А значит, любой оператор, который переводит одно состояние в другое <span class="math notranslate nohighlight">\(\hat{U}\ket{\Psi} = \ket{\Phi}\)</span>, должен сохранять эту нормировку, то есть должен быть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>унитарным</em></a>. Более того, свойство унитарности приводит к тому, что любой квантовый оператор еще и сохраняет скалярное произведение:</p>
 <div class="math notranslate nohighlight">
 \[
 \bra{\Psi}\hat{U}^\dagger\hat{U}\ket{\Psi} = \bra{\Psi}\ket{\Psi}
@@ -1181,7 +1181,7 @@ i &amp; 0
 </div>
 <div class="section" id="id26">
 <h3>Формальная запись<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
-<p>Формально мы можем записать для любого эрмитова оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span>, что собственные состояния этого оператора являются его собственными векторами, а собственные значения в этом случае являются наблюдаемыми значениями:</p>
+<p>Формально мы можем записать для любого <a class="reference external" href="https://en.wikipedia.org/wiki/Hermitian_adjoint#Hermitian_operators">эрмитова</a> оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span>, что собственные состояния этого оператора являются его собственными векторами, а собственные значения в этом случае являются наблюдаемыми значениями:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{U}\ket{\Psi} = u\ket{\Psi}
@@ -1205,6 +1205,12 @@ i &amp; 0
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Заметим, что собственные вектора могут отличаться на какой-то множитель. В частности, один из собственных векторов оператора <span class="math notranslate nohighlight">\(\hat{\sigma^y}\)</span>, возвращенный <code class="docutils literal notranslate"><span class="pre">np.linalg.eig</span></code> равен <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}  \begin{bmatrix} -i  \\ 1 \end{bmatrix}\)</span>, что отличается от <span class="math notranslate nohighlight">\(\ket{R} = \frac{\ket{0} + i\ket{1}}{\sqrt{2}} = \frac{1}{\sqrt{2}}  \begin{bmatrix} 1  \\ i \end{bmatrix}\)</span> только домножением на <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Во-первых, по курсу линейной алгебры мы знаем, что собственные вектора можно домножать на любую константу и они все равно останутся собственными, поскольку если вектор <span class="math notranslate nohighlight">\(x^*\)</span>– решение уравнения <span class="math notranslate nohighlight">\(Ax^* = \lambda x^*\)</span>, то и любой вектор <span class="math notranslate nohighlight">\(kx^*, k \in \mathbb{С}, k \neq 0\)</span> также будет решением этого уравнения.</p>
+<p>Во-вторых, состояния, отличающиеся только множителем, по сути соответствуют одному и тому же состоянию. Любой множитель <span class="math notranslate nohighlight">\(c \in \mathbb{С}\)</span>, стоящий перед вектором состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> можно представить в виде <span class="math notranslate nohighlight">\(c = e^{i\Theta}\)</span>, что соответствует повороту на некоторый угол <span class="math notranslate nohighlight">\(\Theta\)</span>. При вычислении амплитуды <span class="math notranslate nohighlight">\({|\ket{\Psi}|} ^ 2\)</span> этот множитель даст единицу, то есть, другими словами, поворот кубита никак не повлияет на результат измерения кубита. Это известно как <em>глобальная фаза</em>, и в научной литературе часто можно встретить фразу “up to a global phase factor”, что означает одинаковые состояния с точностью до поворота (примерно как произвольная константа, добавляемая к интегралу).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
