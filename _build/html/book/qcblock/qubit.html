@@ -1214,7 +1214,7 @@ i &amp; 0
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Можно заметить, что у всех операторов Паули нет ни одного общего собственного вектора. Таким образом, мы приходим к ситуации, когда не можем одновременно точно провести измерения двумя разными операторами, так как наше измерение должно переводить состояние в соответствующий собственный вектор. В квантовой механике это называется <strong>принципом неопределенности</strong>.</p>
+<p>Также можно заметить, что у всех операторов Паули нет ни одного общего собственного вектора. Таким образом, мы приходим к ситуации, когда не можем одновременно точно провести измерения двумя разными операторами, так как наше измерение должно переводить состояние в соответствующий собственный вектор. В квантовой механике это называется <strong>принципом неопределенности</strong>.</p>
 </div>
 </div>
 <div class="section" id="id28">
@@ -1267,7 +1267,7 @@ i &amp; 0
 <p>Мы уже говорили, что при измерении мы как бы “выбираем” один из собственных векторов наблюдаемой. Более строго такой процесс называется проецированием на пространство собственных векторов. Для собственного вектора <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> проекция будет линейным оператором:</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{P}\_{\ket{\Phi}} = \ket{\Phi}\bra{\Phi}
+\hat{P}_{\ket{\Phi}} = \ket{\Phi}\bra{\Phi}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1283,10 +1283,10 @@ i &amp; 0
 </div>
 <div class="section" id="id32">
 <h4>Правило Борна<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
-<p>Вероятность наблюдения каждого из собственных значений <span class="math notranslate nohighlight">\(\lambda\)</span> какого-то оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span> определяется как результат измерения оператора проекции на соответствующий собственный вектор:</p>
+<p>Как мы уже говорили, любому эрмитову оператору соответствует какая-либо наблюдаемая величина. А какая наблюдаемая величина соответствует оператору проекции на собственный вектор <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>, про который мы говорили выше? Ответ – вероятность наблюдения собственного значения, которое соответствует этому собственному вектору. Значит, чтобы получить вероятность измерения значения <span class="math notranslate nohighlight">\(\lambda_i\)</span> эрмитова оператора <span class="math notranslate nohighlight">\(\hat{A}\)</span> (которое соответствует собственному вектору <span class="math notranslate nohighlight">\(\ket{\Phi_i}\)</span> этого оператора) в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, мы должны измерить величину <span class="math notranslate nohighlight">\(\bra{\Psi} \hat{P}_{\ket{\Phi_i}} \ket{\Psi}\)</span>. Это называется правилом Борна.</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbf{P}(\lambda_i) = \bra{\Psi} \hat{P_i} \ket{\Psi}
+\mathbf{P}(\lambda_i) = \bra{\Psi} \hat{P}_{\ket{\Phi_i}} \ket{\Psi}
 \]</div>
 <p>Считать ожидаемое значение оператора мы уже умеем. Давайте убедимся, что для состояния <span class="math notranslate nohighlight">\(\ket{\Psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1\end{bmatrix}\)</span> результаты измерений операторов проекций дадут 0.5 и совпадут с результатом упражнения, которое мы проделали ранее:</p>
 <div class="cell docutils container">
