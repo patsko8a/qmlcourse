@@ -48,4 +48,3 @@ build-windows:
 
 # install-psi4:
 # 	bash Psi4conda-1.4rc3-py38.sh -b -u -p $(HOME)/psi4conda
-
