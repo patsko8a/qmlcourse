@@ -708,7 +708,7 @@
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id22">
-         Правильное действие
+         Проверка
         </a>
        </li>
       </ul>
@@ -738,7 +738,7 @@
     <a class="reference internal nav-link" href="#hat-sigma-z">
      Собственные вектора
      <span class="math notranslate nohighlight">
-      \(\hat{\sigma^Z}\)
+      \(\hat{\sigma^z}\)
      </span>
     </a>
    </li>
@@ -1105,7 +1105,8 @@ True
 </div>
 </div>
 <div class="section" id="id22">
-<h5>Правильное действие<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<h5>Проверка<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<p>Проверим, что гейт Адамара действительно переводит кубит из состояния <span class="math notranslate nohighlight">\(\ket{0}\)</span> в состояние <span class="math notranslate nohighlight">\(\ket{+}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis_0</span><span class="p">,</span> <span class="n">plus</span><span class="p">))</span>
@@ -1165,13 +1166,13 @@ i &amp; 0
 </div>
 <div class="section" id="id25">
 <h3>Собственные значения<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
-<p>Мы поняли, что есть связь между нашими измерениями и операторами. Но какая именно? Что значит, например, что измерения по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют оператору <span class="math notranslate nohighlight">\(\hat{\sigma^Z}\)</span>?</p>
+<p>Мы поняли, что есть связь между нашими измерениями и операторами. Но какая именно? Что значит, например, что измерения по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют оператору <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span>?</p>
 <p>Здесь мы приходим к собственным значениям операторов. Оказывается (так устроен наш мир), что <em>измеряя</em> какую-то величину в квантовой механике, мы всегда будем получать одно из собственных значений соответствующего оператора, а состояние будет коллапсировать в соответствующий собственный вектор этого оператора. Другими словами, <em>измеряя</em> кота Шредингера, мы будем получать значения “жив” или “мертв”, а состояние кота будет переходить в состояние, соответствующее одному из этих значений. А еще <em>измерение</em> не является обратимой операцией: однажды открыв коробку с котом и поняв, жив он или мертв, мы уже не сможем закрыть ее обратно и вернуть кота в суперпозицию.</p>
 <p>Описанное выше – не абстрактные рассуждения из квантовой физики. Оно пригодится, когда мы будем говорить о решении практических комбинаторных задач, таких как задача о выделении сообществ в графе.</p>
 </div>
 <div class="section" id="hat-sigma-z">
-<h3>Собственные вектора <span class="math notranslate nohighlight">\(\hat{\sigma^Z}\)</span><a class="headerlink" href="#hat-sigma-z" title="Permalink to this headline">¶</a></h3>
-<p>Вернемся к нашему оператору <span class="math notranslate nohighlight">\(\hat{\sigma^Z}\)</span>. Легко убедиться, что его собственные значения равны 1 и -1, а соответствующие им собственные вектора – это <span class="math notranslate nohighlight">\(\begin{bmatrix}1 \\ 0\end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\begin{bmatrix}0 \\ 1\end{bmatrix}\)</span>:</p>
+<h3>Собственные вектора <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span><a class="headerlink" href="#hat-sigma-z" title="Permalink to this headline">¶</a></h3>
+<p>Вернемся к нашему оператору <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span>. Легко убедиться, что его собственные значения равны 1 и -1, а соответствующие им собственные вектора – это <span class="math notranslate nohighlight">\(\begin{bmatrix}1 \\ 0\end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\begin{bmatrix}0 \\ 1\end{bmatrix}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">))</span>
