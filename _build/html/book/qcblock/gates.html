@@ -783,7 +783,7 @@
 <a class="reference internal image-reference" href="../../_images/Blochsphere.svg"><img alt="../../_images/Blochsphere.svg" src="../../_images/Blochsphere.svg" width="400px" /></a>
 <p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">¶</a></p>
 </div>
-<p>Любой однокубитный гейт можно представить как вращение вектора состояния <span class="math notranslate nohighlight">\(\Psi\)</span> на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.</p>
+<p>Любой однокубитный гейт можно представить как вращение вектора состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.</p>
 <p>Гейты <span class="math notranslate nohighlight">\(\hat{RX}(\phi), \hat{RY}(\phi), \hat{RZ}(\phi)\)</span> осуществляют поворот на определенный угол <span class="math notranslate nohighlight">\(\phi\)</span> вокруг соответствующей оси на сфере Блоха.</p>
 <p>Давайте внимательно рассмотрим это на примере гейта <span class="math notranslate nohighlight">\(\hat{RY}\)</span>.</p>
 <div class="section" id="hat-ry">
@@ -798,7 +798,7 @@
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">ry</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -812,27 +812,21 @@
 <p>Запишем наше состояние <span class="math notranslate nohighlight">\(\ket{0}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Внимательно посмотрим на сферу Блоха. Можно заметить, что если повернуть состояние из <span class="math notranslate nohighlight">\(\ket{0}\)</span> на <span class="math notranslate nohighlight">\(\pi\)</span> и измерить значение <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span>, то получится 1. А если повернуть на <span class="math notranslate nohighlight">\(-\pi\)</span>, то получится 0:</p>
+<p>Внимательно посмотрим на сферу Блоха. Можно заметить, что если повернуть состояние из <span class="math notranslate nohighlight">\(\ket{0}\)</span> на <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> и измерить значение <span class="math notranslate nohighlight">\(\hat{\sigma^x}\)</span>, то получится 1. А если повернуть на <span class="math notranslate nohighlight">\(-\frac{\pi}{2}\)</span>, то получится -1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">expval</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">expval</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">state</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">op</span> <span class="o">@</span> <span class="n">state</span>
 
 <span class="n">pauli_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
 </pre></div>
 </div>
 </div>
@@ -847,7 +841,7 @@ True
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.42</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.42</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.42</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.42</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -855,28 +849,13 @@ True
 <p>Измерим его по осям <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, затем повернем на угол <span class="math notranslate nohighlight">\(2\pi\)</span> и измерим снова:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pauli_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pauli_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="n">pauli_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z after RY:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">pauli_z</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X after RY:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z:
-	[[-0.6472+0.j]]
-
-X:
-	[[0.76232025+0.j]]
-
-Z after RY:
-	[[-0.6472+0.j]]
-
-X after RY:
-	[[0.76232025+0.j]]
 </pre></div>
 </div>
 </div>
@@ -908,12 +887,12 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 \[
 \large \hat{R}^\vec{n}(\alpha) = e^{-i\frac{\alpha}{2}\left(\hat{\sigma}^xn_x+\hat{\sigma}^yn_y+\hat{\sigma}^zn_z\right)}.
 \]</div>
-<p>Забегая вперед, можно сказать, что именно гейты вращений – это основа квантовых вариационных схем, главного инструмента этого курса.</p>
+<p>Забегая вперед, можно сказать, что именно гейты вращений – это основа <a class="reference external" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/vqcblock/vqcintro.html">квантовых вариационных схем</a>, главного инструмента этого курса.</p>
 </div>
 </div>
 <div class="section" id="phase-shift">
 <h3>Phase-shift гейт<a class="headerlink" href="#phase-shift" title="Permalink to this headline">¶</a></h3>
-<p>Другой важный гейт – это так называемый phase-shift гейт или <span class="math notranslate nohighlight">\(\hat{U}_1\)</span> гейт. Его матричная форма имеет следующий вид:</p>
+<p>Другой важный гейт – это так называемый phase-shift гейт, или <span class="math notranslate nohighlight">\(\hat{U}_1\)</span> гейт. Его матричная форма имеет следующий вид:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \hat{U}_1(\phi) = \begin{bmatrix}
@@ -923,7 +902,7 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u1</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u1</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span><span class="p">)]])</span> <span class="o">@</span> <span class="n">state</span>
 </pre></div>
 </div>
@@ -945,7 +924,7 @@ e^{i\phi} &amp; e^{i(\phi + \lambda)}
 <p>Давайте убедимся в справедливости этого выражения:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rz</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rz</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)]])</span> <span class="o">@</span> <span class="n">state</span>
 
 
@@ -969,11 +948,6 @@ e^{i\phi} &amp; e^{i(\phi + \lambda)}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
 </div>
 <p>Схожим образом определяется <span class="math notranslate nohighlight">\(\hat{U}_3(\theta, \phi, \lambda)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -990,16 +964,10 @@ e^{1j\phi}\sin(\frac{\theta}{2}) &amp; e^{1j(\phi + \lambda)}\cos(\frac{\theta}{
 <p>На этом мы завершаем обзор основных однокубитных гейтов. Маленькое замечание: гейты, связанные со сдвигом фазы, никак не меняют состояние кубита, если оно сейчас <span class="math notranslate nohighlight">\(\ket{0}\)</span>. Так как мы всегда предполагаем, что начальное состояние кубитов – это именно <span class="math notranslate nohighlight">\(\ket{0}\)</span>, то перед применением, например, <span class="math notranslate nohighlight">\(\hat{U}_1\)</span>, рекомендуется применить гейт Адамара:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u1</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">basis</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u1</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">basis</span><span class="p">))</span>
 
 <span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u1</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
 </pre></div>
 </div>
 </div>
@@ -1016,14 +984,8 @@ False
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">identity_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.+0.j 0.+0.j]
- [0.+0.j 1.+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1037,13 +999,13 @@ False
 <p>Очевидно, что с одним кубитом ничего интересного, кроме разве что генератора истинно-случайных чисел, мы не сделаем. Для начала разберемся, как выглядят состояния для многокубитных систем.</p>
 <div class="section" id="id11">
 <h3>Многокубитные состояния<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>В классическом компьютере один бит имеет два значения – 0 и 1. Два бита имеют четыре значения – 00, 01, 10, 11. Три бита имеют восемь значений и так далее. Аналогично состояние двух кубитов – это вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^4\)</span>, состояние трех кубитов – вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^8\)</span>, то есть состояние <span class="math notranslate nohighlight">\(N\)</span> кубитов описывается вектором размерности <span class="math notranslate nohighlight">\(2^N\)</span> в комплексном пространстве. Вероятности каждой из возможных битовых строк (<span class="math notranslate nohighlight">\(0000...00\)</span>, <span class="math notranslate nohighlight">\(0000...01\)</span>, <span class="math notranslate nohighlight">\(0000...10\)</span>, и так далее) получаются по методу Шредингера, который мы обсуждали в конце прошлой лекции:</p>
+<p>В классическом компьютере один бит имеет два значения – 0 и 1. Два бита имеют четыре значения – 00, 01, 10, 11. Три бита имеют восемь значений и так далее. Аналогично состояние двух кубитов – это вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^4\)</span>, состояние трех кубитов – вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^8\)</span>, то есть состояние <span class="math notranslate nohighlight">\(N\)</span> кубитов описывается вектором размерности <span class="math notranslate nohighlight">\(2^N\)</span> в комплексном пространстве. Вероятности каждой из возможных битовых строк (<span class="math notranslate nohighlight">\(0000...00\)</span>, <span class="math notranslate nohighlight">\(0000...01\)</span>, <span class="math notranslate nohighlight">\(0000...10\)</span>, и так далее) получаются по методу Шредингера, который мы обсуждали <a class="reference external" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/qcblock/qubit.html#id29">в конце прошлой лекции</a>:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathbf{P}(\vec{s}) = | \bra{\Psi}\ket{\vec{s}} |^2
 \]</div>
 <p>Нужно отсортировать наши битовые строки в лексикографическом порядке – и вероятность <em>i</em>-й битовой строки будет равна квадрату <em>i</em>-го элемента вектора <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>.</p>
-<p>Формально многокубитные состояния описываются с помощью математического концепта так называемого тензорного произведения, иначе – произведения Кронекера, обозначаемого значком <span class="math notranslate nohighlight">\(\otimes\)</span>. Так, если <span class="math notranslate nohighlight">\(\ket{\Psi}_A \in \mathrm{H}_A\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_B \in \mathrm{H}_B\)</span>, то <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB} = \ket{\Psi}_A \otimes \ket{\Psi}_B \in \mathrm{H}_{AB} = \mathrm{H}_{A} \otimes \mathrm{H}_{B}\)</span>. О том, как элементы вектора <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB}\)</span> выражаются через элементы векторов <span class="math notranslate nohighlight">\(\ket{\Psi}_{A}\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_{B}\)</span>, можно прочитать на Википедии в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0/">“Произведение Кронекера”</a>.</p>
+<p>Формально, многокубитные состояния описываются с помощью математического концепта так называемого <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B7%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"><em>тензорного произведения</em></a>, которое в случае линейных операторов идентично <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0/"><em>произведению Кронекера</em></a>, обозначаемого значком <span class="math notranslate nohighlight">\(\otimes\)</span>. Так, если <span class="math notranslate nohighlight">\(\ket{\Psi}_A \in \mathrm{H}_A\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_B \in \mathrm{H}_B\)</span>, то <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB} = \ket{\Psi}_A \otimes \ket{\Psi}_B \in \mathrm{H}_{AB} = \mathrm{H}_{A} \otimes \mathrm{H}_{B}\)</span>. О том, как элементы вектора <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB}\)</span> выражаются через элементы векторов <span class="math notranslate nohighlight">\(\ket{\Psi}_{A}\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_{B}\)</span>, можно прочитать на Википедии в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0/">“Произведение Кронекера”</a>.</p>
 </div>
 <div class="section" id="id12">
 <h3>Многокубитные операторы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
@@ -1073,12 +1035,7 @@ False
 <p>Учитывая, что многокубитные состояния конструируются аналогичным образом через произведение Кронекера, мы можем убедиться в верности нашего вывода:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">identity_gate</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1098,12 +1055,7 @@ False
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.+0.j]]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1127,12 +1079,12 @@ False
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
-0 &amp; 0 &amp; 1 ,&amp; 0
+0 &amp; 0 &amp; 1 &amp; 0
 \end{bmatrix}
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnot</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cnot</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -1145,12 +1097,6 @@ False
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
     <span class="n">cnot</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">)</span>
 <span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
 </pre></div>
 </div>
 </div>
@@ -1211,10 +1157,10 @@ True
 </div>
 <div class="section" id="pennylane">
 <h2>Первое знакомство с PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h2>
-<p>На сегодняшний день существует достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a class="reference external" href="https://pennylane.ai/">PennyLane</a>. Он предоставляет высокоуровневый <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">API</span></code> и создан специально для решения задач квантового машинного обучения.</p>
+<p>На сегодняшний день существует достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a class="reference external" href="https://pennylane.ai/">PennyLane</a>. Эта библиотека предоставляет высокоуровневый <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">API</span></code> и создана специально для решения задач квантового машинного обучения.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 </pre></div>
 </div>
 </div>
@@ -1222,9 +1168,13 @@ True
 <div class="section" id="device">
 <h3>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h3>
 <p>Для объявления квантового устройства используется класс <code class="docutils literal notranslate"><span class="pre">Device</span></code>. <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> поддерживает работу с большинством существующих квантовых компьютеров, но для целей курса мы будем запускать все наши программы лишь на самом простом симуляторе идеального квантового компьютера:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Разработка и отладка квантовых алгоритмов, как правило, происходит на симуляторах. Но надо понимать, что это работает только пока алгоритмы – “игрушечные” и задействуют пару-тройку или пару десятков кубитов. Надо понимать, что при добавлении каждого следующего кубита требуется вдвое больше ресурсов, чтобы просимулировать квантовый компьютер. Поэтому симуляторы –принципиально плохо масштабируемые аналоги реальных квантовых компьютеров.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1238,16 +1188,11 @@ True
 <h4>Сначала на NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">))</span>
 <span class="n">measure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">((</span><span class="n">op</span> <span class="o">@</span> <span class="n">state</span><span class="p">)</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">measure</span> <span class="o">@</span> <span class="p">(</span><span class="n">op</span> <span class="o">@</span> <span class="n">state</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.70710678+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1257,18 +1202,13 @@ True
 <h4>Теперь через QNode<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">RY</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">expval</span><span class="p">(</span><span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">@</span> <span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475
 </pre></div>
 </div>
 </div>
