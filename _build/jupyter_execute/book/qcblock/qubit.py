@@ -284,7 +284,7 @@ h = 1 / np.sqrt(2) * np.array([
 # In[10]:
 
 
-print(np.allclose(np.conj(h) @ h, np.eye(2)))
+print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 
 
 # ##### Правильное действие
