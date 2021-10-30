@@ -81,13 +81,14 @@ jobs:
         run: |
           Set-ExecutionPolicy Bypass -Scope Process -Force;
           .\ChocolateyInstallNonAdmin.ps1
-      - name: Update ENV Variables
-        run: refreshenv
 
       - name: Install make miniconda3
         run: |
           choco install make curl miniconda3
 
+      - name: Update ENV Variables
+        run: refreshenv
+      
       - name: Install dependencies
         run: make install-windows
 
