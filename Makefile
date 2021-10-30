@@ -34,17 +34,18 @@ build-linux-macos:
 	poetry run jupyter-book build ./qmlcourseRU
 
 install-windows:
-	cmd /C curl https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe --output "%TMP%\python-3.8.5.exe" && "%TMP%\python-3.8.5.exe" /silent
-	cmd /C pip install poetry
-	cmd /C python -m poetry install
-#	cmd /C "C:\tools\miniconda3\Scripts\conda install psi4=1.4rc4.dev1 python=3.8 -c psi4/label/dev -c conda-forge"
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry remove tensorflow-quantum"
-
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry install"
-
+	conda create -n qmlcourse python=3.8 --yes
+	conda activate qmlcourse
+	python -m pip install --upgrade pip
+	python -m pip install poetry
+	python -m pip install tensorflow==2.5.1
+	python -m pip install -U tensorflow-quantum
+	conda install psi4 python=3.8 -c psi4 -c conda-forge
+	python -m poetry install
+	
 build-windows:
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
-	cmd /C python -m poetry run jupyter-book build ./qmlcourseRU
+        python - m poetry run psi4 --test
+	python -m poetry run jupyter-book build ./qmlcourseRU
 
 # install-psi4:
 # 	bash Psi4conda-1.4rc3-py38.sh -b -u -p $(HOME)/psi4conda
