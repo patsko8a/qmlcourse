@@ -82,12 +82,24 @@ jobs:
           Set-ExecutionPolicy Bypass -Scope Process -Force;
           .\ChocolateyInstallNonAdmin.ps1
 
-      - name: Install make
+      - name: Install make miniconda3
         run: |
           choco install make curl miniconda3
 
       - name: Install dependencies
         run: make install-windows
+
+      - name: Install Tensorflow Quantum
+        run: make install-tfq-windows
+
+      - name: Install Psi4
+        run: make install-psi4-windows
+
+      - name: Install Poetry Locks
+        run: make install-poetry-locks-windows
+
+      - name: Test Psi
+        run: make test-psi4-windows
 
       - name: Build
         run: make build-windows
