@@ -75,7 +75,7 @@ jobs:
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
+          SET DWAVE_TOKEN=%DWAVE_TOKEN%
 
       - name: Install chocolatey
         run: |
