@@ -83,16 +83,16 @@ jobs:
 
       - name: Install make
         run: choco install make curl
-      
+
       - name: Update ENV Variables
         run: refreshenv
-      
+
       - name: Install Software
         run: make install-miniconda-windows
-        
+
       - name: Update ENV Variables
         run: refreshenv
-      
+
       - name: Create conda env
         run: make create-condaenv-windows
 

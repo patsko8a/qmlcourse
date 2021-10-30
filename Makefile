@@ -5,7 +5,7 @@ export PATH := $(HOME)/.poetry/bin:$(PATH)
 
 install-ubuntu-latest: install-python-poetry-ubuntu install-python-dependencies
 install-macos-latest: install-python-poetry-macos install-python-dependencies
-install-windows-latest: 
+install-windows-latest:
 	install-software-windows
 	refreshenv
 	create-condaenv-windows
@@ -40,7 +40,7 @@ build-linux-macos:
 
 #### WINDOWS ####
 
- 
+
 install-choco-windows:
 	Set-ExecutionPolicy Bypass -Scope Process -Force;
 	.\ChocolateyInstallNonAdmin.ps1
@@ -81,13 +81,10 @@ build-windows:
 
 # install-psi4:
 # 	bash Psi4conda-1.4rc3-py38.sh -b -u -p $(HOME)/psi4conda
-# 
+#
 # install-conda-ubuntu:
 # TODO
-# curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh | sh ./Miniconda3-latest-Linux-x86_64.sh 
-# 
+# curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh | sh ./Miniconda3-latest-Linux-x86_64.sh
+#
 # install-conda-macos:
 # https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-
-
-
