@@ -102,9 +102,6 @@ jobs:
       - name: Install Psi4
         run: make install-psi4-windows
 
-      - name: Install Poetry Locks
-        run: make install-poetry-locks-windows
-
       - name: Test Psi
         run: make test-psi4-windows
 
