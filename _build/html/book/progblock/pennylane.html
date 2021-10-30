@@ -650,8 +650,7 @@
 </div>
 </div>
 <p>Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
-Именно поэтому мы не импортировали <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> обычным способом: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, а сделали это так:</p>
-<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pennylane</span> <span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>.</p>
+Именно поэтому мы не импортировали <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> обычным способом: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, а сделали это так: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pennylane</span> <span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>.</p>
 <p>Второй способ создания квантовых узлов – с помощью декоратора <code class="docutils literal notranslate"><span class="pre">QNode</span></code>. Пропускаем импорт библиотек и создание устройства, так как в начале код тот же самый:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
