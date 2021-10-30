@@ -35,18 +35,16 @@ build-linux-macos:
 install-windows:
 	conda create -n qmlcourse python=3.8 --yes
 	conda activate qmlcourse
-	ls
-#	python -m pip install --upgrade pip
-#	python -m pip install poetry
-#install-tfq-windows:
-#	python -m pip install tensorflow==2.5.1
-#	python -m pip install -U tensorflow-quantum
-#install-psi4-windows:
-#	conda install psi4 python=3.8 -c psi4 -c conda-forge
-#install-poetry-locks-windows:
-#	dir
-#	python -m poetry install
-#build-windows:
-#	python -m poetry run jupyter-book build ./qmlcourseRU
-#test-psi4-windows:
-#	python - m poetry run psi4 --test
+	python -m pip install --upgrade pip
+	python -m pip install poetry
+install-tfq-windows:
+	python -m pip install tensorflow==2.5.1
+	python -m pip install -U tensorflow-quantum
+install-psi4-windows:
+	conda install psi4 python=3.8 -c psi4 -c conda-forge
+install-poetry-locks-windows:
+	python -m poetry install
+build-windows:
+	python -m poetry run jupyter-book build ./qmlcourseRU
+test-psi4-windows:
+	python - m poetry run psi4 --test
