@@ -76,8 +76,19 @@ jobs:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           SET DWAVE_TOKEN=%DWAVE_TOKEN%
+      - name: Install chocolatey
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force;
+          .\ChocolateyInstallNonAdmin.ps1
+
+      - name: Install make
+        run: choco install make curl
+      
+      - name: Update ENV Variables
+        run: refreshenv
+      
       - name: Install Software
-        run: make install-software-windows
+        run: make install-miniconda-windows
         
       - name: Update ENV Variables
         run: refreshenv
