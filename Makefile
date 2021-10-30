@@ -74,6 +74,7 @@ test-psi4-windows:
 	cmd /C "conda activate qmlcourse && python - m psi4 --test
 
 build-windows:
+	install-build-packages-windows
 	cmd /C "conda activate qmlcourse && python -m jupyter-book build ./qmlcourseRU"
 
 
