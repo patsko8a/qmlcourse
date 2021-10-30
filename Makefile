@@ -49,7 +49,7 @@ install-make-windows:
 	choco install make curl
 
 install-miniconda-windows:
-	curl -0 https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe -d 
+	curl -0 https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
 	cmd /C "Miniconda3-latest-Windows-x86_64.exe /S /InstallationType=JustMe /AddToPath=0 /RegisterPython=1 /D=%UserProfile%\Miniconda3"
 
 install-software-windows: install-choco-windows install-make-windows install-miniconda-windows
