@@ -5,6 +5,11 @@ export PATH := $(HOME)/.poetry/bin:$(PATH)
 
 install-ubuntu-latest: install-python-poetry-ubuntu install-python-dependencies
 install-macos-latest: install-python-poetry-macos install-python-dependencies
+install-windows-latest: 
+	install-software-windows
+	refreshenv
+	create-condaenv-windows
+
 
 install-python-poetry-ubuntu:
 	sudo apt update
@@ -33,20 +38,55 @@ build-linux-macos:
 #	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
 	poetry run jupyter-book build ./qmlcourseRU
 
-install-windows:
-	cmd /C curl https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe --output "%TMP%\python-3.8.5.exe" && "%TMP%\python-3.8.5.exe" /silent
-	cmd /C curl https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py --output "%TMP%\get-poetry.py"
-	cmd /C py -V
+#### WINDOWS ####
 
-	cmd /C py "%TMP%\get-poetry.py"
-#	cmd /C "C:\tools\miniconda3\Scripts\conda install psi4=1.4rc4.dev1 python=3.8 -c psi4/label/dev -c conda-forge"
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry remove tensorflow-quantum"
+ 
+install-choco-windows:
+	Set-ExecutionPolicy Bypass -Scope Process -Force;
+	.\ChocolateyInstallNonAdmin.ps1
 
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry install"
+install-make-windows:
+	choco install make curl
+
+install-miniconda-windows:
+	curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+	cmd /C "Miniconda3-latest-Windows-x86_64.exe /S /InstallationType=JustMe /AddToPath=0 /RegisterPython=1 /D=%UserProfile%\Miniconda3"
+
+install-software-windows: install-choco-windows install-make-windows install-miniconda-windows
+
+create-condaenv-windows:
+	cmd /C "conda create -n qmlcourse python=3.8 --yes"
+
+install-tfq-windows:
+	cmd /C "conda activate qmlcourse && python -m pip install tensorflow==2.5.1 --yes && python -m pip install -U tensorflow-quantum --yes"
+
+install-psi4-windows:
+	cmd /C "conda activate qmlcourse && conda install psi4 python=3.8 -c psi4 -c conda-forge --yes"
+
+install-packages-windows:
+	install-tfq-windows
+	install-psi4-windows
+
+install-build-packages-windows:
+	cmd /C "conda activate qmlcourse && pip install -U jupyter-book"
+
+test-psi4-windows:
+	cmd /C "conda activate qmlcourse && python - m psi4 --test
 
 build-windows:
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry run jupyter-book build ./qmlcourseRU"
+	cmd /C "conda activate qmlcourse && python -m jupyter-book build ./qmlcourseRU"
+
+
 
 # install-psi4:
 # 	bash Psi4conda-1.4rc3-py38.sh -b -u -p $(HOME)/psi4conda
+# 
+# install-conda-ubuntu:
+# TODO
+# curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh | sh ./Miniconda3-latest-Linux-x86_64.sh 
+# 
+# install-conda-macos:
+# https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+
+
+
