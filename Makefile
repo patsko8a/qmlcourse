@@ -33,9 +33,8 @@ build-linux-macos:
 #	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
 	poetry run jupyter-book build ./qmlcourseRU
 install-windows:
-	cmd /C conda create -n qmlcourse python=3.8 --yes
-	cmd /C conda activate qmlcourse
-	cmd /C dir
+	conda create -n qmlcourse python=3.8 --yes
+	conda activate qmlcourse
 	ls
 #	python -m pip install --upgrade pip
 #	python -m pip install poetry
