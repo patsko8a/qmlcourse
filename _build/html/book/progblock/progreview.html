@@ -705,9 +705,9 @@
 <p>Другим примером относительно низкоуровневого языка квантового программирования является фреймворк <a class="reference external" href="https://github.com/rigetti/pyquil">PyQuil</a> <span id="id4">[<a class="reference internal" href="../bibliography.html#id25"><span>SCZ17</span></a>]</span>. Он разработан компанией <code class="docutils literal notranslate"><span class="pre">Rigetti</span> <span class="pre">Computing</span></code>, производителем одноименных квантовых компьютеров и включает в себя компилятор и виртуальную машину <code class="docutils literal notranslate"><span class="pre">QVM</span></code>. Вот так выглядит код на этом фреймворке:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyquil</span> <span class="kn">import</span> <span class="n">get_qc</span><span class="p">,</span> <span class="n">Program</span>
 <span class="kn">from</span> <span class="nn">pyquil.gates</span> <span class="kn">import</span> <span class="n">CNOT</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">MEASURE</span>
- 
+
 <span class="n">qvm</span> <span class="o">=</span> <span class="n">get_qc</span><span class="p">(</span><span class="s1">&#39;2q-qvm&#39;</span><span class="p">)</span>
- 
+
 <span class="n">p</span> <span class="o">=</span> <span class="n">Program</span><span class="p">()</span>
 <span class="n">p</span> <span class="o">+=</span> <span class="n">H</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">+=</span> <span class="n">CNOT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -796,10 +796,10 @@
 </div>
 <div class="section" id="qiskit">
 <h3>Qiskit<a class="headerlink" href="#qiskit" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://qiskit.org/overview">Qiskit</a> – это один из самых популярных в мире фреймворков для квантовых вычислений от компании <code class="docutils literal notranslate"><span class="pre">IBM</span></code>. На самом деле представляет собой даже не фреймфорк, а целую экосистему, в которую входят, например:</p>
+<p><a class="reference external" href="https://qiskit.org/overview">Qiskit</a> – это один из самых популярных в мире фреймворков для квантовых вычислений от компании <code class="docutils literal notranslate"><span class="pre">IBM</span></code>. На самом деле представляет собой даже не фреймворк, а целую экосистему, в которую входят, например:</p>
 <ul class="simple">
 <li><p>Уже <a class="reference external" href="../progblock/progreview.html#openqasm">упомянутый нами</a> квантовый ассемблер <code class="docutils literal notranslate"><span class="pre">OpenQASM</span></code></p></li>
-<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit">Фреймфорк</a> для программирования кубитов, написанный на <code class="docutils literal notranslate"><span class="pre">OpenQASM</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit">Фреймворк</a> для программирования кубитов, написанный на <code class="docutils literal notranslate"><span class="pre">OpenQASM</span></code></p></li>
 <li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-finance">API для применения квантовых вычислений в финансах</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning">API для применения квантовых вычислений в ML</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-optimization">API для применения квантовых вычислений в оптимизации</a></p></li>
@@ -846,7 +846,7 @@
 <span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Код, написанный на <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> может быть запущен на квантовых компьютерах от комапнии <code class="docutils literal notranslate"><span class="pre">IBM.</span></code> Для изучения квантовых вычислений с экосистемой <code class="docutils literal notranslate"><span class="pre">Qsikit</span></code> можно рекомендовать <a class="reference external" href="https://qiskit.org/textbook/what-is-quantum.html">прекрасную онлайн книгу</a>. Более подробный обзор библиотеки также <a class="reference internal" href="qiskit.html#qiskit"><span class="std std-ref">в отдельной лекции нашего курса</span></a>.</p>
+<p>Код, написанный на <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> может быть запущен на квантовых компьютерах от компании <code class="docutils literal notranslate"><span class="pre">IBM.</span></code> Для изучения квантовых вычислений с экосистемой <code class="docutils literal notranslate"><span class="pre">Qsikit</span></code> можно рекомендовать <a class="reference external" href="https://qiskit.org/textbook/what-is-quantum.html">прекрасную онлайн книгу</a>. Более подробный обзор библиотеки также <a class="reference internal" href="qiskit.html#qiskit"><span class="std std-ref">в отдельной лекции нашего курса</span></a>.</p>
 </div>
 <div class="section" id="pennylane">
 <h3>Pennylane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h3>
